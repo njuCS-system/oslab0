@@ -37,7 +37,7 @@ static void __draw(Screen* s){
 
 
 void draw(){
-    draw(&screen);
+    __draw(&screen);
 }
 
 void init_screen(){

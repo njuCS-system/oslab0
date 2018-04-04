@@ -3,10 +3,10 @@
 #include "util.h"
 #include "amdev.h"
 
-char __type[]={
-    'R',//rectangle
-    'L' //line
-};
+// char __type[]={
+//     'R',//rectangle
+//     'L' //line
+// };
 
 typedef struct Info{
     volatile char type;//record the type of an object

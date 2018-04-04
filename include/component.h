@@ -20,6 +20,7 @@ typedef struct RectProperty{
     int stroke;//线宽
 }RectProperty;
 
+
 typedef struct Rect{
     volatile Info info;
     volatile _FBCtlReg reg;
@@ -30,6 +31,7 @@ void __init__Rect(Rect* ,RectProperty);
 
 void draw(void*);
 
+void __finalize_Rect(Rect* rect);
 
 
 

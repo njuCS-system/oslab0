@@ -3,7 +3,7 @@
 
 Rect_factory rect_factory;
 
-
+//构造器无法多态
 Rect* build_rect(RectProperty property){
     //mem_alloc 
     Rect* rect= __inner_build_rect(&rect_factory);
@@ -35,7 +35,10 @@ static Rect* __inner_build_rect(Rect_factory * factory){
     return NULL;
 }
 
-void free_rect(Rect* rect){
+static void free_rect(Rect* rect){
+    //destructor
+    __finalize_Rect(rect);
+    //free memory
     rect->info.valid.boolean=TRUE;
 }
 
@@ -44,4 +47,24 @@ void init_memory(){
     rect_factory.free=&free_rect;
 }
 
+
+
+
+
+//************************************
+//virtual functions
+//************************************
+
+void free(void* obj){
+    Info info=((Info*)obj)[0];
+    if(!info.valid.boolean){
+        return;
+    }
+    switch(info.type){
+        case 'R':
+            free_rect((Rect*)obj);
+            break;
+
+    }
+}
 

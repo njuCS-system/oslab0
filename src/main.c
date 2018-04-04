@@ -1,5 +1,10 @@
 #include <am.h>
 #include <amdev.h>
+#include "memory.h"
+#include "component.h"
+#include "screen.h"
+
+extern Screen screen;
 
 // TODO: implement necessary libraries
 int printf(const char *fmt, ...) {
@@ -29,6 +34,7 @@ int main() {
       case _DEV_PCICONF: pciconf_test(dev); break;
       case _DEV_ATA0: ata_test(dev); break;
     }
+    try();
     printf("\n");
   }
   return 0;
@@ -132,4 +138,12 @@ static void ata_test(_Device *dev) {
     }
     printf("\n");
   }
+}
+
+
+
+void try(){
+  RectProperty p;
+  Rect* rect=build_rect(p);
+  (*screen.add)(rect);
 }

@@ -2,8 +2,11 @@
 #include "component.h"
 
 Rect_factory rect_factory;
+static Rect* __inner_build_rect(Rect_factory * factory);
 
-//构造器无法多态
+//*****************************
+//构造器(们)无法多态
+//****************************
 Rect* build_rect(RectProperty property){
     //mem_alloc 
     Rect* rect= __inner_build_rect(&rect_factory);

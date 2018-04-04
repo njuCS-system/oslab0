@@ -14,6 +14,8 @@ int printf(const char *fmt, ...) {
   return 0;
 }
 
+void try();
+
 static void input_test(_Device *dev);
 static void timer_test(_Device *dev);
 static void video_test(_Device *dev);

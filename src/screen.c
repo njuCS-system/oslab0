@@ -36,12 +36,12 @@ static void __draw(Screen* s){
 }
 
 
-void draw(){
+void draw_screen(){
     __draw(&screen);
 }
 
 void init_screen(){
     screen.add=&add;
     screen.clear=&clear;
-    screen.draw=&draw;
+    screen.draw=&draw_screen;
 }

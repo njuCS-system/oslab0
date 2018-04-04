@@ -36,9 +36,9 @@ int main() {
       case _DEV_PCICONF: pciconf_test(dev); break;
       case _DEV_ATA0: ata_test(dev); break;
     }
-    try();
-    init_memory();
-    init_screen();
+    // try();
+    // init_memory();
+    // init_screen();
     printf("\n");
   }
   return 0;

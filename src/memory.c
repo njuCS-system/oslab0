@@ -3,12 +3,23 @@
 
 Rect_factory rect_factory;
 
+
 Rect* build_rect(RectProperty property){
-    return __init_build_rect(&rect_factory,property);
+    //mem_alloc 
+    Rect* rect= __inner_build_rect(&rect_factory);
+    //constructor
+    if(rect!=NULL){
+        __init__Rect(rect,property);
+
+    }else{
+        printf("[ERROR] Memory-allocate error when build a rectangle!");
+    }
+    return rect;
 }
 
 
-Rect* __init_build_rect(Rect_factory * factory,RectProperty property){
+
+static Rect* __inner_build_rect(Rect_factory * factory){
     Rect* rect;
     for(int i=0;i<RECT_MAX;i++){
         rect=&(factory->__rects[factory->idx]);
@@ -24,6 +35,13 @@ Rect* __init_build_rect(Rect_factory * factory,RectProperty property){
     return NULL;
 }
 
+void free_rect(Rect* rect){
+    rect->info.valid.boolean=TRUE;
+}
+
 void init_memory(){
     rect_factory.build=&build_rect;
+    rect_factory.free=&free_rect;
 }
+
+

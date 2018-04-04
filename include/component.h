@@ -23,9 +23,12 @@ typedef struct RectProperty{
 typedef struct Rect{
     volatile Info info;
     volatile _FBCtlReg reg;
-    void (*init)(RectProperty property);
-    void (*draw)(void);
 }Rect;
+
+
+void __init__Rect(Rect* ,RectProperty);
+
+void draw(void*);
 
 
 

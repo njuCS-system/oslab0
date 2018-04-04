@@ -33,7 +33,7 @@ static void draw_rect(Rect* rect){
 void draw(void* obj){
     Info info=((Info*)obj)[0];
     if(!info.valid.boolean){
-        return NULL;
+        return;
     }
     
     switch(info.type){

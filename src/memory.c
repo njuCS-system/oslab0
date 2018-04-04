@@ -15,7 +15,7 @@ Rect* build_rect(RectProperty property){
         __init__Rect(rect,property);
 
     }else{
-        printf("[ERROR] Memory-allocate error when build a rectangle!");
+        // printf("[ERROR] Memory-allocate error when build a rectangle!");
     }
     return rect;
 }

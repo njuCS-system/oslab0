@@ -8,7 +8,7 @@ Screen screen;
 
 static void __add(Screen* s,void* object){
     if(s->index >= OBJ_MAX){
-        printf("[ERROR] Screen buffer overflow!");
+        // printf("[ERROR] Screen buffer overflow!");
     }
     s->obj[s->index++]=object;
 

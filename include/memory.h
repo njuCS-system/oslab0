@@ -16,7 +16,9 @@ typedef struct Rect_factory{
 
 void free(void*);
 
-void init_memory()
+void init_memory();
+
+Rect* build_rect();
 
 
 

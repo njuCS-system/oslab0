@@ -50,6 +50,7 @@ static _Device *getdev(_Device **ptr, uint32_t id) {
   assert(0);
   return NULL;
 }
+static _Device *video_dev;
 
 void rect_draw(Rect* rect){
     _FBCtlReg reg;

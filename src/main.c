@@ -13,7 +13,7 @@ static void pciconf_test(_Device *dev);
 static void ata_test(_Device *dev);
 
 int main() {
-  if (_ioe_init() != 0) _halt(1);
+  /*if (_ioe_init() != 0) _halt(1);
   printf("_heap = [%08x, %08x)\n", _heap.start, _heap.end);
   for (int n = 1; ; n++) {
     _Device *dev = _device(n);
@@ -26,10 +26,18 @@ int main() {
       case _DEV_PCICONF: pciconf_test(dev); break;
       case _DEV_ATA0: ata_test(dev); break;
     }
-     try();
 
     printf("\n");
-  }
+  }*/
+  
+  Color color;
+  color.r = 255;
+  color.g = 174;
+  color.b = 128;
+  color.a = 1;
+  
+  printf("%d\n", color_to_int(color));
+
   return 0;
 }
 

@@ -39,11 +39,22 @@ void rect_delete(Rect* rect){
 
 void rect_draw(Rect* rect){
     //TODO:
+    _FBCtlReg *reg;
+    int color_buf[WIDTH * HEIGHT];
+    memset(color_buf, 0 ,sizeof(int) * WIDTH * HEIGHT);
+    for(int i = 0; i < rect->property.height; i++)
+    {
+    	for(int j = 0; j < rect->property.width; j++)
+        {
+            color_buf[i * rect->property.width + j] = 
+        }
+    }
 }
 
 
 void rect_move(Rect* rect,int deltaX, int deltaY){
-    //TODO:
+    rect->property.x += deltaX;
+    rect->property.y += deltaY;
 }
 
 

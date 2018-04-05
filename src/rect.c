@@ -85,7 +85,7 @@ void rect_draw(Rect* rect){
     reg.pixels = color_buf;
     reg.w = rect->property.width;
     reg.h = rect->property.height;
-    reg.sync = 0;
+    reg.sync = 1;
     _Device *dev = getdev(&video_dev, _DEV_VIDEO);
     dev->write(_DEVREG_VIDEO_FBCTL, &reg, sizeof(reg));
     fb_add(&reg);

@@ -1,5 +1,4 @@
 #include "lib.h"
-#include "memory.h"
 #include "component.h"
 #include "screen.h"
 

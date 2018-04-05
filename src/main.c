@@ -30,7 +30,7 @@ int main() {
     printf("\n");
   }*/
   
-  try();
+  //try();
 
   return 0;
 }

@@ -46,7 +46,7 @@ void rect_draw(Rect* rect){
     {
     	for(int j = 0; j < rect->property.width; j++)
         {
-            color_buf[i * rect->property.width + j] = 
+            //color_buf[i * rect->property.width + j] = 
         }
     }
 }

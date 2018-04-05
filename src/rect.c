@@ -39,7 +39,7 @@ void rect_delete(Rect* rect){
 
 void rect_draw(Rect* rect){
     //TODO:
-    _FBCtlReg *reg;
+    //_FBCtlReg *reg;
     int color_buf[WIDTH * HEIGHT];
     memset(color_buf, 0 ,sizeof(int) * WIDTH * HEIGHT);
     for(int i = 0; i < rect->property.height; i++)

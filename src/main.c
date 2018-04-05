@@ -149,11 +149,11 @@ void try(){
   p.f_color.b = 128;
   p.f_color.a = 0;
   p.is_fill = TRUE;
-  p.stroke = 20;
+  p.stroke = 10;
   p.x = 0;
   p.y = 0;
-  p.width = 100;
-  p.height = 100;
+  p.width = 30;
+  p.height = 30;
 
   Rect* rect=build_rect(p);
   rect_draw(rect);

@@ -37,6 +37,20 @@ void rect_delete(Rect* rect){
     rect->info.valid=FALSE;
 }
 
+static _Device *getdev(_Device **ptr, uint32_t id) {
+  if (*ptr) return *ptr;
+  for (int n = 1; ; n ++) {
+    _Device *cur = _device(n);
+    if (cur->id == id) {
+      *ptr = cur;
+      return cur;
+    }
+    if (!cur) break;
+  }
+  assert(0);
+  return NULL;
+}
+
 void rect_draw(Rect* rect){
     _FBCtlReg reg;
     int s_color = color_to_int(rect->property.s_color);

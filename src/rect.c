@@ -62,7 +62,7 @@ void draw_sync() {
 }
 
 void rect_draw(Rect* rect){
-    _FBCtlReg reg;
+    _FBCtlReg ctl;
     int s_color = color_to_int(rect->property.s_color);
     int f_color = color_to_int(rect->property.f_color);
     unsigned color_buf[WIDTH * HEIGHT];
@@ -89,14 +89,14 @@ void rect_draw(Rect* rect){
             }
         }
     }
-    reg.x = rect->property.x;
-    reg.y = rect->property.y;
-    reg.pixels = color_buf;
-    reg.w = rect->property.width;
-    reg.h = rect->property.height;
-    reg.sync = 0;
+    ctl.x = rect->property.x;
+    ctl.y = rect->property.y;
+    ctl.pixels = color_buf;
+    ctl.w = rect->property.width;
+    ctl.h = rect->property.height;
+    ctl.sync = 0;
     
-    printf("%d %d %d %d\n", reg.x, reg.y, reg.w, reg.h);
+    printf("%d %d %d %d\n", ctl.x, ctl.y, ctl.w, ctl.h);
     
     /*_Device *dev = getdev(&video_dev, _DEV_VIDEO);
     dev->write(_DEVREG_VIDEO_FBCTL, &reg, sizeof(_FBCtlReg));

@@ -52,6 +52,15 @@ static _Device *getdev(_Device **ptr, uint32_t id) {
 }
 static _Device *video_dev;
 
+void draw_sync() {
+  _Device *dev = getdev(&video_dev, _DEV_VIDEO);
+  _FBCtlReg ctl;
+  ctl.pixels = NULL;
+  ctl.x = ctl.y = ctl.w = ctl.h = 0;
+  ctl.sync = 1;
+  dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(ctl));
+}
+
 void rect_draw(Rect* rect){
     _FBCtlReg reg;
     int s_color = color_to_int(rect->property.s_color);
@@ -85,9 +94,10 @@ void rect_draw(Rect* rect){
     reg.pixels = color_buf;
     reg.w = rect->property.width;
     reg.h = rect->property.height;
-    reg.sync = 1;
+    reg.sync = 0;
     _Device *dev = getdev(&video_dev, _DEV_VIDEO);
-    dev->write(_DEVREG_VIDEO_FBCTL, &reg, sizeof(reg));
+    dev->write(_DEVREG_VIDEO_FBCTL, &reg, sizeof(_FBCtlReg));
+    draw_sync();
     fb_add(&reg);
 }
 

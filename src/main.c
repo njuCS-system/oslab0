@@ -145,9 +145,7 @@ static void ata_test(_Device *dev) {
 
 void try(){
   RectProperty p;
-  p.r=(char)255;
-  p.g=(char)255;
-  p.b=(char)255;
+  
 
   Rect* rect=build_rect(p);
   screen_add(rect);

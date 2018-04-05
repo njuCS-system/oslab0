@@ -1,18 +1,9 @@
-#include <am.h>
-#include <amdev.h>
+#include "lib.h"
 #include "memory.h"
 #include "component.h"
 #include "screen.h"
 
 extern Screen screen;
-
-// TODO: implement necessary libraries
-int printf(const char *fmt, ...) {
-  for (; *fmt; fmt++) {
-    _putc(*fmt);
-  }
-  return 0;
-}
 
 void try();
 

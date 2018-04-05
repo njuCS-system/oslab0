@@ -41,7 +41,7 @@ void rect_draw(Rect* rect){
     _FBCtlReg reg;
     int s_color = color_to_int(rect->property.s_color);
     int f_color = color_to_int(rect->property.f_color);
-    int color_buf[WIDTH * HEIGHT];
+    unsigned color_buf[WIDTH * HEIGHT];
     memset(color_buf, 0 ,sizeof(int) * WIDTH * HEIGHT);
     for(int i = 0; i < rect->property.height; i++)
     {
@@ -94,7 +94,7 @@ static Rect* rect_allocate(){
         rect_factory.idx++;
         rect_factory.idx%=RECT_MAX;
         
-        //TODO:
+        //TODO:!
         if(!rect->info.valid){//遇到有效的则返回
             rect->info.valid=TRUE;
             return rect;

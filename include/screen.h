@@ -7,15 +7,19 @@
 typedef struct Screen{
     void* obj[OBJ_MAX];
     int index;
-    void (*add)(void*);
-    void (*clear)();
-    void (*draw)();
 }Screen;
 
 
+void screen_draw();
+
+void screen_add(void *);
+
+void screen_clear();
+
+void screen_rm(void *);
 
 
-void init_screen();
+
 
 
 #endif

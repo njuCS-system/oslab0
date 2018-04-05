@@ -6,6 +6,28 @@ Screen screen;
 
 
 
+
+void screen_add(void *obj){
+    __add(&screen,obj);
+}
+
+
+void screen_clear(){
+    __clear(&screen);
+}
+
+
+
+void screen_draw(){
+    __draw(&screen);
+}
+
+void screen_rm(void * obj){
+
+}
+
+
+//****************************************************************
 static void __add(Screen* s,void* object){
     if(s->index >= OBJ_MAX){
         // printf("[ERROR] Screen buffer overflow!");
@@ -14,34 +36,14 @@ static void __add(Screen* s,void* object){
 
 }
 
-void add(void *obj){
-    __add(&screen,obj);
-}
-
-static void __clear(Screen* s){
-    for(int i=0;i < s->index;i++){
-        free(s->obj[i]);
-    }
-    s->index=0;
-}
-
-void clear(){
-    __clear(&screen);
-}
-
 static void __draw(Screen* s){
     for(int i=0;i < s->index;i++){
         draw(s->obj[i]);
     }
 }
-
-
-void draw_screen(){
-    __draw(&screen);
-}
-
-void init_screen(){
-    screen.add=&add;
-    screen.clear=&clear;
-    screen.draw=&draw_screen;
+static void __clear(Screen* s){
+    for(int i=0;i < s->index;i++){
+        free(s->obj[i]);
+    }
+    s->index=0;
 }

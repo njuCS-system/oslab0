@@ -7,9 +7,15 @@
 #define NULL 0
 #endif 
 
-typedef struct boolean{
-    char boolean;
-}boolean;
+#define bool char 
+
+typedef struct Info{
+    volatile char type;//record the type of an object
+    volatile bool valid;
+
+}Info;
+
+
 
 
 

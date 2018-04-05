@@ -21,7 +21,7 @@ Rect* build_rect(RectProperty property){
         __init__Rect(rect,property);
 
     }else{
-        // printf("[ERROR] Memory-allocate error when build a rectangle!");
+        printf("[ERROR] Memory-allocate error when build a rectangle!");
     }
     return rect;
 }
@@ -68,6 +68,9 @@ static Rect* rect_allocate(){
 
 static void __init__Rect(Rect* rect,RectProperty property){
     //矩形初始化逻辑
+    rect->info.type = 'R';
+    rect->info.valid = true;
+    rect->property = property;
 }
 
 

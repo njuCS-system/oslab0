@@ -101,7 +101,7 @@ void rect_draw(Rect* rect){
     /*_Device *dev = getdev(&video_dev, _DEV_VIDEO);
     dev->write(_DEVREG_VIDEO_FBCTL, &reg, sizeof(_FBCtlReg));
     draw_sync();*/
-    fb_add(&reg);
+    fb_add(&ctl);
 }
 
 

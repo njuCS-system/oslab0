@@ -36,7 +36,7 @@ int main() {
   color.b = 128;
   color.a = 1;
   
-  printf("%d\n", color_to_int(color));
+  printf("%x\n", color_to_int(color));
 
   return 0;
 }

@@ -8,7 +8,7 @@ void cp_virtual_draw(void* obj){
     
     switch(info.type){
         case 'R':
-            draw_rect((Rect*)obj);
+            rect_draw((Rect*)obj);
             break;
         
     }

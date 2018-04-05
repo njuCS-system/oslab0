@@ -30,13 +30,7 @@ int main() {
     printf("\n");
   }*/
   
-  Color color;
-  color.r = 255;
-  color.g = 174;
-  color.b = 128;
-  color.a = 1;
-  
-  printf("%08x\n", color_to_int(color));
+  try();
 
   return 0;
 }

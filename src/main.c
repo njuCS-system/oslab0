@@ -156,5 +156,5 @@ void try(){
   p.height = 100;
 
   Rect* rect=build_rect(p);
-  screen_add(rect);
+  rect_draw(rect);
 }

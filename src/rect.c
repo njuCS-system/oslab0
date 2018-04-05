@@ -19,7 +19,6 @@ Rect* build_rect(RectProperty property){
     //constructor
     if(rect!=NULL){
         __init__Rect(rect,property);
-        printf("allocate success\n");
 
     }else{
         printf("[ERROR] Memory-allocate error when build a rectangle!\n");

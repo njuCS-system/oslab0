@@ -154,5 +154,5 @@ void try(){
   p.b=(char)255;
 
   Rect* rect=build_rect(p);
-  (*screen.add)(rect);
+  screen_add(rect);
 }

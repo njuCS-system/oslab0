@@ -6,6 +6,10 @@ Rect_factory rect_factory;
 
 static Rect* rect_allocate();
 
+static void __init__Rect(Rect* rect,RectProperty property);
+
+static void __finalize_Rect(Rect* rect);
+
 //*****************************
 //构造器(们)无法多态
 //****************************

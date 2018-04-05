@@ -39,16 +39,42 @@ void rect_delete(Rect* rect){
 
 void rect_draw(Rect* rect){
     //TODO:
-    //_FBCtlReg *reg;
+    _FBCtlReg reg;
+    int s_color = color_to_int(rect->property.s_color);
+    int f_color = color_to_int(rect->property.f_color);
     int color_buf[WIDTH * HEIGHT];
     memset(color_buf, 0 ,sizeof(int) * WIDTH * HEIGHT);
     for(int i = 0; i < rect->property.height; i++)
     {
     	for(int j = 0; j < rect->property.width; j++)
         {
-            //color_buf[i * rect->property.width + j] = 
+            if(i < rect->property.stroke || j < rect->property.stroke 
+            || i + rect->property.stroke >= rect->property.height || j + rect->property.stroke >= rect->property.width)
+            {
+                color_buf[i * rect->property.width + j] = s_color;
+            }
+            else
+            {
+                if(rect->property.is_fill)
+                {
+                    color_buf[i * rect->property.width + j] = f_color;
+                }
+                else
+                {
+                    color_buf[i * rect->property.width + j] = DEFAULT_COLOR;
+                }
+            }
         }
     }
+    reg.x = rect->property.x;
+    reg.y = rect->property.y;
+    reg.pixels = color_buf;
+    reg.w = rect->property.width;
+    reg.h = rect->property.height;
+    reg.sync = 0;
+    _Device *dev = getdev(&video_dev, _DEV_VIDEO);
+    dev->write(_DEVREG_VIDEO_FBCTL, &reg, sizeof(reg));
+    fb_add(&reg);
 }
 
 

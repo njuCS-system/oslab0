@@ -146,6 +146,20 @@ static void ata_test(_Device *dev) {
 void try(){
   RectProperty p;
   
+  p.s_color.r = 255;
+  p.s_color.g = 255;
+  p.s_color.b = 255;
+  p.s_color.a = 0;
+  p.f_color.r = 128;
+  p.f_color.g = 128;
+  p.f_color.b = 128;
+  p.f_color.a = 0;
+  p.is_fill = TRUE;
+  p.stroke = 20;
+  p.x = 0;
+  p.y = 0;
+  p.width = 100;
+  p.height = 100;
 
   Rect* rect=build_rect(p);
   screen_add(rect);

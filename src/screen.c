@@ -48,7 +48,7 @@ static void __draw(Screen* s){
 }
 static void __clear(Screen* s){
     for(int i=0;i < s->index;i++){
-        cp_virtual_rm(s->obj[i]);
+        cp_virtual_delete(s->obj[i]);
     }
     s->index=0;
 }

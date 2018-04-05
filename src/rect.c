@@ -69,7 +69,7 @@ static Rect* rect_allocate(){
 static void __init__Rect(Rect* rect,RectProperty property){
     //矩形初始化逻辑
     rect->info.type = 'R';
-    rect->info.valid = true;
+    rect->info.valid = TRUE;
     rect->property = property;
 }
 

@@ -96,7 +96,7 @@ void rect_draw(Rect* rect){
     reg.h = rect->property.height;
     reg.sync = 0;
     
-    printf("%d %d %d %d", reg.x, reg.y, reg.w, reg.h)
+    printf("%d %d %d %d", reg.x, reg.y, reg.w, reg.h);
     
     _Device *dev = getdev(&video_dev, _DEV_VIDEO);
     dev->write(_DEVREG_VIDEO_FBCTL, &reg, sizeof(_FBCtlReg));

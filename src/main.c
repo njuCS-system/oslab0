@@ -6,11 +6,11 @@ extern Screen screen;
 
 void try();
 
-static void input_test(_Device *dev);
+/*static void input_test(_Device *dev);
 static void timer_test(_Device *dev);
 static void video_test(_Device *dev);
 static void pciconf_test(_Device *dev);
-static void ata_test(_Device *dev);
+static void ata_test(_Device *dev);*/
 
 int main() {
   /*if (_ioe_init() != 0) _halt(1);
@@ -41,7 +41,7 @@ int main() {
   return 0;
 }
 
-static void input_test(_Device *dev) {
+/*static void input_test(_Device *dev) {
   printf("Input device test skipped.\n");
 }
 
@@ -139,7 +139,7 @@ static void ata_test(_Device *dev) {
     }
     printf("\n");
   }
-}
+}*/
 
 
 

@@ -1,11 +1,16 @@
 #include "screen.h"
+#include "component.h"
 #include "memory.h"
 
 Screen screen;
 
 
 
+static void __add(Screen* s,void* object);
 
+static void __draw(Screen* s);
+
+static void __clear(Screen* s);
 
 void screen_add(void *obj){
     __add(&screen,obj);
@@ -38,12 +43,12 @@ static void __add(Screen* s,void* object){
 
 static void __draw(Screen* s){
     for(int i=0;i < s->index;i++){
-        draw(s->obj[i]);
+        cp_virtual_draw(s->obj[i]);
     }
 }
 static void __clear(Screen* s){
     for(int i=0;i < s->index;i++){
-        free(s->obj[i]);
+        cp_virtual_rm(s->obj[i]);
     }
     s->index=0;
 }

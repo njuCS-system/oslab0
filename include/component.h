@@ -3,5 +3,7 @@
 
 #include "rect.h"
 
+#include "cp_virtual.h"
+
 
 #endif

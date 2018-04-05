@@ -38,7 +38,6 @@ void rect_delete(Rect* rect){
 }
 
 void rect_draw(Rect* rect){
-    //TODO:
     _FBCtlReg reg;
     int s_color = color_to_int(rect->property.s_color);
     int f_color = color_to_int(rect->property.f_color);
@@ -95,7 +94,8 @@ static Rect* rect_allocate(){
         rect_factory.idx++;
         rect_factory.idx%=RECT_MAX;
         
-        if(rect->info.valid){//遇到有效的则返回
+        //TODO:
+        if(!rect->info.valid){//遇到有效的则返回
             rect->info.valid=TRUE;
             return rect;
         }

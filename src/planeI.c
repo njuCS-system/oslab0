@@ -43,20 +43,20 @@ void planeI_draw(PlaneI* planeI){
     int y = planeI->property.y;
     
     //                x    y     w   h     s_color        f_color  stroke is_fill
-    RectProperty p = {x, y + 16, 30, 6, {0, 0, 0, 0}, {255, 0, 0, 0}, 1, TRUE};
-    Rect *large_wing = build_rect(p);
-                 p = {x + 9, y + 2, 12, 2, {0, 0, 0, 0}, {255, 0, 0, 0}, 1, TRUE};
-    Rect *small_wing = build_rect(p);
-                 p = {x + 10, y, 2, 6, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
-    Rect *empennage_left = build_rect(p);
-                 p = {x + 18, y, 2, 6, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
-    Rect *empennage_right = build_rect(p);
-                 p = {x + 13, y + 2, 4, 25, {0, 0, 0, 0}, {71, 173, 112, 0}, 1, TRUE};
-    Rect *body = build_rect(p);
-                 p = {x + 5, y + 15, 3, 9, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
-    Rect *jet_left = build_rect(p);
-                 p = {x + 22, y + 15, 3, 9, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
-    Rect *jet_right = build_rect(p);
+    RectProperty p0 = {x, y + 16, 30, 6, {0, 0, 0, 0}, {255, 0, 0, 0}, 1, TRUE};
+    Rect *large_wing = build_rect(p0);
+    RectProperty p1 = {x + 9, y + 2, 12, 2, {0, 0, 0, 0}, {255, 0, 0, 0}, 1, TRUE};
+    Rect *small_wing = build_rect(p1);
+    RectProperty p2 = {x + 10, y, 2, 6, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
+    Rect *empennage_left = build_rect(p2);
+    RectProperty p3 = {x + 18, y, 2, 6, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
+    Rect *empennage_right = build_rect(p3);
+    RectProperty p4 = {x + 13, y + 2, 4, 25, {0, 0, 0, 0}, {71, 173, 112, 0}, 1, TRUE};
+    Rect *body = build_rect(p4);
+    RectProperty p5 = {x + 5, y + 15, 3, 9, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
+    Rect *jet_left = build_rect(p5);
+    RectProperty p6 = {x + 22, y + 15, 3, 9, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
+    Rect *jet_right = build_rect(p6);
     
     rect_draw(large_wing);
     rect_draw(small_wing);

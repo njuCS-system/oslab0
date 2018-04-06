@@ -94,6 +94,9 @@ void rect_draw(Rect* rect){
                 if(rect->property.is_fill)
                 {
                     //color_buf[i * rect->property.width + j] = f_color;
+                    ctl.pixels = &f_color;
+                _Device *dev = getdev(&video_dev, _DEV_VIDEO);
+                dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
                 }
                 else
                 {

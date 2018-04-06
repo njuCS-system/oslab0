@@ -149,7 +149,7 @@ void try(){
   p.f_color.b = 128;
   p.f_color.a = 0;
   p.is_fill = TRUE;
-  p.stroke = 0;
+  p.stroke = 20;
   p.x = 10;
   p.y = 10;
   p.width = 100;

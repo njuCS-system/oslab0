@@ -63,7 +63,7 @@ void cp_virtual_move(void* obj,int deltaX, int deltaY){
             line_move((Line *)obj, deltaX, deltaY);
             break;
         case 'I':
-            planeI_draw((Line *)obj, deltaX, deltaY);
+            planeI_move((Line *)obj, deltaX, deltaY);
             break;
     }
 }

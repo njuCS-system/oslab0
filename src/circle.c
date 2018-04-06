@@ -63,8 +63,7 @@ void draw_sync() {
 
 void circle_draw(Circle* circle){
     _FBCtlReg ctl;
-    unsigned s_color = color_to_int(circle->property.s_color);
-    unsigned f_color = color_to_int(circle->property.f_color);
+    unsigned color = color_to_int(circle->property.color);
     
     unsigned color_buf[_WIDTH * _HEIGHT];
     

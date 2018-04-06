@@ -68,7 +68,7 @@ void rect_draw(Rect* rect){
     unsigned color_buf[WIDTH * HEIGHT];
     //memset(color_buf, 0 ,sizeof(int) * WIDTH * HEIGHT);
     //printf("hello1\n");
-    printf("%d %d\n", rect->property.height, rect->property.width);
+    //printf("%d %d\n", rect->property.height, rect->property.width);
     for(int i = 0; i < rect->property.height; i++)
     {
     	for(int j = 0; j < rect->property.width; j++)

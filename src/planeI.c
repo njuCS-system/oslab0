@@ -57,7 +57,14 @@ void planeI_draw(PlaneI* planeI){
     Rect *jet_left = build_rect(p);
                  p = {x + 22, y + 15, 3, 9, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
     Rect *jet_right = build_rect(p);
-                     
+    
+    rect_draw(large_wing);
+    rect_draw(small_wing);
+    rect_draw(empennage_left);
+    rect_draw(empennage_right);
+    rect_draw(body);
+    rect_draw(jet_left);
+    rect_draw(jet_right);
     /*_Device *dev = getdev(&video_dev, _DEV_VIDEO);
     dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
     draw_sync();*/

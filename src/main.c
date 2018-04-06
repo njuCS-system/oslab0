@@ -199,9 +199,9 @@ void try(){
   PlaneIProperty i;
   i.x = 10;
   i.y = 10;
-  i.vx = 20;
-  i.vy = 10;
-  i.size = 1;
+  i.vx = 40;
+  i.vy = 20;
+  i.size = 2;
   
   PlaneI* planeI = build_planeI(i);
   if(planeI != NULL)

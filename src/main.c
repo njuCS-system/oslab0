@@ -139,7 +139,7 @@ static void ata_test(_Device *dev) {
 
 void try(){
   RectProperty p;
-  int a[10000];
+  int a[100000];
   if(a != 0)
   {
   

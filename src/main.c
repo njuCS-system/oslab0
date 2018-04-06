@@ -140,7 +140,11 @@ static void ata_test(_Device *dev) {
 void try(){
   RectProperty p;
   unsigned a[10000];
-  memset(a, 0 , 40000);
+  //memset(a, 0 , 40000);
+  for(int i =0;i<10000;i++)
+  {
+    a[i]=0;
+  }
   if(a != 0)
   {
   

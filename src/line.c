@@ -43,7 +43,7 @@ void line_draw(Line* line){
     int color = color_to_int(line->property.color);
     int width;
     int height;
-    if(is_vertical)
+    if(line->property.is_vertical)
     {
         width = line->property.stroke;
         height = line->property.length;

@@ -157,5 +157,6 @@ void try(){
 
   Rect* rect=build_rect(p);
   printf("Hello2\n");
+  rect = NULL;
   //rect_draw(rect);
 }

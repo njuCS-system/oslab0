@@ -16,6 +16,9 @@ void cp_virtual_draw(void* obj){
         case 'L':
             line_draw((Line *)obj);
             break;
+        case 'I':
+            planeI_draw((Line *)obj);
+            break;
     }
 
 }
@@ -36,6 +39,9 @@ void cp_virtual_delete(void* obj){
         case 'L':
             line_delete((Line *)obj);
             break;
+        case 'I':
+            planeI_delete((Line *)obj);
+            break;
     }
 }
 
@@ -55,6 +61,9 @@ void cp_virtual_move(void* obj,int deltaX, int deltaY){
             break;
         case 'L':
             line_move((Line *)obj, deltaX, deltaY);
+            break;
+        case 'I':
+            planeI_draw((Line *)obj, deltaX, deltaY);
             break;
     }
 }

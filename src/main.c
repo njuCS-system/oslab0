@@ -173,6 +173,7 @@ void try(){
   Circle* circle=build_circle(c);
   if(circle != NULL){
     circle_draw(circle);
+    circle_move(circle, 100, 100);
+    cricle_draw(circle);
   }
-  
 }

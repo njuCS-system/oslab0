@@ -48,13 +48,13 @@ void cp_virtual_move(void* obj,int deltaX, int deltaY){
     
     switch(info.type){
         case 'R':
-            rect_move((Rect*)obj);
+            rect_move((Rect*)obj, deltaX, deltaY);
             break;
         case 'C':
-            circle_move((Circle *)obj);
+            circle_move((Circle *)obj, deltaX, deltaY);
             break;
         case 'L':
-            line_move((Line *)obj);
+            line_move((Line *)obj, deltaX, deltaY);
             break;
     }
 }

@@ -94,9 +94,12 @@ void rect_draw(Rect* rect){
         }
     }
     if(color_buf != 0)
+    {
+    
+    }
     ctl.x = rect->property.x;
     ctl.y = rect->property.y;
-    //ctl.pixels = color_buf;
+    ctl.pixels = color_buf;
     ctl.w = rect->property.width;
     ctl.h = rect->property.height;
     ctl.sync = 0;

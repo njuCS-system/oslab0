@@ -58,9 +58,9 @@ void planeI_draw(PlaneI* planeI){
                  p = {x + 22, y + 15, 3, 9, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
     Rect *jet_right = build_rect(p);
                      
-    _Device *dev = getdev(&video_dev, _DEV_VIDEO);
+    /*_Device *dev = getdev(&video_dev, _DEV_VIDEO);
     dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
-    draw_sync();
+    draw_sync();*/
     fb_add(&ctl);
 }
 

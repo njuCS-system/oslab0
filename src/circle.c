@@ -37,31 +37,34 @@ void circle_delete(Circle* circle){
     circle->info.valid=FALSE;
 }
 
-/*static _Device *getdev(_Device **ptr, uint32_t id) {
-  if (*ptr) return *ptr;
-  for (int n = 1; ; n ++) {
-    _Device *cur = _device(n);
-    if (cur->id == id) {
-      *ptr = cur;
-      return cur;
-    }
-    if (!cur) break;
-  }
-  //assert(0);
-  return NULL;
-}
-static _Device *video_dev;*/
-
 void circle_draw(Circle* circle){
     _FBCtlReg ctl;
-    //unsigned color = color_to_int(circle->property.color);
-    //unsigned color_buf[_WIDTH * _HEIGHT];
+    unsigned color = color_to_int(circle->property.color);
+    unsigned color_buf[_WIDTH * _HEIGHT];
+    int r = circle->property.r;
+    int r_square = r * r;
     
+    ctl.x = circle->property.x - r;
+    ctl.y = circle->property.y - r;
     
+    for(int i = 0; i < r * 2; i++)
+    {
+        for(int j = 0; j < r * 2; j++)
+        {
+            if((i - r) * (i - r) + (j - r) * (j - r) <= r_square)
+            {
+                color_buf[i * 2 * r + j] = color;
+            }
+            else
+            {
+                color_buf[i * 2 * r + j] = DEFAULT_COLOR;
+            }
+        }
+    }
     
-    //_Device *dev = getdev(&video_dev, _DEV_VIDEO);
-    //dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
-    //draw_sync();
+    _Device *dev = getdev(&video_dev, _DEV_VIDEO);
+    dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
+    draw_sync();
     fb_add(&ctl);
 }
 

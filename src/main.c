@@ -138,17 +138,7 @@ static void ata_test(_Device *dev) {
 
 
 void try(){
-  RectProperty p;
-  unsigned a[100000];
-  //memset(a, 0 , 40000);
-  for(int i =0;i<100000;i++)
-  {
-    a[i]=0;
-  }
-  if(a != 0)
-  {
-  
-  }
+  /*RectProperty p;
   
   p.s_color.r = 255;
   p.s_color.g = 255;
@@ -169,6 +159,15 @@ void try(){
   if(rect != NULL){
     //printf("Hello2\n");
     rect_draw(rect);
-  }
+  }*/
+  
+  CircleProperty c;
+  c.color.r = 0;
+  c.color.g = 255;
+  c.color.b = 255;
+  c.color.a = 0;
+  c.x = 100;
+  c.y = 100;
+  c.r = 10;
   
 }

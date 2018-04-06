@@ -206,7 +206,7 @@ void try(){
   if(planeI != NULL)
   {
     cp_virtual_draw(planeI);
-    mv_virtual_automove(planeI);
-    cp_virtual_draw(planeI);
+    //mv_virtual_automove(planeI);
+    //cp_virtual_draw(planeI);
   }
 }

@@ -70,7 +70,7 @@ void rect_draw(Rect* rect){
     unsigned color_buf[10000];
     //memset(color_buf, 0 ,sizeof(int) * WIDTH * HEIGHT);
     //printf("hello1\n");
-    printf("%d %d\n", rect->property.height, rect->property.width);
+    //printf("%d %d\n", rect->property.height, rect->property.width);
     for(int i = 0; i < rect->property.height; i++)
     {
     	for(int j = 0; j < rect->property.width; j++)
@@ -93,9 +93,10 @@ void rect_draw(Rect* rect){
             }
         }
     }
+    if(color_buf != 0)
     ctl.x = rect->property.x;
     ctl.y = rect->property.y;
-    ctl.pixels = color_buf;
+    //ctl.pixels = color_buf;
     ctl.w = rect->property.width;
     ctl.h = rect->property.height;
     ctl.sync = 0;

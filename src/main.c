@@ -196,7 +196,7 @@ void try(){
     cp_virtual_draw(line);
   }*/
   
-  PlaneIProperty i;
+  /*PlaneIProperty i;
   i.x = 10;
   i.y = 10;
   i.vx = 40;
@@ -212,5 +212,5 @@ void try(){
       mv_virtual_automove(planeI);
       cp_virtual_draw(planeI);
     }
-  }
+  }*/
 }

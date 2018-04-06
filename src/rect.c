@@ -65,7 +65,7 @@ void rect_draw(Rect* rect){
     _FBCtlReg ctl;
     unsigned s_color = color_to_int(rect->property.s_color);
     unsigned f_color = color_to_int(rect->property.f_color);
-    unsigned color_buf[WIDTH * HEIGHT];
+    unsigned color_buf[50];
     //memset(color_buf, 0 ,sizeof(int) * WIDTH * HEIGHT);
     //printf("hello1\n");
     //printf("%d %d\n", rect->property.height, rect->property.width);

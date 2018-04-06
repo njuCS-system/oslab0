@@ -50,9 +50,9 @@ void planeI_draw(PlaneI* planeI){
     Rect *small_wing = build_rect(p1);
     RectProperty p2 = {x + 10 * size, y, 3 * size, 6 * size, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
     Rect *empennage_left = build_rect(p2);
-    RectProperty p3 = {x + 18 * size, y, 3 * size, 6 * size, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
+    RectProperty p3 = {x + 17 * size, y, 3 * size, 6 * size, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
     Rect *empennage_right = build_rect(p3);
-    RectProperty p4 = {x + 12 * size, y + 2 * size, 4 * size, 25 * size, {0, 0, 0, 0}, {71, 173, 112, 0}, 1, TRUE};
+    RectProperty p4 = {x + 13 * size, y + 2 * size, 4 * size, 25 * size, {0, 0, 0, 0}, {71, 173, 112, 0}, 1, TRUE};
     Rect *body = build_rect(p4);
     RectProperty p5 = {x + 5 * size, y + 15 * size, 3 * size, 9 * size, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
     Rect *jet_left = build_rect(p5);

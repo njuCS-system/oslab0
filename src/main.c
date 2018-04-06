@@ -156,5 +156,6 @@ void try(){
   p.height = 100;
 
   Rect* rect=build_rect(p);
+  printf("Hello2\n");
   rect_draw(rect);
 }

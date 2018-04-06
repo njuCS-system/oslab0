@@ -123,8 +123,7 @@ static Rect* rect_allocate(){
 
         rect_factory.idx++;
         rect_factory.idx%=RECT_MAX;
-        
-        //TODO:!
+
         if(!rect->info.valid){//遇到有效的则返回
             rect->info.valid=TRUE;
             return rect;

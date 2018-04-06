@@ -3,7 +3,7 @@
 
 Screen screen;
 
-
+//TODO:init screen
 
 static void __add(Screen* s,void* object);
 
@@ -33,11 +33,15 @@ void screen_rm(void * obj){
 
 //****************************************************************
 static void __add(Screen* s,void* object){
-    if(s->index >= OBJ_MAX){
-        // printf("[ERROR] Screen buffer overflow!");
+    /*if(s->index >= OBJ_MAX){
+        //printf("[ERROR] Screen buffer overflow!");
     }
-    s->obj[s->index++]=object;
+    s->obj[s->index++]=object;*/
 
+    int now_index = s->index - 1;
+    for(; (Info *)s->obj[s->index]->valid == FALSE && i != now_index; s->index = (s->index + 1)%OBJ_MAX);    
+    //TODO:
+    
 }
 
 static void __draw(Screen* s){

@@ -76,17 +76,17 @@ void rect_draw(Rect* rect){
             if(i < rect->property.stroke || j < rect->property.stroke 
             || i + rect->property.stroke >= rect->property.height || j + rect->property.stroke >= rect->property.width)
             {
-                //color_buf[i * rect->property.width + j] = s_color;
+                color_buf[i * rect->property.width + j] = s_color;
             }
             else
             {
                 if(rect->property.is_fill)
                 {
-                    //color_buf[i * rect->property.width + j] = f_color;
+                    color_buf[i * rect->property.width + j] = f_color;
                 }
                 else
                 {
-                    //color_buf[i * rect->property.width + j] = DEFAULT_COLOR;
+                    color_buf[i * rect->property.width + j] = DEFAULT_COLOR;
                 }
             }
         }

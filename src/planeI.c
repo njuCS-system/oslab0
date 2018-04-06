@@ -39,11 +39,11 @@ void planeI_delete(PlaneI* planeI){
 
 void planeI_draw(PlaneI* planeI){
     _FBCtlReg ctl;
-    int x = planeI->property.x;
+/*    int x = planeI->property.x;
     int y = planeI->property.y;
     
     //                x       y  w   h     s_color        f_color  stroke is_fill
-    /*RectProperty p = {x, y + 16, 30, 6, {0, 0, 0, 0}, {255, 0, 0, 0}, 1, TRUE};
+    RectProperty p = {x, y + 16, 30, 6, {0, 0, 0, 0}, {255, 0, 0, 0}, 1, TRUE};
     Rect* large_wing = build_rect(p);
                  p = {x + 16, y, 30, 6, {0, 0, 0, 0}, {255, 0, 0, 0}, 1, TRUE};
     Rect* small_wing = build_rect(p);

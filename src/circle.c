@@ -63,15 +63,14 @@ void draw_sync() {
 
 void circle_draw(Circle* circle){
     _FBCtlReg ctl;
-    unsigned color = color_to_int(circle->property.color);
-    
-    unsigned color_buf[_WIDTH * _HEIGHT];
-    
+    //unsigned color = color_to_int(circle->property.color);
+    //unsigned color_buf[_WIDTH * _HEIGHT];
     
     
-    _Device *dev = getdev(&video_dev, _DEV_VIDEO);
-    dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
-    draw_sync();
+    
+    //_Device *dev = getdev(&video_dev, _DEV_VIDEO);
+    //dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
+    //draw_sync();
     fb_add(&ctl);
 }
 

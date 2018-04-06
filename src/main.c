@@ -158,7 +158,7 @@ void try(){
   Rect* rect=build_rect(p);
   if(rect != NULL){
     rect_draw(rect);
-    rect_move(rect, 200, 200);
+    rect_move(rect, 100, 100);
     rect_draw(rect);
   }
   

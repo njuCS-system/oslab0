@@ -58,7 +58,7 @@ void line_draw(Line* line){
     {
         for(int j = 0; j < width; j++)
         {
-            color[i * width + j] = color;
+            color_buf[i * width + j] = color;
         }
     }
     
@@ -66,6 +66,7 @@ void line_draw(Line* line){
     ctl.y = line->property.y;
     ctl.w = width;
     ctl.h = height;
+    ctl.pixels = color_buf;
     ctl.sync = 1;
     
     fb_add(&ctl);

@@ -40,18 +40,27 @@ static void __add(Screen* s,void* object){
 
     int now_index = s->index - 1;
     for(; ((Info *)(s->obj[s->index]))->valid == FALSE && s->index != now_index; s->index = (s->index + 1)%OBJ_MAX);    
-    //TODO:
+    if(s->index == now_index)
+    {
+        printf("[ERROR] Screen buffer overflow!");
+    }
+    else
+    {
+        s->obj[s->index] = object;
+    }
     
 }
 
 static void __draw(Screen* s){
-    for(int i=0;i < s->index;i++){
-        cp_virtual_draw(s->obj[i]);
+    for(int i = 0;i < OBJ_MAX;i++){
+        if(((Info *)(s->obj[i]))->valid == TRUE)
+            cp_virtual_draw(s->obj[i]);
     }
 }
 static void __clear(Screen* s){
-    for(int i=0;i < s->index;i++){
-        cp_virtual_delete(s->obj[i]);
+    for(int i=0;i < OBJ_MAX;i++){
+        if(((Info *)(s->obj[i]))->valid == TRUE)
+            cp_virtual_delete(s->obj[i]);
     }
     s->index=0;
 }

@@ -63,8 +63,8 @@ void draw_sync() {
 
 void rect_draw(Rect* rect){
     _FBCtlReg ctl;
-    int s_color = color_to_int(rect->property.s_color);
-    int f_color = color_to_int(rect->property.f_color);
+    unsigned s_color = color_to_int(rect->property.s_color);
+    unsigned f_color = color_to_int(rect->property.f_color);
     unsigned color_buf[WIDTH * HEIGHT];
     //memset(color_buf, 0 ,sizeof(int) * WIDTH * HEIGHT);
     //printf("hello1\n");
@@ -100,9 +100,9 @@ void rect_draw(Rect* rect){
     
     //printf("%d %d %d %d\n", ctl.x, ctl.y, ctl.w, ctl.h);
     
-    _Device *dev = getdev(&video_dev, _DEV_VIDEO);
-    dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
-    draw_sync();
+    //_Device *dev = getdev(&video_dev, _DEV_VIDEO);
+    //dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
+    //draw_sync();
     fb_add(&ctl);
 }
 

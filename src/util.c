@@ -1,7 +1,7 @@
 #include "util.h"
 
-int color_to_int(Color color)
+unsigned color_to_int(Color color)
 {
-    int *return_val = (int *)&color;
+    unsigned *return_val = (int *)&color;
     return *return_val;
 }

@@ -221,7 +221,7 @@ void try(){
   b.y = 10;
   b.vx = 10;
   b.vy = 20;
-  b.size = 2;
+  b.size = 1;
   Bullet *bullet = build_bullet(b);
   if(bullet != NULL)
   {

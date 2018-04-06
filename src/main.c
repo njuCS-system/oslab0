@@ -162,7 +162,7 @@ void try(){
     cp_virtual_draw(rect);
   }*/
   
-  /*CircleProperty c;
+  CircleProperty c;
   c.color.r = 0;
   c.color.g = 255;
   c.color.b = 255;
@@ -176,9 +176,9 @@ void try(){
     cp_virtual_draw(circle);
     cp_virtual_move(circle, 200, 200);
     cp_virtual_draw(circle);
-  }*/
+  }
   
-  LineProperty l;
+  /*LineProperty l;
   l.x = 10;
   l.y = 10;
   l.stroke = 20;
@@ -190,5 +190,5 @@ void try(){
     cp_virtual_draw(line);
     cp_virtual_move(line, 200, 200);
     cp_virtual_draw(line);
-  }
+  }*/
 }

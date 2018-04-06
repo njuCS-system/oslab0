@@ -139,7 +139,11 @@ static void ata_test(_Device *dev) {
 
 void try(){
   RectProperty p;
+  int a[10000];
+  if(a != 0)
+  {
   
+  }
   p.s_color.r = 255;
   p.s_color.g = 255;
   p.s_color.b = 255;
@@ -158,6 +162,7 @@ void try(){
   Rect* rect=build_rect(p);
   if(rect != NULL){
     printf("Hello2\n");
-    rect_draw(rect);
+    //rect_draw(rect);
   }
+  
 }

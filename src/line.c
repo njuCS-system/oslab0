@@ -40,7 +40,7 @@ void line_delete(Line* line){
 void line_draw(Line* line){
     _FBCtlReg ctl;
     
-    int color = color_to_int(line.property.color);
+    int color = color_to_int(line->property.color);
     int width;
     int height;
     if(is_vertical)

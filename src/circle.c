@@ -52,15 +52,6 @@ static _Device *getdev(_Device **ptr, uint32_t id) {
 }
 static _Device *video_dev;
 
-void draw_sync() {
-  _Device *dev = getdev(&video_dev, _DEV_VIDEO);
-  _FBCtlReg ctl;
-  ctl.pixels = NULL;
-  ctl.x = ctl.y = ctl.w = ctl.h = 0;
-  ctl.sync = 1;
-  dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(ctl));
-}
-
 void circle_draw(Circle* circle){
     _FBCtlReg ctl;
     //unsigned color = color_to_int(circle->property.color);

@@ -151,7 +151,7 @@ void try(){
   }*/
   
   unsigned a[100000];
-  memset(a, 0 , 40000);
+  memset(a, 0 , 400);
   
   p.s_color.r = 255;
   p.s_color.g = 255;

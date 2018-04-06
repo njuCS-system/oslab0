@@ -153,7 +153,7 @@ void try(){
   p.x = 10;
   p.y = 10;
   p.width = 100;
-  p.height = 100;
+  p.height = 50;
 
   Rect* rect=build_rect(p);
   if(rect != NULL){

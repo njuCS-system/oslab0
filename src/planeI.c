@@ -39,8 +39,12 @@ void planeI_delete(PlaneI* planeI){
 
 void planeI_draw(PlaneI* planeI){
     _FBCtlReg ctl;
+    int x = planeI->property.x;
+    int y = planeI->property.y;
     
-    
+    //                x       y  w   h     s_color        f_color  stroke is_fill
+    RectProperty p = {x + 16, y, 30, 6, {0, 0, 0, 0}, {255, 0, 0, 0}, 1, TRUE};
+    Rect* large_wing = build_rect(p);
 
     _Device *dev = getdev(&video_dev, _DEV_VIDEO);
     dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));

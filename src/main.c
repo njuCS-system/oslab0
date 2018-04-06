@@ -201,7 +201,7 @@ void try(){
   i.y = 10;
   i.vx = 20;
   i.vy = 10;
-  i.size = 2;
+  i.size = 5;
   
   PlaneI* planeI = build_planeI(i);
   if(planeI != NULL)

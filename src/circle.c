@@ -37,7 +37,7 @@ void circle_delete(Circle* circle){
     circle->info.valid=FALSE;
 }
 
-static _Device *getdev(_Device **ptr, uint32_t id) {
+/*static _Device *getdev(_Device **ptr, uint32_t id) {
   if (*ptr) return *ptr;
   for (int n = 1; ; n ++) {
     _Device *cur = _device(n);
@@ -50,7 +50,7 @@ static _Device *getdev(_Device **ptr, uint32_t id) {
   //assert(0);
   return NULL;
 }
-static _Device *video_dev;
+static _Device *video_dev;*/
 
 void circle_draw(Circle* circle){
     _FBCtlReg ctl;

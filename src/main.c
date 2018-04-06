@@ -170,9 +170,9 @@ void try(){
   c.y = 100;
   c.r = 10;
   
-  Circle* circle=build_circle(p);
+  Circle* circle=build_circle(c);
   if(circle != NULL){
-    circle_draw(rect);
+    circle_draw(circle);
   }
   
 }

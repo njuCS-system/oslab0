@@ -231,7 +231,7 @@ void try(){
       mv_virtual_automove(bullet);
       cp_virtual_draw(bullet);
     }*/
-    cp_virtual_move(planeI, 10, 20);
-    cp_virtual_draw(planeI);
+    cp_virtual_move(bullet, 10, 20);
+    cp_virtual_draw(bullet);
   }
 }

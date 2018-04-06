@@ -149,6 +149,10 @@ void try(){
   {
   
   }*/
+  
+  unsigned a[100000];
+  memset(a, 0 , 40000);
+  
   p.s_color.r = 255;
   p.s_color.g = 255;
   p.s_color.b = 255;
@@ -166,7 +170,7 @@ void try(){
 
   Rect* rect=build_rect(p);
   if(rect != NULL){
-    printf("Hello2\n");
+    //printf("Hello2\n");
     rect_draw(rect);
   }
   

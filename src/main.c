@@ -139,7 +139,7 @@ static void ata_test(_Device *dev) {
 
 void try(){
   RectProperty p;
-  /*unsigned a[100000];
+  unsigned a[100000];
   memset(a, 0 , 40000);
   for(int i =0;i<100000;i++)
   {
@@ -148,10 +148,7 @@ void try(){
   if(a != 0)
   {
   
-  }*/
-  
-  unsigned a[100000];
-  printf("hello\n");
+  }
   
   p.s_color.r = 255;
   p.s_color.g = 255;

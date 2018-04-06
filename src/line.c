@@ -40,6 +40,33 @@ void line_delete(Line* line){
 void line_draw(Line* line){
     _FBCtlReg ctl;
     
+    int color = color_to_int(line.property.color);
+    int width;
+    int height;
+    if(is_vertical)
+    {
+        width = line.property.stroke;
+        height = line.property.length;
+    }
+    else
+    {
+        width = line.property.length;
+        height = line.property.stroke;
+    }
+    
+    for(int i = 0; i < height; i++)
+    {
+        for(int j = 0; j < width; j++)
+        {
+            color[i * width + j] = color;
+        }
+    }
+    
+    ctl.x = line.property.x;
+    ctl.y = line.property.y;
+    ctl.w = width;
+    ctl.h = height;
+    ctl.sync = 1;
     
     fb_add(&ctl);
 }

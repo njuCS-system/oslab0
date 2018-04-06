@@ -102,14 +102,14 @@ void rect_draw(Rect* rect){
     ctl.pixels = color_buf;
     ctl.w = rect->property.width;
     ctl.h = rect->property.height;
-    ctl.sync = 1;
+    ctl.sync = 0;
     
     //printf("%d %d %d %d\n", ctl.x, ctl.y, ctl.w, ctl.h);
     
     _Device *dev = getdev(&video_dev, _DEV_VIDEO);
     dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
-    //draw_sync();
-    fb_add(&ctl);
+    draw_sync();
+    //fb_add(&ctl);
 }
 
 

@@ -66,7 +66,7 @@ void rect_draw(Rect* rect){
     unsigned s_color = color_to_int(rect->property.s_color);
     unsigned f_color = color_to_int(rect->property.f_color);
     
-    printf("%d %d", WIDTH, HEIGHT)
+    printf("%d %d\n", WIDTH, HEIGHT);
     unsigned color_buf[50];
     //memset(color_buf, 0 ,sizeof(int) * WIDTH * HEIGHT);
     //printf("hello1\n");

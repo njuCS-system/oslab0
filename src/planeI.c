@@ -62,7 +62,7 @@ void planeI_draw(PlaneI* planeI){
     rect_draw(small_wing);
     rect_draw(empennage_left);
     rect_draw(empennage_right);
-    rect_draw(body);
+    //rect_draw(body);
     rect_draw(jet_left);
     rect_draw(jet_right);
     /*_Device *dev = getdev(&video_dev, _DEV_VIDEO);

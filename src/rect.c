@@ -103,7 +103,7 @@ void rect_draw(Rect* rect){
     ctl.w = rect->property.width;
     ctl.h = rect->property.height;
     ctl.sync = 0;
-    
+    if(ctl != NULL)
     //printf("%d %d %d %d\n", ctl.x, ctl.y, ctl.w, ctl.h);
     
     //_Device *dev = getdev(&video_dev, _DEV_VIDEO);

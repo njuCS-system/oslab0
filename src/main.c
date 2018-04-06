@@ -152,6 +152,7 @@ void try(){
   
   unsigned a[100000];
   memset(a, 0 , 0);
+  printf("hello\n");
   
   p.s_color.r = 255;
   p.s_color.g = 255;

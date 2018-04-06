@@ -17,25 +17,12 @@ int strlen(const char *str)
 	return len;
 }
 
-void* memset(void* v,int c,size_t n){
-  c &= 0xff;
-  uint32_t c2 = (c << 8) | c;
-  uint32_t c4 = (c2 << 16) | c2;
-  uint64_t c8 = (((uint64_t)c4 << 16) << 16) | c4;
-  int n_align = n & ~0xf;
-
-  int i;
-  // TODO: adjust 'v' to be 8-byte align to avoid unalign accesses on MIPS
-  for (i = 0; i < n_align; i += 16) {
-    *(uint64_t *)(v + i    ) = c8;
-    *(uint64_t *)(v + i + 8) = c8;
-  }
-
-  for (; i < n; i ++) {
-    ((char *)v)[i] = c;
-  }
-
-  return v;
+void *memset(void * s, int c, size_t count)
+{
+	char *xs = (char *)s;
+	while (count--)
+		*xs++ = c;
+	return s;
 }
 
 

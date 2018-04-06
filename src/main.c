@@ -179,10 +179,10 @@ void try(){
   }*/
   
   LineProperty l;
-  l.property.x = 10;
-  l.property.y = 10;
-  l.property.stroke = 20;
-  l.property.is_vertical = TRUE;
+  l.x = 10;
+  l.y = 10;
+  l.stroke = 20;
+  l.is_vertical = TRUE;
   
   Line *line = build_line(l);
   if(line != NULL)

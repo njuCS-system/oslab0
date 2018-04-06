@@ -179,6 +179,9 @@ void try(){
   }*/
   
   LineProperty l;
+  l.color.r = 0;
+  l.color.g = 0;
+  l.color.b = 128;
   l.x = 10;
   l.y = 10;
   l.stroke = 20;

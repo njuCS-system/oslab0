@@ -62,6 +62,8 @@ void circle_draw(Circle* circle){
         }
     }
     
+    ctl.pixels = color_buf;
+    
     _Device *dev = getdev(&video_dev, _DEV_VIDEO);
     dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
     draw_sync();

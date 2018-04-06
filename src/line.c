@@ -45,13 +45,13 @@ void line_draw(Line* line){
     int height;
     if(is_vertical)
     {
-        width = line.property.stroke;
-        height = line.property.length;
+        width = line->property.stroke;
+        height = line->property.length;
     }
     else
     {
-        width = line.property.length;
-        height = line.property.stroke;
+        width = line->property.length;
+        height = line->property.stroke;
     }
     
     for(int i = 0; i < height; i++)
@@ -62,8 +62,8 @@ void line_draw(Line* line){
         }
     }
     
-    ctl.x = line.property.x;
-    ctl.y = line.property.y;
+    ctl.x = line->property.x;
+    ctl.y = line->property.y;
     ctl.w = width;
     ctl.h = height;
     ctl.sync = 1;

@@ -6,15 +6,15 @@ extern Screen screen;
 
 void try();
 
-static void input_test(_Device *dev);
+/*static void input_test(_Device *dev);
 static void timer_test(_Device *dev);
 static void video_test(_Device *dev);
 static void pciconf_test(_Device *dev);
-static void ata_test(_Device *dev);
+static void ata_test(_Device *dev);*/
 
 int main() {
   if (_ioe_init() != 0) _halt(1);
-  printf("_heap = [%08x, %08x)\n", _heap.start, _heap.end);
+  /*printf("_heap = [%08x, %08x)\n", _heap.start, _heap.end);
   for (int n = 1; ; n++) {
     _Device *dev = _device(n);
     if (!dev) break;
@@ -28,14 +28,14 @@ int main() {
     }
 
     printf("\n");
-  }
+  }*/
   
-  //try();
+  try();
 
   return 0;
 }
 
-static void input_test(_Device *dev) {
+/*static void input_test(_Device *dev) {
   printf("Input device test skipped.\n");
 }
 
@@ -133,7 +133,7 @@ static void ata_test(_Device *dev) {
     }
     printf("\n");
   }
-}
+}*/
 
 
 
@@ -149,11 +149,11 @@ void try(){
   p.f_color.b = 128;
   p.f_color.a = 0;
   p.is_fill = TRUE;
-  p.stroke = 10;
-  p.x = 0;
-  p.y = 0;
-  p.width = 30;
-  p.height = 30;
+  p.stroke = 20;
+  p.x = 10;
+  p.y = 10;
+  p.width = 100;
+  p.height = 100;
 
   Rect* rect=build_rect(p);
   rect_draw(rect);

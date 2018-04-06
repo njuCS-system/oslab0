@@ -40,7 +40,6 @@ void circle_delete(Circle* circle){
 void circle_draw(Circle* circle){
     _FBCtlReg ctl;
     unsigned color = color_to_int(circle->property.color);
-    unsigned color_buf[_WIDTH * _HEIGHT];
     int r = circle->property.r;
     int r_square = r * r;
     

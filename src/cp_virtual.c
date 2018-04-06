@@ -10,9 +10,11 @@ void cp_virtual_draw(void* obj){
         case 'R':
             rect_draw((Rect*)obj);
             break;
-
         case 'C':
             circle_draw((Circle *)obj);
+            break;
+        case 'L':
+            line_draw((Line *)obj);
             break;
     }
 
@@ -28,9 +30,11 @@ void cp_virtual_delete(void* obj){
         case 'R':
             rect_delete((Rect*)obj);
             break;
-
         case 'C':
             circle_delete((Circle *)obj);
+            break;
+        case 'L':
+            line_delete((Line *)obj);
             break;
     }
 }

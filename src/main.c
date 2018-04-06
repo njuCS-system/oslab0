@@ -168,12 +168,12 @@ void try(){
   c.color.a = 0;
   c.x = 100;
   c.y = 100;
-  c.r = 10;
+  c.r = 100;
   
   Circle* circle=build_circle(c);
   if(circle != NULL){
     circle_draw(circle);
-    circle_move(circle, 5, 5);
+    circle_move(circle, 150, 150);
     circle_draw(circle);
   }
 }

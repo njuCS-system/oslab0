@@ -63,8 +63,8 @@ void draw_sync() {
 
 void rect_draw(Rect* rect){
     _FBCtlReg ctl;
-    //unsigned s_color = color_to_int(rect->property.s_color);
-    //unsigned f_color = color_to_int(rect->property.f_color);
+    unsigned s_color = color_to_int(rect->property.s_color);
+    unsigned f_color = color_to_int(rect->property.f_color);
     
     //printf("%d\n", HEIGHT);
     unsigned color_buf[10000];

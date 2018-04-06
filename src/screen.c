@@ -1,6 +1,5 @@
 #include "screen.h"
 #include "component.h"
-#include "memory.h"
 
 Screen screen;
 

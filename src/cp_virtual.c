@@ -41,4 +41,20 @@ void cp_virtual_delete(void* obj){
 
 
 void cp_virtual_move(void* obj,int deltaX, int deltaY){
+    Info info = *((Info*)obj);
+    if(!info.valid){
+        return;
+    }
+    
+    switch(info.type){
+        case 'R':
+            rect_move((Rect*)obj);
+            break;
+        case 'C':
+            circle_move((Circle *)obj);
+            break;
+        case 'L':
+            line_move((Line *)obj);
+            break;
+    }
 }

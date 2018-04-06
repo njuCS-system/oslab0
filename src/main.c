@@ -157,9 +157,9 @@ void try(){
 
   Rect* rect=build_rect(p);
   if(rect != NULL){
-    rect_draw(rect);
-    rect_move(rect, 100, 100);
-    rect_draw(rect);
+    cp_virtual_draw(rect);
+    cp_virtual_move(rect, 100, 100);
+    cp_virtual_draw(rect);
   }*/
   
   /*CircleProperty c;
@@ -173,8 +173,22 @@ void try(){
   
   Circle* circle=build_circle(c);
   if(circle != NULL){
-    circle_draw(circle);
-    circle_move(circle, 200, 200);
-    circle_draw(circle);
+    cp_virtual_draw(circle);
+    cp_virtual_move(circle, 200, 200);
+    cp_virtual_draw(circle);
   }*/
+  
+  LineProperty l;
+  l.property.x = 10;
+  l.property.y = 10;
+  l.property.stroke = 20;
+  l.property.is_vertical = TRUE;
+  
+  Line *line = build_line(l);
+  if(line != NULL)
+  {
+    cp_virtual_draw(line);
+    cp_virtual_move(line, 200, 200);
+    cp_virtual_draw(line);
+  }
 }

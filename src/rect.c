@@ -68,6 +68,12 @@ void rect_draw(Rect* rect){
     
     //printf("%d\n", HEIGHT);
     unsigned color_buf[10000];
+    ctl.x = rect->property.x;
+    ctl.y = rect->property.y;
+    //ctl.pixels = color_buf;
+    ctl.w = rect->property.width;
+    ctl.h = rect->property.height;
+    ctl.sync = 1;
     //memset(color_buf, 0 ,sizeof(int) * WIDTH * HEIGHT);
     //printf("hello1\n");
     //printf("%d %d\n", rect->property.height, rect->property.width);
@@ -78,17 +84,20 @@ void rect_draw(Rect* rect){
             if(i < rect->property.stroke || j < rect->property.stroke 
             || i + rect->property.stroke >= rect->property.height || j + rect->property.stroke >= rect->property.width)
             {
-                color_buf[i * rect->property.width + j] = s_color;
+                //color_buf[i * rect->property.width + j] = s_color;
+                ctl.pixels = &s_color;
+                _Device *dev = getdev(&video_dev, _DEV_VIDEO);
+                dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
             }
             else
             {
                 if(rect->property.is_fill)
                 {
-                    color_buf[i * rect->property.width + j] = f_color;
+                    //color_buf[i * rect->property.width + j] = f_color;
                 }
                 else
                 {
-                    color_buf[i * rect->property.width + j] = DEFAULT_COLOR;
+                    //color_buf[i * rect->property.width + j] = DEFAULT_COLOR;
                 }
             }
         }
@@ -97,12 +106,7 @@ void rect_draw(Rect* rect){
     {
     
     }
-    ctl.x = rect->property.x;
-    ctl.y = rect->property.y;
-    ctl.pixels = color_buf;
-    ctl.w = rect->property.width;
-    ctl.h = rect->property.height;
-    ctl.sync = 0;
+    
     if(ctl.sync != 1)
     //printf("%d %d %d %d\n", ctl.x, ctl.y, ctl.w, ctl.h);
     

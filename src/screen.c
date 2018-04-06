@@ -39,7 +39,7 @@ static void __add(Screen* s,void* object){
     s->obj[s->index++]=object;*/
 
     int now_index = s->index - 1;
-    for(; (Info *)(s->obj[s->index])->valid == FALSE && s->index != now_index; s->index = (s->index + 1)%OBJ_MAX);    
+    for(; ((Info *)(s->obj[s->index]))->valid == FALSE && s->index != now_index; s->index = (s->index + 1)%OBJ_MAX);    
     //TODO:
     
 }

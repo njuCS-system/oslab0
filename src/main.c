@@ -29,7 +29,7 @@ int main() {
 
     printf("\n");
   }*/
-  printf("hello");
+  
   try();
 
   return 0;
@@ -158,6 +158,6 @@ void try(){
   Rect* rect=build_rect(p);
   if(rect != NULL){
     printf("Hello2\n");
-    //rect_draw(rect);
+    rect_draw(rect);
   }
 }

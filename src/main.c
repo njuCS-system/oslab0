@@ -145,6 +145,10 @@ void try(){
   {
     a[i]=0;
   }
+  if(a != 0)
+  {
+  
+  }
   p.s_color.r = 255;
   p.s_color.g = 255;
   p.s_color.b = 255;

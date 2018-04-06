@@ -2,6 +2,6 @@
 
 unsigned color_to_int(Color color)
 {
-    unsigned *return_val = (int *)&color;
+    unsigned *return_val = (unsigned *)&color;
     return *return_val;
 }

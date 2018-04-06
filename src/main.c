@@ -168,7 +168,7 @@ void try(){
   c.color.a = 0;
   c.x = 100;
   c.y = 100;
-  c.r = 10;
+  c.r = 20;
   
   Circle* circle=build_circle(c);
   if(circle != NULL){

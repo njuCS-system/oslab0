@@ -138,7 +138,7 @@ static void ata_test(_Device *dev) {
 
 
 void try(){
-  RectProperty p;
+  /*RectProperty p;
   
   p.s_color.r = 255;
   p.s_color.g = 255;
@@ -160,7 +160,7 @@ void try(){
     cp_virtual_draw(rect);
     cp_virtual_move(rect, 100, 100);
     cp_virtual_draw(rect);
-  }
+  }*/
   
   /*CircleProperty c;
   c.color.r = 0;
@@ -195,4 +195,18 @@ void try(){
     cp_virtual_move(line, 200, 200);
     cp_virtual_draw(line);
   }*/
+  
+  PlaneIProperty i;
+  i.x = 10;
+  i.y = 10;
+  i.vx = 20;
+  i.vy = 10;
+  
+  PlaneI* planeI = build_planeI(i);
+  if(planeI != NULL)
+  {
+    cp_virtual_draw(planeI);
+    mv_virtual_automove(planeI);
+    cp_virtual_draw(planeI);
+  }
 }

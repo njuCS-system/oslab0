@@ -46,6 +46,8 @@ void circle_draw(Circle* circle){
     
     ctl.x = circle->property.x - r;
     ctl.y = circle->property.y - r;
+    ctl.w = 2 * r;
+    ctl.h = 2 * r;
     
     for(int i = 0; i < r * 2; i++)
     {

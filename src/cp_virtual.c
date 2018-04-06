@@ -46,7 +46,7 @@ void cp_virtual_delete(void* obj){
             planeI_delete((PlaneI *)obj);
             break;
         case 'B':
-            bullet_draw((Bullet *)obj);
+            bullet_delete((Bullet *)obj);
             break;
     }
 }
@@ -72,7 +72,7 @@ void cp_virtual_move(void* obj,int deltaX, int deltaY){
             planeI_move((PlaneI *)obj, deltaX, deltaY);
             break;
         case 'B':
-            bullet_draw((Bullet *)obj);
+            bullet_move((Bullet *)obj, deltaX, deltaY);
             break;
     }
 }

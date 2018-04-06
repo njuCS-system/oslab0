@@ -10,6 +10,8 @@ void mv_virtual_automove(void* obj){
         case 'I':
             planeI_automove((PlaneI*)obj);
             break;
+        case 'B':
+            bullet_automove((Bullet*)obj);
+            break;
     }
-
 }

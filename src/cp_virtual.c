@@ -19,6 +19,9 @@ void cp_virtual_draw(void* obj){
         case 'I':
             planeI_draw((PlaneI *)obj);
             break;
+        case 'B':
+            bullet_draw((Bullet *)obj);
+            break;
     }
 
 }
@@ -42,6 +45,9 @@ void cp_virtual_delete(void* obj){
         case 'I':
             planeI_delete((PlaneI *)obj);
             break;
+        case 'B':
+            bullet_draw((Bullet *)obj);
+            break;
     }
 }
 
@@ -64,6 +70,9 @@ void cp_virtual_move(void* obj,int deltaX, int deltaY){
             break;
         case 'I':
             planeI_move((PlaneI *)obj, deltaX, deltaY);
+            break;
+        case 'B':
+            bullet_draw((Bullet *)obj);
             break;
     }
 }

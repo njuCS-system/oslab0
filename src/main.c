@@ -138,7 +138,7 @@ static void ata_test(_Device *dev) {
 
 
 void try(){
-  RectProperty p;
+  /*RectProperty p;
   
   p.s_color.r = 255;
   p.s_color.g = 255;
@@ -160,7 +160,7 @@ void try(){
     cp_virtual_draw(rect);
     cp_virtual_move(rect, 100, 100);
     cp_virtual_draw(rect);
-  }
+  }*/
   
   /*CircleProperty c;
   c.color.r = 0;
@@ -178,7 +178,7 @@ void try(){
     cp_virtual_draw(circle);
   }*/
   
-  LineProperty l;
+  /*LineProperty l;
   l.color.r = 0;
   l.color.g = 0;
   l.color.b = 128;
@@ -194,7 +194,7 @@ void try(){
     cp_virtual_draw(line);
     cp_virtual_move(line, 200, 200);
     cp_virtual_draw(line);
-  }
+  }*/
   
   /*PlaneIProperty i;
   i.x = 10;
@@ -203,7 +203,7 @@ void try(){
   i.vy = 20;
   i.size = 2;
   
-  PlaneI* planeI = build_planeI(i);
+  PlaneI *planeI = build_planeI(i);
   if(planeI != NULL)
   {
     cp_virtual_draw(planeI);
@@ -215,4 +215,21 @@ void try(){
     //cp_virtual_move(planeI, 40, 20);
     //cp_virtual_draw(planeI);
   }*/
+  
+  BulletProperty b;
+  b.x = 10;
+  b.y = 10;
+  b.vx = 10;
+  b.vy = 20;
+  b.size = 2;
+  Bullet *bullet = build_bullet(b);
+  if(bullet != NULL)
+  {
+    cp_virtual_draw(bullet);
+    for(int i =0; i < 10; i++)
+    {
+      mv_virtual_automove(bullet);
+      cp_virtual_draw(bullet);
+    }
+  }
 }

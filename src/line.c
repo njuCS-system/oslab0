@@ -102,7 +102,7 @@ static Line* line_allocate(){
 }
 
 static void __init__Line(Line* line,LineProperty property){
-    //矩形初始化逻辑
+    //初始化逻辑
     line->info.type = 'L';
     line->info.valid = TRUE;
     line->property = property;
@@ -113,5 +113,5 @@ static void __init__Line(Line* line,LineProperty property){
 //destructors
 //*****************************
 static void __finalize_Line(Line* line){
-    //矩形的善后事宜
+    //善后事宜
 }

@@ -98,7 +98,7 @@ static Circle* circle_allocate(){
 }
 
 static void __init__Circle(Circle* circle,CircleProperty property){
-    //矩形初始化逻辑
+    //初始化逻辑
     circle->info.type = 'C';
     circle->info.valid = TRUE;
     circle->property = property;
@@ -109,5 +109,5 @@ static void __init__Circle(Circle* circle,CircleProperty property){
 //destructors
 //*****************************
 static void __finalize_Circle(Circle* circle){
-    //矩形的善后事宜
+    //善后事宜
 }

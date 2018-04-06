@@ -39,15 +39,25 @@ void planeI_delete(PlaneI* planeI){
 
 void planeI_draw(PlaneI* planeI){
     _FBCtlReg ctl;
-/*    int x = planeI->property.x;
+    int x = planeI->property.x;
     int y = planeI->property.y;
     
-    //                x       y  w   h     s_color        f_color  stroke is_fill
+    //                x    y     w   h     s_color        f_color  stroke is_fill
     RectProperty p = {x, y + 16, 30, 6, {0, 0, 0, 0}, {255, 0, 0, 0}, 1, TRUE};
-    Rect* large_wing = build_rect(p);
-                 p = {x + 16, y, 30, 6, {0, 0, 0, 0}, {255, 0, 0, 0}, 1, TRUE};
-    Rect* small_wing = build_rect(p);
-*/
+    Rect *large_wing = build_rect(p);
+                 p = {x + 9, y + 2, 12, 2, {0, 0, 0, 0}, {255, 0, 0, 0}, 1, TRUE};
+    Rect *small_wing = build_rect(p);
+                 p = {x + 10, y, 2, 6, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
+    Rect *empennage_left = build_rect(p);
+                 p = {x + 18, y, 2, 6, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
+    Rect *empennage_right = build_rect(p);
+                 p = {x + 13, y + 2, 4, 25, {0, 0, 0, 0}, {71, 173, 112, 0}, 1, TRUE};
+    Rect *body = build_rect(p);
+                 p = {x + 5, y + 15, 3, 9, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
+    Rect *jet_left = build_rect(p);
+                 p = {x + 22, y + 15, 3, 9, {0, 0, 0, 0}, {43, 244, 249, 0}, 1, TRUE};
+    Rect *jet_right = build_rect(p);
+                     
     _Device *dev = getdev(&video_dev, _DEV_VIDEO);
     dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
     draw_sync();

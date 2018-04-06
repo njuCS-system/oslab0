@@ -201,13 +201,13 @@ void try(){
   i.y = 10;
   i.vx = 20;
   i.vy = 10;
-  i.size = 3;
+  i.size = 1;
   
   PlaneI* planeI = build_planeI(i);
   if(planeI != NULL)
   {
     cp_virtual_draw(planeI);
-    //mv_virtual_automove(planeI);
-    //cp_virtual_draw(planeI);
+    mv_virtual_automove(planeI);
+    cp_virtual_draw(planeI);
   }
 }

@@ -226,10 +226,12 @@ void try(){
   if(bullet != NULL)
   {
     cp_virtual_draw(bullet);
-    for(int i =0; i < 10; i++)
+    /*for(int i =0; i < 10; i++)
     {
       mv_virtual_automove(bullet);
       cp_virtual_draw(bullet);
-    }
+    }*/
+    cp_virtual_move(planeI, 10, 20);
+    cp_virtual_draw(planeI);
   }
 }

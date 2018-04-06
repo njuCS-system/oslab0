@@ -101,10 +101,10 @@ int printString(char *str)
 	return length;
 }
 
-int printFmtNum(va_list argp, char flag, int width, int percision, int base, int sign)
+int printFmtNum(va_list *argp, char flag, int width, int percision, int base, int sign)
 {
 	int length = 0;
-	int num = va_arg(argp, int);
+	int num = va_arg(*argp, int);
 	char str[MAXINTLEN];
 	int tempPercision;
 	int tempWidthExceed;
@@ -225,12 +225,12 @@ int printFmtNum(va_list argp, char flag, int width, int percision, int base, int
 	return length;
 }
 
-int printFmt(va_list argp, char flag, int width, int percision, char type)//·µ»Ø³€¶È
+int printFmt(va_list *argp, char flag, int width, int percision, char type)//·µ»Ø³€¶È
 {
 	int length = 0;
 	if (type == 'c')
 	{
-		char c = va_arg(argp, int);
+		char c = va_arg(*argp, int);
 		length++;//for the length of char
 		int tempWidth = width - 1;
 		if (flag == '-')
@@ -266,7 +266,7 @@ int printFmt(va_list argp, char flag, int width, int percision, char type)//·µ
 	}
 	else if (type == 's')
 	{
-		char *str = va_arg(argp, char *);
+		char *str = va_arg(*argp, char *);
 		int len = strlen(str);
 		length += len;
 		int tempWidth = width - len;
@@ -342,7 +342,7 @@ int printf(char *fmt, ...)
 			temp += getPercsion(temp, &percision);
 			//
 			temp += getType(temp, &type);
-			length += printFmt(argp, flag, width, percision, type);
+			length += printFmt(&argp, flag, width, percision, type);
 		}
 		else
 		{

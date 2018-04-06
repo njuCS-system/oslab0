@@ -138,7 +138,7 @@ static void ata_test(_Device *dev) {
 
 
 void try(){
-  /*RectProperty p;
+  RectProperty p;
   
   p.s_color.r = 255;
   p.s_color.g = 255;
@@ -146,22 +146,23 @@ void try(){
   p.s_color.a = 0;
   p.f_color.r = 128;
   p.f_color.g = 128;
-  p.f_color.b = 128;
+  p.f_color.b = 255;
   p.f_color.a = 0;
   p.is_fill = TRUE;
   p.stroke = 20;
   p.x = 10;
   p.y = 10;
   p.width = 100;
-  p.height = 50;
+  p.height = 100;
 
   Rect* rect=build_rect(p);
   if(rect != NULL){
-    //printf("Hello2\n");
     rect_draw(rect);
-  }*/
+    rect_move(rect, 200, 200);
+    rect_draw(rect);
+  }
   
-  CircleProperty c;
+  /*CircleProperty c;
   c.color.r = 0;
   c.color.g = 255;
   c.color.b = 255;
@@ -175,5 +176,5 @@ void try(){
     circle_draw(circle);
     circle_move(circle, 200, 200);
     circle_draw(circle);
-  }
+  }*/
 }

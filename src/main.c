@@ -157,5 +157,5 @@ void try(){
 
   Rect* rect=build_rect(p);
   printf("Hello2\n");
-  rect_draw(rect);
+  //rect_draw(rect);
 }

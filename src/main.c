@@ -161,7 +161,7 @@ void try(){
     //screen_draw();
     cp_virtual_move(rect, 100, 100);
     //screen_draw();
-    screen_add(rect);
+    //screen_add(rect);
     //screen_rm(rect);
 }
   
@@ -172,7 +172,7 @@ void try(){
   c.color.a = 0;
   c.x = 100;
   c.y = 100;
-  c.r = 10;
+  c.r = 100;
   
   Circle* circle=build_circle(c);
   if(circle != NULL){

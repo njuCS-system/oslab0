@@ -138,7 +138,9 @@ static void ata_test(_Device *dev) {
 
 
 void try(){
-  RectProperty p;
+  screen_init();
+  
+  /*RectProperty p;
   
   p.s_color.r = 255;
   p.s_color.g = 255;
@@ -158,14 +160,10 @@ void try(){
   Rect* rect=build_rect(p);
   if(rect != NULL){
     screen_add(rect);
-    //screen_draw();
     cp_virtual_move(rect, 100, 100);
-    //screen_draw();
-    screen_add(rect);
-    //screen_rm(rect);
-}
+}*/
   
-  CircleProperty c;
+  /*CircleProperty c;
   c.color.r = 0;
   c.color.g = 255;
   c.color.b = 255;
@@ -178,11 +176,7 @@ void try(){
   if(circle != NULL){
     screen_add(circle);
     //cp_virtual_move(circle, 200, 200);
-  }
-
-  //screen_draw();
-  screen_clear();
-  screen_draw();
+  }*/
   
   /*LineProperty l;
   l.color.r = 0;

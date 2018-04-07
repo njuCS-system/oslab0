@@ -75,6 +75,7 @@ static void __clear(Screen* s){
     for(int i=0;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE)
             cp_virtual_delete(s->obj[i]);
+            printf("%d\n", s->index);
     }
     s->index=0;
 }
@@ -88,8 +89,6 @@ static void __remove(Screen* s, void *obj)
     if(index >= 0 && index < OBJ_MAX && ((Info *)(s->obj[index]))->valid == TRUE)
     {
         cp_virtual_delete(s->obj[index]);
-        printf("%d\n", s->index);
-        
     }
     else 
     {

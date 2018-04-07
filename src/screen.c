@@ -51,7 +51,7 @@ static void __add(Screen* s,void* object){
     {
         now_index += OBJ_MAX;
     }
-    for(; ((Info *)(s->obj[s->index]))->valid == FALSE && s->index != now_index; s->index = (s->index + 1)%OBJ_MAX);    
+    for(; ((Info *)(s->obj[s->index]))->valid == TRUE && s->index != now_index; s->index = (s->index + 1)%OBJ_MAX);    
     if(s->index == now_index)
     {
         printf("[ERROR] Screen buffer overflow!\n");

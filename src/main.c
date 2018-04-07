@@ -159,9 +159,9 @@ void try(){
   if(rect != NULL){
     //cp_virtual_draw(rect);
     screen_add(rect);
-    screen_draw();
+    //screen_draw();
     cp_virtual_move(rect, 100, 100);
-    screen_draw();
+    //screen_draw();
     screen_rm(rect);
     screen_draw();
     //cp_virtual_draw(rect);

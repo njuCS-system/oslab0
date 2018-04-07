@@ -59,7 +59,6 @@ static void __add(Screen* s,void* object){
     else
     {
         s->obj[s->index] = object;
-        printf("%d\n", s->index);
     }
     
 }
@@ -89,6 +88,8 @@ static void __remove(Screen* s, void *obj)
     if(index >= 0 && index < OBJ_MAX && ((Info *)(s->obj[index]))->valid == TRUE)
     {
         cp_virtual_delete(s->obj[index]);
+        printf("%d\n", s->index);
+        
     }
     else 
     {

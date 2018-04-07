@@ -83,7 +83,7 @@ static void __clear(Screen* s){
 static void __remove(Screen* s, void *obj)
 {
     int index = 0;
-    for(; obj == s->obj[index] && index < OBJ_MAX; index++);
+    for(; obj != s->obj[index] && index < OBJ_MAX; index++);
     
     if(index >= 0 && index < OBJ_MAX && ((Info *)(s->obj[index]))->valid == TRUE)
     {

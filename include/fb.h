@@ -1,6 +1,6 @@
 #ifndef FB_H
 #define FB_H
-#include "amdev.h"
+#include "lib.h"
 
 void fb_add(_FBCtlReg* reg);
 

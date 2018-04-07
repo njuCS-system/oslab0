@@ -1,5 +1,5 @@
-#ifndef LIB_H
-#define LIB_H
+#ifndef OUR_LIB_H
+#define OUR_LIB_H
 
 #include <am.h>
 #include <amdev.h>

@@ -4,13 +4,15 @@
 #include "util.h"
 
 
-#define RECT_MAX 100
+#define RECT_MAX 200
 
 
 typedef struct RectProperty{
     int x,y,width,height; //位置和大小
-    char r,g,b;//颜色
+    Color s_color;//颜色
+    Color f_color;
     int stroke;//线宽
+    bool is_fill;
 }RectProperty;
 
 
@@ -22,8 +24,6 @@ typedef struct Rect{
 typedef struct Rect_factory{
     Rect __rects[RECT_MAX];
     int idx;
-    Rect* (*build)(RectProperty property);
-    void (*free)(Rect*);
 }Rect_factory;
 
 
@@ -31,13 +31,13 @@ Rect* build_rect();
 
 //*******************virtual functions***********************
 
-//绘制矩形
+//绘制
 void rect_draw(Rect* );
 
-//移动矩形
+//移动
 void rect_move(Rect*,int,int);
 
-//删除矩形
+//删除
 void rect_delete(Rect* );
 
 

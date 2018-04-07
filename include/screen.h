@@ -10,6 +10,8 @@ typedef struct Screen{
 }Screen;
 
 
+void screen_init();
+
 void screen_draw();
 
 void screen_add(void *);

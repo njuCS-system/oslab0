@@ -163,6 +163,7 @@ void try(){
     cp_virtual_move(rect, 100, 100);
     screen_draw();
     screen_rm(rect);
+    screen_draw();
     //cp_virtual_draw(rect);
   }
   

@@ -157,17 +157,15 @@ void try(){
 
   Rect* rect=build_rect(p);
   if(rect != NULL){
-    //cp_virtual_draw(rect);
     screen_add(rect);
     //screen_draw();
     cp_virtual_move(rect, 100, 100);
     //screen_draw();
-    screen_rm(rect);
-    screen_draw();
-    //cp_virtual_draw(rect);
-  }
+    screen_add(rect);
+    //screen_rm(rect);
+}
   
-  /*CircleProperty c;
+  CircleProperty c;
   c.color.r = 0;
   c.color.g = 255;
   c.color.b = 255;
@@ -178,10 +176,13 @@ void try(){
   
   Circle* circle=build_circle(c);
   if(circle != NULL){
-    cp_virtual_draw(circle);
-    cp_virtual_move(circle, 200, 200);
-    cp_virtual_draw(circle);
-  }*/
+    screen_add(circle);
+    //cp_virtual_move(circle, 200, 200);
+  }
+
+  screen_draw();
+  Screen_clear();
+  screen_draw();
   
   /*LineProperty l;
   l.color.r = 0;

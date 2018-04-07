@@ -181,7 +181,7 @@ void try(){
   }
 
   screen_draw();
-  Screen_clear();
+  screen_clear();
   screen_draw();
   
   /*LineProperty l;

@@ -180,7 +180,7 @@ void try(){
     //cp_virtual_move(circle, 200, 200);
   }
 
-  screen_draw();
+  //screen_draw();
   screen_clear();
   screen_draw();
   

@@ -73,9 +73,10 @@ static void __draw(Screen* s){
 }
 static void __clear(Screen* s){
     for(int i=0;i < OBJ_MAX;i++){
-        if(((Info *)(s->obj[i]))->valid == TRUE)
+        if(((Info *)(s->obj[i]))->valid == TRUE){
             cp_virtual_delete(s->obj[i]);
-            printf("%d\n", s->index);
+            printf("%d\n", i);
+        }
     }
     s->index=0;
 }

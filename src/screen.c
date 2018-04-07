@@ -83,7 +83,7 @@ static void __clear(Screen* s){
 static void __remove(Screen* s, void *obj)
 {
     int index = obj - s->obj[0];
-    if(index >= 0 && index < OBJ_MAX && s->obj[index].valid == TRUE)
+    if(index >= 0 && index < OBJ_MAX && ((Info *)(s->obj[index]))->valid == TRUE)
     {
         cp_virtual_delete(s->obj[index]);
     }

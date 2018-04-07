@@ -3,13 +3,21 @@
 
 Screen screen;
 
-//TODO:init screen
-
 static void __add(Screen* s,void* object);
 
 static void __draw(Screen* s);
 
 static void __clear(Screen* s);
+
+static void __remove(Screen* s,void* object);
+
+
+void screen_init()
+{
+    memset(screen.obj, 0 ,sizeof(void *) * OBJ_MAX);
+    screen.index = 0;
+}
+
 
 void screen_add(void *obj){
     __add(&screen,obj);
@@ -27,7 +35,7 @@ void screen_draw(){
 }
 
 void screen_rm(void * obj){
-
+    __remove(&screen, obj);
 }
 
 
@@ -39,10 +47,14 @@ static void __add(Screen* s,void* object){
     s->obj[s->index++]=object;*/
 
     int now_index = s->index - 1;
+    if(now_index < 0)
+    {
+        now_index += OBJ_MAX;
+    }
     for(; ((Info *)(s->obj[s->index]))->valid == FALSE && s->index != now_index; s->index = (s->index + 1)%OBJ_MAX);    
     if(s->index == now_index)
     {
-        printf("[ERROR] Screen buffer overflow!");
+        printf("[ERROR] Screen buffer overflow!\n");
     }
     else
     {
@@ -52,10 +64,12 @@ static void __add(Screen* s,void* object){
 }
 
 static void __draw(Screen* s){
+    fb_clear();
     for(int i = 0;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE)
             cp_virtual_draw(s->obj[i]);
     }
+    fb_sync();
 }
 static void __clear(Screen* s){
     for(int i=0;i < OBJ_MAX;i++){
@@ -63,4 +77,18 @@ static void __clear(Screen* s){
             cp_virtual_delete(s->obj[i]);
     }
     s->index=0;
+}
+
+
+static void __remove(Screen* s, void *obj)
+{
+    int index = obj - s->obj[0];
+    if(index >= 0 && index < OBJ_MAX && s->obj[index].valid == TRUE)
+    {
+        cp_virtual_delete(s->obj[index]);
+    }
+    else 
+    {
+        printf("[ERROR] The Object is invalid!\n");
+    }
 }

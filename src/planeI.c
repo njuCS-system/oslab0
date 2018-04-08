@@ -95,8 +95,8 @@ void planeI_draw(PlaneI* planeI){
     ctl.x = planeI->property.x;
     ctl.y = planeI->property.y;
     ctl.pixels = color_buf;
-    ctl.w = rect->width;
-    ctl.h = rect->height;
+    ctl.w = width;
+    ctl.h = height;
     ctl.sync = 0;
 
     _Device *dev = getdev(&video_dev, _DEV_VIDEO);

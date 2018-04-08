@@ -20,7 +20,7 @@ void cp_virtual_draw(void* obj){
             planeI_draw((PlaneI *)obj);
             break;
         case 'X':
-            planeI_draw((PlaneX *)obj);
+            planeX_draw((PlaneX *)obj);
             break;
         case 'B':
             bullet_draw((Bullet *)obj);

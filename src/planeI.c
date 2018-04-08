@@ -40,7 +40,7 @@ void planeI_delete(PlaneI* planeI){
 void planeI_draw(PlaneI* planeI){
     _FBCtlReg ctl;
 
-    tagBITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (planeI_Info + sizeof(BITMAPFILEHEADER));
+    BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_planeI + sizeof(BITMAPFILEHEADER));
     long width = bmpHead -> biWidth;
     long height = bmpHead -> biHeight;
 

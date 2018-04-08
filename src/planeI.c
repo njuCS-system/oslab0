@@ -46,7 +46,7 @@ void planeI_draw(PlaneI* planeI){
 
     for(int i = 0; i < height; i++)
     {
-        for(itn j = 0; j < width; j++)
+        for(int j = 0; j < width; j++)
         {
             Color temp_color;
             temp_color.b = bmpHead -> pixels[(i * width + j) * 3];

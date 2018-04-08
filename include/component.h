@@ -5,6 +5,7 @@
 #include "circle.h"
 #include "line.h"
 #include "planeI.h"
+#include "planeX.h"
 #include "bullet.h"
 
 #include "cp_virtual.h"

@@ -59,7 +59,6 @@ static void __add(Screen* s,void* object){
     else
     {
         s->obj[s->index] = object;
-        printf("%d\n", s->index);
     }
     
 }

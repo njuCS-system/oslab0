@@ -40,8 +40,29 @@ void planeI_delete(PlaneI* planeI){
 void planeI_draw(PlaneI* planeI){
     _FBCtlReg ctl;
 
-    //tagBITMAPINFOHEADER *bmpHead = (tagBITMAPINFOHEADER*) planeI_Info + tagBITMAPFILEHEADER_LENGTH;
-    //bmpHead -> 
+    tagBITMAPINFOHEADER *bmpHead = (tagBITMAPINFOHEADER*) planeI_Info + tagBITMAPFILEHEADER_LENGTH;
+    long width = bmpHead -> biWidth;
+    long height = bmpHead -> biHeight;
+
+    for(int i = 0; i < height; i++)
+    {
+        for(itn j = 0; j < width; j++)
+        {
+            Color temp_color;
+            temp_color.b = bmpHead -> pixels[(i * width + j) * 3];
+            temp_color.g = bmpHead -> pixels[(i * width + j) * 3 + 1];
+            temp_color.r = bmpHead -> pixels[(i * width + j) * 3 + 2];
+            if(temp_color.b == 1 && temp_color.g == 1 && temp_color.r == 1)
+            {
+                temp_color.a = 1;
+            }
+            else
+            {
+                temp_color.a = 0;
+            }
+            color_buf[i * width + j] = color_to_int(temp_color);
+        }
+    }
 
     /*int x = planeI->property.x;
     int y = planeI->property.y;
@@ -71,6 +92,17 @@ void planeI_draw(PlaneI* planeI){
     rect_draw(planeI->jet_left);
     rect_draw(planeI->jet_right);*/
     
+    ctl.x = planeI->property.x;
+    ctl.y = planeI->property.y;
+    ctl.pixels = color_buf;
+    ctl.w = rect->width;
+    ctl.h = rect->height;
+    ctl.sync = 0;
+
+    _Device *dev = getdev(&video_dev, _DEV_VIDEO);
+    dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
+    draw_sync();
+
     fb_add(&ctl);
 }
 

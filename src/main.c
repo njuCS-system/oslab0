@@ -135,12 +135,9 @@ static void ata_test(_Device *dev) {
   }
 }*/
 
-
-
-void try(){
-  screen_init();
-  
-  /*RectProperty p;
+void try_rect()
+{
+  RectProperty p;
   
   p.s_color.r = 255;
   p.s_color.g = 255;
@@ -161,9 +158,12 @@ void try(){
   if(rect != NULL){
     screen_add(rect);
     cp_virtual_move(rect, 100, 100);
-}*/
-  
-  /*CircleProperty c;
+  }
+}
+
+void try_circle()
+{
+  CircleProperty c;
   c.color.r = 0;
   c.color.g = 255;
   c.color.b = 255;
@@ -176,9 +176,12 @@ void try(){
   if(circle != NULL){
     screen_add(circle);
     //cp_virtual_move(circle, 200, 200);
-  }*/
-  
-  /*LineProperty l;
+  }
+}
+
+void try_line()
+{
+  LineProperty l;
   l.color.r = 0;
   l.color.g = 0;
   l.color.b = 128;
@@ -194,8 +197,11 @@ void try(){
     cp_virtual_draw(line);
     cp_virtual_move(line, 200, 200);
     cp_virtual_draw(line);
-  }*/
-  
+  }
+}
+
+void try_planeI()
+{
   PlaneIProperty i;
   i.x = 10;
   i.y = 10;
@@ -215,26 +221,10 @@ void try(){
     //cp_virtual_move(planeI, 40, 20);
     //cp_virtual_draw(planeI);
   }
-  
-  /*BulletProperty b;
-  b.x = 10;
-  b.y = 10;
-  b.vx = 10;
-  b.vy = 20;
-  b.size = 1;
-  Bullet *bullet = build_bullet(b);
-  if(bullet != NULL)
-  {
-    cp_virtual_draw(bullet);
-    for(int i =0; i < 10; i++)
-    {
-      mv_virtual_automove(bullet);
-      cp_virtual_draw(bullet);
-    }
-    //cp_virtual_move(bullet, 10, 20);
-    //cp_virtual_draw(bullet);
-  }*/
+}
 
+void try_planeX()
+{
   PlaneIProperty x;
   x.x = 10;
   x.y = 100;
@@ -254,4 +244,37 @@ void try(){
     //cp_virtual_move(planeI, 40, 20);
     //cp_virtual_draw(planeI);
   }
+}
+
+void try_bullet()
+{
+  BulletProperty b;
+  b.x = 10;
+  b.y = 10;
+  b.vx = 10;
+  b.vy = 20;
+  b.size = 1;
+  Bullet *bullet = build_bullet(b);
+  if(bullet != NULL)
+  {
+    cp_virtual_draw(bullet);
+    for(int i =0; i < 10; i++)
+    {
+      mv_virtual_automove(bullet);
+      cp_virtual_draw(bullet);
+    }
+    //cp_virtual_move(bullet, 10, 20);
+    //cp_virtual_draw(bullet);
+  }
+}
+
+void try(){
+  screen_init();
+  
+  //try_rect();
+  //try_circle();
+  //try_line();
+  //try_planeI();
+  //try_planeX();
+  //try_bullet();
 }

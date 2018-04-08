@@ -7,7 +7,7 @@ unsigned color_to_int(Color color)
 }
 
 
-_Device *getdev(_Device **ptr, uint32_t id) {
+/*_Device *getdev(_Device **ptr, uint32_t id) {
   if (*ptr) return *ptr;
   for (int n = 1; ; n ++) {
     _Device *cur = _device(n);
@@ -29,4 +29,4 @@ void draw_sync() {
   ctl.x = ctl.y = ctl.w = ctl.h = 0;
   ctl.sync = 1;
   dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(ctl));
-}
+}*/

@@ -242,7 +242,7 @@ void try(){
   x.vy = 20;
   x.size = 2;
   
-  PlaneX *planeX = build_planeI(x);
+  PlaneX *planeX = build_planeX(x);
   if(planeX != NULL)
   {
     cp_virtual_draw(planeX);

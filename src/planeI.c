@@ -43,6 +43,7 @@ void planeI_draw(PlaneI* planeI){
     BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_planeI + sizeof(BITMAPFILEHEADER));
     long width = bmpHead -> biWidth;
     long height = bmpHead -> biHeight;
+    printf("%d %d\n", width, height);
 
     for(int i = 0; i < height; i++)
     {

@@ -32,7 +32,7 @@ RES_IDC res_idc[] =
 		{ID_BIGBOMB_5, {0}, {180 * 1, 115 + 135 * 1, 180, 135}},
 		{ID_BIGBOMB_6, {0}, {180 * 2, 115 + 135 * 1, 180, 135}},
 		{ID_BIGBOMB_7, {0}, {180 * 3, 115 + 135 * 1, 180, 135}}
-	}
+	};
 
 _Device *getdev(_Device **ptr, uint32_t id) {
   if (*ptr) return *ptr;

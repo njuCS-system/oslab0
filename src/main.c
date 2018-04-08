@@ -157,7 +157,7 @@ void try_rect()
   Rect* rect=build_rect(p);
   if(rect != NULL){
     screen_add(rect);
-    cp_virtual_move(rect, 100, 100);
+    //cp_virtual_move(rect, 100, 100);
   }
 }
 
@@ -194,9 +194,8 @@ void try_line()
   Line *line = build_line(l);
   if(line != NULL)
   {
-    cp_virtual_draw(line);
-    cp_virtual_move(line, 200, 200);
-    cp_virtual_draw(line);
+    screen_add(line);
+    //cp_virtual_move(line, 200, 200);
   }
 }
 
@@ -212,14 +211,13 @@ void try_planeI()
   PlaneI *planeI = build_planeI(i);
   if(planeI != NULL)
   {
-    cp_virtual_draw(planeI);
+    /*cp_virtual_draw(planeI);
     for(int i =0; i < 5; i++)
     {
       mv_virtual_automove(planeI);
       cp_virtual_draw(planeI);
-    }
-    //cp_virtual_move(planeI, 40, 20);
-    //cp_virtual_draw(planeI);
+    }*/
+    screen_add(planeI);
   }
 }
 
@@ -235,14 +233,13 @@ void try_planeX()
   PlaneX *planeX = build_planeX(x);
   if(planeX != NULL)
   {
-    cp_virtual_draw(planeX);
+    /*cp_virtual_draw(planeX);
     for(int i = 0; i < 5; i++)
     {
       mv_virtual_automove(planeX);
       cp_virtual_draw(planeX);
-    }
-    //cp_virtual_move(planeI, 40, 20);
-    //cp_virtual_draw(planeI);
+    }*/
+    screen_add(planeX);
   }
 }
 
@@ -274,7 +271,8 @@ void try(){
   //try_rect();
   //try_circle();
   //try_line();
-  //try_planeI();
-  //try_planeX();
+  try_planeI();
+  try_planeX();
   //try_bullet();
+  screen_draw();
 }

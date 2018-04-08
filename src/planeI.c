@@ -66,9 +66,7 @@ void planeI_draw(PlaneI* planeI){
     rect_draw(planeI->body);
     rect_draw(planeI->jet_left);
     rect_draw(planeI->jet_right);
-    /*_Device *dev = getdev(&video_dev, _DEV_VIDEO);
-    dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
-    draw_sync();*/
+    
     fb_add(&ctl);
 }
 

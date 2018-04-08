@@ -196,7 +196,7 @@ void try(){
     cp_virtual_draw(line);
   }*/
   
-  /*PlaneIProperty i;
+  PlaneIProperty i;
   i.x = 10;
   i.y = 10;
   i.vx = 40;
@@ -207,14 +207,14 @@ void try(){
   if(planeI != NULL)
   {
     cp_virtual_draw(planeI);
-    for(int i =0; i < 10; i++)
+    for(int i =0; i < 5; i++)
     {
       mv_virtual_automove(planeI);
       cp_virtual_draw(planeI);
     }
     //cp_virtual_move(planeI, 40, 20);
     //cp_virtual_draw(planeI);
-  }*/
+  }
   
   /*BulletProperty b;
   b.x = 10;

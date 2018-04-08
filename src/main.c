@@ -237,7 +237,7 @@ void try(){
 
   PlaneIProperty x;
   x.x = 10;
-  x.y = 10;
+  x.y = 100;
   x.vx = 40;
   x.vy = 20;
   x.size = 2;
@@ -246,7 +246,7 @@ void try(){
   if(planeX != NULL)
   {
     cp_virtual_draw(planeX);
-    for(int i = 0; i < 10; i++)
+    for(int i = 0; i < 5; i++)
     {
       mv_virtual_automove(planeX);
       cp_virtual_draw(planeX);

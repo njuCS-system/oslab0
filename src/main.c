@@ -234,4 +234,24 @@ void try(){
     //cp_virtual_move(bullet, 10, 20);
     //cp_virtual_draw(bullet);
   }*/
+
+  PlaneIProperty x;
+  x.x = 10;
+  x.y = 10;
+  x.vx = 40;
+  x.vy = 20;
+  x.size = 2;
+  
+  PlaneX *planeX = build_planeI(x);
+  if(planeX != NULL)
+  {
+    cp_virtual_draw(planeX);
+    for(int i =0; i < 10; i++)
+    {
+      mv_virtual_automove(planeX);
+      cp_virtual_draw(planeX);
+    }
+    //cp_virtual_move(planeI, 40, 20);
+    //cp_virtual_draw(planeI);
+  }
 }

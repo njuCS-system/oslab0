@@ -39,7 +39,11 @@ void planeI_delete(PlaneI* planeI){
 
 void planeI_draw(PlaneI* planeI){
     _FBCtlReg ctl;
-    int x = planeI->property.x;
+
+    //tagBITMAPINFOHEADER *bmpHead = (tagBITMAPINFOHEADER*) planeI_Info + tagBITMAPFILEHEADER_LENGTH;
+    //bmpHead -> 
+
+    /*int x = planeI->property.x;
     int y = planeI->property.y;
     int size = planeI->property.size;
     
@@ -65,7 +69,7 @@ void planeI_draw(PlaneI* planeI){
     rect_draw(planeI->empennage_right);
     rect_draw(planeI->body);
     rect_draw(planeI->jet_left);
-    rect_draw(planeI->jet_right);
+    rect_draw(planeI->jet_right);*/
     
     fb_add(&ctl);
 }

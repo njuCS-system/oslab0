@@ -78,7 +78,7 @@ void cp_virtual_move(void* obj,int deltaX, int deltaY){
             planeI_move((PlaneI *)obj, deltaX, deltaY);
             break;
         case 'X':
-            planeX_delete((PlaneX *)obj);
+            planeX_move((PlaneX *)obj, deltaX, deltaY);
             break;
         case 'B':
             bullet_move((Bullet *)obj, deltaX, deltaY);

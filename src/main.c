@@ -245,8 +245,9 @@ void try(){
   PlaneX *planeX = build_planeX(x);
   if(planeX != NULL)
   {
+    printf("HELLO\n");
     cp_virtual_draw(planeX);
-    for(int i =0; i < 10; i++)
+    for(int i = 0; i < 10; i++)
     {
       mv_virtual_automove(planeX);
       cp_virtual_draw(planeX);

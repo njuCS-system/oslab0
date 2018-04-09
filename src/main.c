@@ -246,11 +246,11 @@ void try_planeX()
 void try_planeU()
 {
   PlaneIProperty u;
-  x.x = 100;
-  x.y = 10;
-  x.vx = 40;
-  x.vy = 20;
-  x.size = 2;
+  u.x = 100;
+  u.y = 10;
+  u.vx = 40;
+  u.vy = 20;
+  u.size = 2;
   
   PlaneU *planeU = build_planeU(u);
   if(planeU != NULL)

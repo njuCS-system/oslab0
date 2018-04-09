@@ -60,8 +60,8 @@ void bigExplosion_draw(BigExplosion* bigExplosion){
             temp_color.r = bmpHead -> pixels[((i + y) * pic_width + (j + x)) * 3 + 2];
             if(temp_color.b == 255 && temp_color.g == 0 && temp_color.r == 255)
             {
-                //temp_color.a = temp_color.r = temp_color.g = temp_color.b = 1;
-                temp_color.a = 1;
+                temp_color.a = temp_color.r = temp_color.g = temp_color.b = 1;
+                //temp_color.a = 1;
             }
             else
             {

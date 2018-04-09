@@ -43,7 +43,7 @@ void bigExplosion_draw(BigExplosion* bigExplosion){
     BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_objset + BITMAPFILEHEADER_LENGTH);
     RECT temp_rect = res_idc[ID_BIGBOMB_3];
     long pic_width = bmpHead -> biWidth;
-    long pic_height = bmpHead -> biHeight;
+    //long pic_height = bmpHead -> biHeight;
     unsigned width = temp_rect.w;
     unsigned height = temp_rect.h;
     int x = temp_rect.x;
@@ -54,9 +54,9 @@ void bigExplosion_draw(BigExplosion* bigExplosion){
         for(int j = 0; j < width; j++)
         {
             Color temp_color;
-            temp_color.b = bmpHead -> pixels[(i + x) * width + (j + y) * 3];
-            temp_color.g = bmpHead -> pixels[(i + x) * width + (j + y) * 3 + 1];
-            temp_color.r = bmpHead -> pixels[(i + x) * width + (j + y) * 3 + 2];
+            temp_color.b = bmpHead -> pixels[(i + x) * pic_width + (j + y) * 3];
+            temp_color.g = bmpHead -> pixels[(i + x) * pic_width + (j + y) * 3 + 1];
+            temp_color.r = bmpHead -> pixels[(i + x) * pic_width + (j + y) * 3 + 2];
             if(temp_color.b == 255 && temp_color.g == 0 && temp_color.r == 255)
             {
                 temp_color.a = 1;

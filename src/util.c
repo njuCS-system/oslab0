@@ -6,7 +6,7 @@ unsigned color_to_int(Color color)
     return *return_val;
 }
 
-RES_IDC res_idc[] =
+RES_IDC *res_idc =
 	{
 		{ID_PLAYER, {0, 0, 29, 33}},
 		{ID_ENEMY_SMALL, {41, 0, 33, 28}},

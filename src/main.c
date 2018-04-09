@@ -318,6 +318,7 @@ void try(){
   try_planeI();
   try_planeX();
   try_planeU();
+  try_planeT();
   //try_bullet();
   screen_draw();
 }

@@ -269,7 +269,7 @@ void try_planeT()
 {
   PlaneIProperty t;
   t.x = 100;
-  t.y = 10;
+  t.y = 100;
   t.vx = 40;
   t.vy = 20;
   t.size = 2;

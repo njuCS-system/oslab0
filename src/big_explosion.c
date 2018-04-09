@@ -54,9 +54,9 @@ void bigExplosion_draw(BigExplosion* bigExplosion){
         for(int j = 0; j < width; j++)
         {
             Color temp_color;
-            temp_color.b = bmpHead -> pixels[((i + x) * width + (j + y) * 3];
-            temp_color.g = bmpHead -> pixels[((i + x) * width + (j + y) * 3 + 1];
-            temp_color.r = bmpHead -> pixels[((i + x) * width + (j + y) * 3 + 2];
+            temp_color.b = bmpHead -> pixels[(i + x) * width + (j + y) * 3];
+            temp_color.g = bmpHead -> pixels[(i + x) * width + (j + y) * 3 + 1];
+            temp_color.r = bmpHead -> pixels[(i + x) * width + (j + y) * 3 + 2];
             if(temp_color.b == 255 && temp_color.g == 0 && temp_color.r == 255)
             {
                 temp_color.a = 1;

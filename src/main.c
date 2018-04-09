@@ -287,6 +287,28 @@ void try_planeT()
   }
 }
 
+void try_bigExplosion()
+{
+  BigExplosionProperty b;
+  b.x = 100;
+  b.y = 100;
+  b.vx = 40;
+  b.vy = 20;
+  b.size = 2;
+  
+  BigExplosion *bigExplosion = build_planeT(b);
+  if(bigExplosion != NULL)
+  {
+    /*cp_virtual_draw(planeT);
+    for(int i = 0; i < 5; i++)
+    {
+      mv_virtual_automove(planeT);
+      cp_virtual_draw(planeT);
+    }*/
+    screen_add(bigExplosion);
+  }
+}
+
 void try_bullet()
 {
   BulletProperty b;
@@ -315,10 +337,11 @@ void try(){
   //try_rect();
   //try_circle();
   //try_line();
-  try_planeI();
-  try_planeX();
-  try_planeU();
-  try_planeT();
+  //try_planeI();
+  //try_planeX();
+  //try_planeU();
+  //try_planeT();
   //try_bullet();
+  try_bigExplosion();
   screen_draw();
 }

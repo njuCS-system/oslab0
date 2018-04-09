@@ -1,43 +1,43 @@
-#include "big_explosion.h"
+#include "big_explosion3.h"
 
 
-BigExplosion_factory bigExplosion_factory;
+BigExplosion3_factory bigExplosion3_factory;
 
 
-static BigExplosion* bigExplosion_allocate();
+static BigExplosion3* bigExplosion3_allocate();
 
-static void __init__BigExplosion(BigExplosion* bigExplosion,BigExplosionProperty property);
+static void __init__BigExplosion3(BigExplosion3* bigExplosion3,BigExplosion3Property property);
 
-static void __finalize_BigExplosion(BigExplosion* bigExplosion);
+static void __finalize_BigExplosion3(BigExplosion3* bigExplosion3);
 
 //*****************************
 //构造器(们)无法多态
 //****************************
-BigExplosion* build_bigExplosion(BigExplosionProperty property){
+BigExplosion3* build_bigExplosion3(BigExplosion3Property property){
     //mem_alloc 
-    BigExplosion* bigExplosion = bigExplosion_allocate();
+    BigExplosion3* bigExplosion3 = bigExplosion3_allocate();
     //constructor
-    if(bigExplosion!=NULL){
-        __init__BigExplosion(bigExplosion,property);
+    if(bigExplosion3!=NULL){
+        __init__BigExplosion3(bigExplosion3,property);
 
     }else{
-        printf("[ERROR] Memory-allocate error when build a bigExplosion!\n");
+        printf("[ERROR] Memory-allocate error when build a bigExplosion3!\n");
     }
-    return bigExplosion;
+    return bigExplosion3;
 }
 
 
 
 //***********************virtual functions**************************
 
-void bigExplosion_delete(BigExplosion* bigExplosion){
+void bigExplosion3_delete(BigExplosion3* bigExplosion3){
     //destructor
-    __finalize_BigExplosion(bigExplosion);
+    __finalize_BigExplosion3(bigExplosion3);
     //free memory
-    bigExplosion->info.valid=FALSE;
+    bigExplosion3->info.valid=FALSE;
 }
 
-void bigExplosion_draw(BigExplosion* bigExplosion){
+void bigExplosion3_draw(BigExplosion3* bigExplosion3){
     _FBCtlReg ctl;
 
     BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_objset + BITMAPFILEHEADER_LENGTH);
@@ -71,8 +71,8 @@ void bigExplosion_draw(BigExplosion* bigExplosion){
         }
     }
     
-    ctl.x = bigExplosion->property.x;
-    ctl.y = bigExplosion->property.y;
+    ctl.x = bigExplosion3->property.x;
+    ctl.y = bigExplosion3->property.y;
     ctl.pixels = color_buf;
     ctl.w = width;
     ctl.h = height;
@@ -86,47 +86,47 @@ void bigExplosion_draw(BigExplosion* bigExplosion){
 }
 
 
-void bigExplosion_move(BigExplosion* bigExplosion,int deltaX, int deltaY){
-    bigExplosion->property.x += deltaX;
-    bigExplosion->property.y += deltaY;
+void bigExplosion3_move(BigExplosion3* bigExplosion3,int deltaX, int deltaY){
+    bigExplosion3->property.x += deltaX;
+    bigExplosion3->property.y += deltaY;
 }
 
-void bigExplosion_automove(BigExplosion* bigExplosion){
-    bigExplosion->property.x += bigExplosion->property.vx;
-    bigExplosion->property.y += bigExplosion->property.vy;
+void bigExplosion3_automove(BigExplosion3* bigExplosion3){
+    bigExplosion3->property.x += bigExplosion3->property.vx;
+    bigExplosion3->property.y += bigExplosion3->property.vy;
 }
 
 
 
 //****************************************************************
 
-static BigExplosion* bigExplosion_allocate(){
-    BigExplosion* bigExplosion;
+static BigExplosion3* bigExplosion3_allocate(){
+    BigExplosion3* bigExplosion3;
     for(int i=0;i<BIGEXPLOSION_MAX;i++){
-        bigExplosion=&(bigExplosion_factory.__bigExplosions[bigExplosion_factory.idx]);
+        bigExplosion3=&(bigExplosion3_factory.__bigExplosion3s[bigExplosion3_factory.idx]);
 
-        bigExplosion_factory.idx++;
-        bigExplosion_factory.idx%=BIGEXPLOSION_MAX;
+        bigExplosion3_factory.idx++;
+        bigExplosion3_factory.idx%=BIGEXPLOSION_MAX;
 
-        if(!bigExplosion->info.valid){//遇到有效的则返回
-            bigExplosion->info.valid=TRUE;
-            return bigExplosion;
+        if(!bigExplosion3->info.valid){//遇到有效的则返回
+            bigExplosion3->info.valid=TRUE;
+            return bigExplosion3;
         }
     }
     return NULL;
 }
 
-static void __init__BigExplosion(BigExplosion* bigExplosion,BigExplosionProperty property){
+static void __init__BigExplosion3(BigExplosion3* bigExplosion3,BigExplosion3Property property){
     //初始化逻辑
-    bigExplosion->info.type = 'E';
-    bigExplosion->info.valid = TRUE;
-    bigExplosion->property = property;
+    bigExplosion3->info.type = '3';
+    bigExplosion3->info.valid = TRUE;
+    bigExplosion3->property = property;
 }
 
 
 //*****************************
 //destructors
 //*****************************
-static void __finalize_BigExplosion(BigExplosion* bigExplosion){
+static void __finalize_BigExplosion3(BigExplosion3* bigExplosion3){
     //善后事宜
 }

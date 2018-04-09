@@ -31,7 +31,7 @@ void cp_virtual_draw(void* obj){
         case 'B':
             bullet_draw((Bullet *)obj);
             break;
-        case 'E':
+        case '3':
             bigExplosion_draw((BigExplosion *)obj);
             break;
     }
@@ -69,7 +69,7 @@ void cp_virtual_delete(void* obj){
         case 'B':
             bullet_delete((Bullet *)obj);
             break;
-        case 'E':
+        case '3':
             bigExplosion_delete((BigExplosion *)obj);
             break;
     }
@@ -107,7 +107,7 @@ void cp_virtual_move(void* obj,int deltaX, int deltaY){
         case 'B':
             bullet_move((Bullet *)obj, deltaX, deltaY);
             break;
-        case 'E':
+        case '3':
             bigExplosion_move((BigExplosion *)obj, deltaX, deltaY);
             break;
     }

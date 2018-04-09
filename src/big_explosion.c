@@ -50,9 +50,9 @@ void bigExplosion_draw(BigExplosion* bigExplosion){
     int y = temp_rect.y;
     printf("%d %d %d %d %d\n", pic_width, width, height, y, x);
 
-    for(int i = 0; i < height; i++)
+    for(int i = 0; i <= height; i++)
     {
-        for(int j = 0; j < width; j++)
+        for(int j = 0; j <= width; j++)
         {
             Color temp_color;
             temp_color.b = bmpHead -> pixels[((i + y) * pic_width + (j + x)) * 3];

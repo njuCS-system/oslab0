@@ -1,4 +1,4 @@
-#include "bigExplosion.h"
+#include "big_explosion.h"
 
 
 BigExplosion_factory bigExplosion_factory;

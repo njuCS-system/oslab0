@@ -79,7 +79,7 @@ void planeU_draw(PlaneU* planeU){
 }
 
 
-void planeU_move(PlaneU* planeU,int deltaU, int deltaY){
+void planeU_move(PlaneU* planeU,int deltaX, int deltaY){
     planeU->property.x += deltaX;
     planeU->property.y += deltaY;
 }

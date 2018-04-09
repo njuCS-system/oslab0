@@ -48,6 +48,7 @@ void bigExplosion_draw(BigExplosion* bigExplosion){
     unsigned height = temp_rect.h;
     int x = temp_rect.x;
     int y = temp_rect.y;
+    printf("%d %d %d\n", pic_width, width, height);
 
     for(int i = 0; i < height; i++)
     {

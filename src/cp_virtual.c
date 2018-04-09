@@ -23,10 +23,10 @@ void cp_virtual_draw(void* obj){
             planeX_draw((PlaneX *)obj);
             break;
         case 'U':
-            planeX_draw((PlaneX *)obj);
+            planeU_draw((PlaneU *)obj);
             break;
         case 'T':
-            planeX_draw((PlaneX *)obj);
+            planeT_draw((PlaneT *)obj);
             break;
         case 'B':
             bullet_draw((Bullet *)obj);
@@ -58,10 +58,10 @@ void cp_virtual_delete(void* obj){
             planeX_delete((PlaneX *)obj);
             break;
         case 'U':
-            planeX_delete((PlaneX *)obj);
+            planeU_delete((PlaneU *)obj);
             break;
         case 'T':
-            planeX_delete((PlaneX *)obj);
+            planeT_delete((PlaneT *)obj);
             break;
         case 'B':
             bullet_delete((Bullet *)obj);
@@ -93,10 +93,10 @@ void cp_virtual_move(void* obj,int deltaX, int deltaY){
             planeX_move((PlaneX *)obj, deltaX, deltaY);
             break;
         case 'U':
-            planeX_move((PlaneX *)obj, deltaX, deltaY);
+            planeU_move((PlaneU *)obj, deltaX, deltaY);
             break;
         case 'T':
-            planeX_move((PlaneX *)obj, deltaX, deltaY);
+            planeT_move((PlaneT *)obj, deltaX, deltaY);
             break;
         case 'B':
             bullet_move((Bullet *)obj, deltaX, deltaY);

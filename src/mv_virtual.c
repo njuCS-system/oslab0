@@ -14,10 +14,10 @@ void mv_virtual_automove(void* obj){
             planeX_automove((PlaneX*)obj);
             break;
         case 'U':
-            planeX_automove((PlaneX*)obj);
+            planeU_automove((PlaneU*)obj);
             break;
         case 'T':
-            planeX_automove((PlaneX*)obj);
+            planeT_automove((PlaneT*)obj);
             break;
         case 'B':
             bullet_automove((Bullet*)obj);

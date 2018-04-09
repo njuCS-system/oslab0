@@ -17,7 +17,7 @@ PlaneT* build_planeT(PlaneTProperty property){
     //mem_alloc 
     PlaneT* planeT = planeT_allocate();
     //constructor
-    if(planeT!=NTLL){
+    if(planeT!=NULL){
         __init__PlaneT(planeT,property);
 
     }else{
@@ -102,17 +102,17 @@ static PlaneT* planeT_allocate(){
         planeT_factory.idx%=PLANET_MAX;
 
         if(!planeT->info.valid){//遇到有效的则返回
-            planeT->info.valid=TRTE;
+            planeT->info.valid=TRUE;
             return planeT;
         }
     }
-    return NTLL;
+    return NULL;
 }
 
 static void __init__PlaneT(PlaneT* planeT,PlaneTProperty property){
     //初始化逻辑
     planeT->info.type = 'T';
-    planeT->info.valid = TRTE;
+    planeT->info.valid = TRUE;
     planeT->property = property;
 }
 

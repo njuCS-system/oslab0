@@ -40,7 +40,7 @@ void planeX_delete(PlaneX* planeX){
 void planeX_draw(PlaneX* planeX){
     _FBCtlReg ctl;
 
-    BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_planex + BITMAPFILEHEADER_LENGTH);
+    BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_planeX + BITMAPFILEHEADER_LENGTH);
     printf("%d\n", sizeof(BITMAPFILEHEADER));
     long width = bmpHead -> biWidth;
     long height = bmpHead -> biHeight;
@@ -66,8 +66,8 @@ void planeX_draw(PlaneX* planeX){
         }
     }
     
-    ctl.x = planex->property.x;
-    ctl.y = planex->property.y;
+    ctl.x = planeX->property.x;
+    ctl.y = planeX->property.y;
     ctl.pixels = color_buf;
     ctl.w = width;
     ctl.h = height;

@@ -41,10 +41,8 @@ void planeI_draw(PlaneI* planeI){
     _FBCtlReg ctl;
 
     BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_planeI + BITMAPFILEHEADER_LENGTH);
-    printf("%d\n", sizeof(BITMAPFILEHEADER));
     long width = bmpHead -> biWidth;
     long height = bmpHead -> biHeight;
-    printf("%d %d\n", width, height);
 
     for(int i = 0; i < height; i++)
     {
@@ -152,11 +150,4 @@ static void __init__PlaneI(PlaneI* planeI,PlaneIProperty property){
 //*****************************
 static void __finalize_PlaneI(PlaneI* planeI){
     //善后事宜
-    rect_delete(planeI->large_wing);
-    rect_delete(planeI->small_wing);
-    rect_delete(planeI->empennage_left);
-    rect_delete(planeI->empennage_right);
-    rect_delete(planeI->body);
-    rect_delete(planeI->jet_left);
-    rect_delete(planeI->jet_right);
 }

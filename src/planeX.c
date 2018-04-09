@@ -41,10 +41,8 @@ void planeX_draw(PlaneX* planeX){
     _FBCtlReg ctl;
 
     BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_planeX + BITMAPFILEHEADER_LENGTH);
-    printf("%d\n", sizeof(BITMAPFILEHEADER));
     long width = bmpHead -> biWidth;
     long height = bmpHead -> biHeight;
-    printf("%d %d\n", width, height);
 
     for(int i = 0; i < height; i++)
     {
@@ -124,11 +122,4 @@ static void __init__PlaneX(PlaneX* planeX,PlaneXProperty property){
 //*****************************
 static void __finalize_PlaneX(PlaneX* planeX){
     //善后事宜
-    rect_delete(planeX->large_wing);
-    rect_delete(planeX->small_wing);
-    rect_delete(planeX->empennage_left);
-    rect_delete(planeX->empennage_right);
-    rect_delete(planeX->body);
-    rect_delete(planeX->jet_left);
-    rect_delete(planeX->jet_right);
 }

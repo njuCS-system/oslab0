@@ -243,6 +243,28 @@ void try_planeX()
   }
 }
 
+void try_planeU()
+{
+  PlaneIProperty u;
+  x.x = 100;
+  x.y = 10;
+  x.vx = 40;
+  x.vy = 20;
+  x.size = 2;
+  
+  PlaneU *planeU = build_planeU(u);
+  if(planeU != NULL)
+  {
+    /*cp_virtual_draw(planeU);
+    for(int i = 0; i < 5; i++)
+    {
+      mv_virtual_automove(planeU);
+      cp_virtual_draw(planeU);
+    }*/
+    screen_add(planeU);
+  }
+}
+
 void try_bullet()
 {
   BulletProperty b;
@@ -273,6 +295,7 @@ void try(){
   //try_line();
   try_planeI();
   try_planeX();
+  try_planeU();
   //try_bullet();
   screen_draw();
 }

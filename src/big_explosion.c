@@ -41,7 +41,7 @@ void bigExplosion_draw(BigExplosion* bigExplosion){
     _FBCtlReg ctl;
 
     BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_objset + BITMAPFILEHEADER_LENGTH);
-    RECT temp_rect = res_idc[ID_BIGBOMB_3];
+    RECT temp_rect = res_idc[ID_BIGBOMB_3].rect;
     long pic_width = bmpHead -> biWidth;
     //long pic_height = bmpHead -> biHeight;
     unsigned width = temp_rect.w;

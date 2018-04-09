@@ -296,7 +296,7 @@ void try_bigExplosion()
   b.vy = 20;
   b.size = 2;
   
-  BigExplosion *bigExplosion = build_planeT(b);
+  BigExplosion *bigExplosion = build_bigExplosion(b);
   if(bigExplosion != NULL)
   {
     /*cp_virtual_draw(planeT);

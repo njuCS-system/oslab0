@@ -6,5 +6,9 @@ void kb_virtual_answer(void* obj, int keycode){
         return;
     }
     
-
+    switch(info.type)
+    {
+        case 'P':
+            player1_answer((Player1 *)obj, keycode);
+    }
 }

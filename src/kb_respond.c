@@ -69,6 +69,7 @@ static void __action(KbRespond* s){
             kb_virtual_answer(s->obj[i], reg.keycode);
     }
 }
+
 static void __clear(KbRespond* s){
     for(int i=0;i < OBJ_MAX;i++){
         s->obj[i] = NULL;

@@ -16,7 +16,7 @@ static _Device *getdev(_Device **ptr, uint32_t id) {
   return NULL;
 }
 
-void video_draw(_FBCtlReg clt)
+void video_draw(_FBCtlReg ctl)
 {
     _Device *dev = getdev(&video_dev, _DEV_VIDEO);
     dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));

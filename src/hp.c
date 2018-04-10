@@ -70,7 +70,7 @@ void hp_move(Hp* hp,int deltaX, int deltaY){
 
 void hp_decrease(Hp* hp, int hp_lost)
 {
-    //printf("%d\n", hp_lost);
+    printf("%d %d\n", hp_lost, hp->hp_left);
     if(hp->hp_left >= hp_lost)
     {
         hp->hp_left -= hp_lost;

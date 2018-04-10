@@ -298,7 +298,7 @@ void try_player1()
   t.size = 2;
   
   Player1 *player1 = build_player1(t);
-  if(planeT != NULL)
+  if(player1 != NULL)
   {
     /*cp_virtual_draw(player1);
     for(int i = 0; i < 5; i++)

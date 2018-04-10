@@ -7,7 +7,7 @@ void battle_virtual_hurt(void* obj, int hp_lost){
     }
     
     switch(info.type){
-        case "P":
+        case 'P':
             player1_hurt((Player1 *)obj, hp_lost);
     }
 }

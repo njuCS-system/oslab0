@@ -392,11 +392,11 @@ void try(){
   //try_bigExplosion3();
   //try_hp();
   
-  while(1)
+  /*while(1)
   {
     kbRespond_action();
     screen_draw();
-  }
+  }*/
   
 
   /*_KbdReg reg = read_key();

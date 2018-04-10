@@ -122,7 +122,7 @@ static void __init__PlaneT(PlaneT* planeT,PlaneTProperty property){
 
     int x = planeT->property.x;
     int y = planeT->property.y;
-    HpProperty h = {x, y, 2, planeT->property.hp_max, TRUE};
+    HpProperty h = {x, y, 2, planeT->property.hp_max, FALSE};
     planeT->hp = build_hp(h);
 }
 

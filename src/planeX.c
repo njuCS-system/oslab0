@@ -122,7 +122,7 @@ static void __init__PlaneX(PlaneX* planeX,PlaneXProperty property){
 
     int x = planeX->property.x;
     int y = planeX->property.y;
-    HpProperty h = {x, y, 2, planeX->property.hp_max, TRUE};
+    HpProperty h = {x, y, 2, planeX->property.hp_max, FALSE};
     planeX->hp = build_hp(h);
 }
 

@@ -150,7 +150,7 @@ static void __init__PlaneI(PlaneI* planeI,PlaneIProperty property){
 
     int x = planeI->property.x;
     int y = planeI->property.y;
-    HpProperty h = {x, y, 2, planeI->property.hp_max, TRUE};
+    HpProperty h = {x, y, 2, planeI->property.hp_max, FALSE};
     planeI->hp = build_hp(h);
 }
 

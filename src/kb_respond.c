@@ -13,7 +13,7 @@ static void __remove(KbRespond* s,void* object);
 
 void kbRespond_init()
 {
-    memset(kbRespond.obj, 0 ,sizeof(void *) * OBJ_MAX);
+    memset(kbRespond.obj, 0 ,sizeof(void *) * KB_MAX);
     kbRespond.index = 0;
     __clear(&kbRespond);
 }
@@ -44,9 +44,9 @@ static void __add(KbRespond* s,void* object){
     int now_index = s->index - 1;
     if(now_index < 0)
     {
-        now_index += OBJ_MAX;
+        now_index += KB_MAX;
     }
-    for(; s->obj[s->index] != NULL && s->index != now_index; s->index = (s->index + 1)%OBJ_MAX);    
+    for(; s->obj[s->index] != NULL && s->index != now_index; s->index = (s->index + 1)%KB_MAX);    
     if(s->index == now_index)
     {
         printf("[ERROR] KbRespond buffer overflow!\n");
@@ -64,14 +64,14 @@ static void __action(KbRespond* s){
     {
         return;
     }
-    for(int i = 0;i < OBJ_MAX;i++){
+    for(int i = 0;i < KB_MAX;i++){
         if(s->obj[i] != NULL)
             kb_virtual_answer(s->obj[i], reg.keycode);
     }
 }
 
 static void __clear(KbRespond* s){
-    for(int i=0;i < OBJ_MAX;i++){
+    for(int i=0;i < KB_MAX;i++){
         s->obj[i] = NULL;
     }
     s->index=0;
@@ -81,9 +81,9 @@ static void __clear(KbRespond* s){
 static void __remove(KbRespond* s, void *obj)
 {
     int index = 0;
-    for(; obj != s->obj[index] && index < OBJ_MAX; index++);
+    for(; obj != s->obj[index] && index < KB_MAX; index++);
     
-    if(index >= 0 && index < OBJ_MAX && s->obj[index] != NULL)
+    if(index >= 0 && index < KB_MAX && s->obj[index] != NULL)
     {
         s->obj[index] = NULL;
     }

@@ -369,7 +369,7 @@ void try_hp()
     for(int i = 0; i < 5; i++)
     {
       hp_decrease(hp, 10);
-      hp_move(hp, 20, 0);
+      hp_move(hp, 0, 20);
       hp_draw(hp);
     }
   }

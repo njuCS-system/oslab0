@@ -288,6 +288,28 @@ void try_planeT()
   }
 }
 
+void try_player1()
+{
+  Player1Property t;
+  t.x = 100;
+  t.y = 100;
+  t.vx = 40;
+  t.vy = 20;
+  t.size = 2;
+  
+  Player1 *player1 = build_player1(t);
+  if(planeT != NULL)
+  {
+    /*cp_virtual_draw(player1);
+    for(int i = 0; i < 5; i++)
+    {
+      mv_virtual_automove(player1);
+      cp_virtual_draw(player1);
+    }*/
+    screen_add(player1);
+  }
+}
+
 void try_bigExplosion3()
 {
   BigExplosion3Property b;
@@ -346,6 +368,6 @@ void try(){
   //try_bigExplosion3();
   //screen_draw();
 
-  _KbdReg reg = read_key();
-  printf("%d\n", reg.keycode);
+  /*_KbdReg reg = read_key();
+  printf("%d\n", reg.keycode);*/
 }

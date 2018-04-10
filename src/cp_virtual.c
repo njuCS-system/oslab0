@@ -34,6 +34,9 @@ void cp_virtual_draw(void* obj){
         case '3':
             bigExplosion3_draw((BigExplosion3 *)obj);
             break;
+        case 'P':
+            player1_draw((Player1 *)obj);
+            break;
     }
 
 }
@@ -72,6 +75,9 @@ void cp_virtual_delete(void* obj){
         case '3':
             bigExplosion3_delete((BigExplosion3 *)obj);
             break;
+        case 'P':
+            player1_delete((Player1 *)obj);
+            break;
     }
 }
 
@@ -109,6 +115,9 @@ void cp_virtual_move(void* obj,int deltaX, int deltaY){
             break;
         case '3':
             bigExplosion3_move((BigExplosion3 *)obj, deltaX, deltaY);
+            break;
+        case 'P':
+            player1_move((Player1 *)obj, deltaX, deltaY);
             break;
     }
 }

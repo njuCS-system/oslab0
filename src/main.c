@@ -294,7 +294,7 @@ void try_player1()
   t.x = 100;
   t.y = 100;
   t.size = 2;
-  t.hp_max = 10000000;
+  t.hp_max = 100;
   
   Player1 *player1 = build_player1(t);
   if(player1 != NULL)
@@ -392,29 +392,8 @@ void try(){
   //try_bigExplosion3();
   //try_hp();
   
-  Player1Property t;
-  t.x = 100;
-  t.y = 100;
-  t.size = 2;
-  t.hp_max = 10000;
-  
-  Player1 *player1 = build_player1(t);
-  if(player1 != NULL)
-  {
-    /*cp_virtual_draw(player1);
-    for(int i = 0; i < 5; i++)
-    {
-      mv_virtual_automove(player1);
-      cp_virtual_draw(player1);
-    }*/
-    //battle_virtual_hurt(player1, 10);
-    kbRespond_add(player1);
-    screen_add(player1);
-  }
-  
   while(1)
   {
-    battle_virtual_hurt(player1, 1);
     kbRespond_action();
     screen_draw();
   }

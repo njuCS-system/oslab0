@@ -393,7 +393,7 @@ void try(){
   //try_line();
   //try_planeI();
   //try_planeX();
-  try_planeU();
+  //try_planeU();
   //try_planeT();
   //try_player1();
   //try_bullet();

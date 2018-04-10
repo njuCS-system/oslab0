@@ -208,6 +208,7 @@ void try_planeI()
   i.vx = 40;
   i.vy = 20;
   i.size = 2;
+  i.hp_max = 100;
   
   PlaneI *planeI = build_planeI(i);
   if(planeI != NULL)
@@ -218,6 +219,7 @@ void try_planeI()
       mv_virtual_automove(planeI);
       cp_virtual_draw(planeI);
     }*/
+    battle_virtual_hurt(planeI, 10);
     screen_add(planeI);
   }
 }
@@ -230,6 +232,7 @@ void try_planeX()
   x.vx = 40;
   x.vy = 20;
   x.size = 2;
+  x.hp_max = 100;
   
   PlaneX *planeX = build_planeX(x);
   if(planeX != NULL)
@@ -240,6 +243,7 @@ void try_planeX()
       mv_virtual_automove(planeX);
       cp_virtual_draw(planeX);
     }*/
+    battle_virtual_hurt(planeX, 20);
     screen_add(planeX);
   }
 }
@@ -252,6 +256,7 @@ void try_planeU()
   u.vx = 40;
   u.vy = 20;
   u.size = 2;
+  u.hp_max = 100;
   
   PlaneU *planeU = build_planeU(u);
   if(planeU != NULL)
@@ -262,6 +267,7 @@ void try_planeU()
       mv_virtual_automove(planeU);
       cp_virtual_draw(planeU);
     }*/
+    battle_virtual_hurt(planeU, 20);
     screen_add(planeU);
   }
 }
@@ -274,6 +280,7 @@ void try_planeT()
   t.vx = 40;
   t.vy = 20;
   t.size = 2;
+  t.hp_max = 100;
   
   PlaneT *planeT = build_planeT(t);
   if(planeT != NULL)
@@ -284,6 +291,7 @@ void try_planeT()
       mv_virtual_automove(planeT);
       cp_virtual_draw(planeT);
     }*/
+    battle_virtual_hurt(planeT, 50);
     screen_add(planeT);
   }
 }
@@ -383,10 +391,10 @@ void try(){
   //try_rect();
   //try_circle();
   //try_line();
-  //try_planeI();
-  //try_planeX();
-  //try_planeU();
-  //try_planeT();
+  try_planeI();
+  try_planeX();
+  try_planeU();
+  try_planeT();
   //try_player1();
   //try_bullet();
   //try_bigExplosion3();

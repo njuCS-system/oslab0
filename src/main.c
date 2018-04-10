@@ -362,7 +362,7 @@ void try_hp()
   h.is_player = false;
   h.hp_max = 100;
 
-  Hp *hp = bulid_hp(h);
+  Hp *hp = build_hp(h);
   if(hp != NULL)
   {
     hp_draw(hp);

@@ -74,7 +74,7 @@ void planeX_draw(PlaneX* planeX){
     video_draw(ctl);
     draw_sync();
 
-    hp_draw(planeU->hp);
+    hp_draw(planeX->hp);
     fb_add(&ctl);
 }
 

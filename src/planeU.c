@@ -93,9 +93,7 @@ void planeU_automove(PlaneU* planeU){
 
 void planeU_hurt(PlaneU *planeU, int hp_lost)
 {
-    printf("%d\n", planeU->hp->hp_left);
     hp_decrease(planeU->hp, hp_lost);
-    printf("%d\n", planeU->hp->hp_left);
 }
 
 //****************************************************************

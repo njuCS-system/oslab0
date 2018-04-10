@@ -82,9 +82,9 @@ static void __remove(KbRespond* s, void *obj)
     int index = 0;
     for(; obj != s->obj[index] && index < OBJ_MAX; index++);
     
-    if(index >= 0 && index < OBJ_MAX && s->obj[i] != NULL)
+    if(index >= 0 && index < OBJ_MAX && s->obj[index] != NULL)
     {
-        s->obj[i] = NULL;
+        s->obj[index] = NULL;
     }
     else 
     {

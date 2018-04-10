@@ -78,8 +78,7 @@ void bigExplosion3_draw(BigExplosion3* bigExplosion3){
     ctl.h = height;
     ctl.sync = 0;
 
-    _Device *dev = getdev(&video_dev, _DEV_VIDEO);
-    dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
+    video_draw(ctl);
     draw_sync();
 
     fb_add(&ctl);

@@ -49,7 +49,7 @@ void hp_draw(Hp* hp)
     }
     else
     {
-        x = hp->property.y - offset;
+        y = hp->property.y - offset;
     }
     //                x    y                  w                                   h     s_color          f_color  stroke is_fill
     RectProperty p0 = {x, y, (30 * hp->hp_left) / hp->property.hp_max * size, 4 * size, {0, 255, 0, 0}, {0, 255, 0, 0}, 0, TRUE};

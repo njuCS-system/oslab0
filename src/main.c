@@ -267,9 +267,7 @@ void try_planeU()
       mv_virtual_automove(planeU);
       cp_virtual_draw(planeU);
     }*/
-    printf("hello1\n");
     battle_virtual_hurt(planeU, 50);
-    printf("hello2\n");
     screen_add(planeU);
   }
 }

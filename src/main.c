@@ -1,6 +1,7 @@
 #include "lib.h"
 #include "component.h"
 #include "screen.h"
+#include "kb_util.h"
 
 extern Screen screen;
 
@@ -342,6 +343,9 @@ void try(){
   //try_planeU();
   //try_planeT();
   //try_bullet();
-  try_bigExplosion3();
-  screen_draw();
+  //try_bigExplosion3();
+  //screen_draw();
+
+  _KbdReg reg = read_key();
+  printf("%d\n", reg.keycode);
 }

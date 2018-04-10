@@ -388,7 +388,7 @@ void try(){
   //try_player1();
   //try_bullet();
   //try_bigExplosion3();
-  try_hp();
+  //try_hp();
   /*while(1)
   {
     kbRespond_action();

@@ -38,6 +38,8 @@ void player1_delete(Player1* player1){
 }
 
 void player1_draw(Player1* player1){
+    //              x  y size        hp_max          is_player
+    HpProperty h = {x, y, 2, player1->property.hp_max, TRUE};
     _FBCtlReg ctl;
 
     BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_player1 + BITMAPFILEHEADER_LENGTH);

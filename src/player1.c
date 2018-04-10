@@ -86,7 +86,7 @@ void player1_move(Player1* player1,int deltaX, int deltaY){
 
 void player1_answer(Player1 *player1, int keycode)
 {
-    swicth(keycode)
+    switch(keycode)
     {
         case 43: //A
             player1_move(player1, -PLAYER1_SPEED, 0);

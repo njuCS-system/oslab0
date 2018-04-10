@@ -84,6 +84,25 @@ void player1_move(Player1* player1,int deltaX, int deltaY){
     player1->property.y += deltaY;
 }
 
+void player1_answer(Player1 *player1, int keycode)
+{
+    swicth(keycode)
+    {
+        case 43: //A
+            player1_move(player1, -PLAYER1_SPEED, 0);
+            break;
+        case 44: //S
+            player1_move(player1, 0, PLAYER1_SPEED);
+            break;
+        case 45: //D
+            player1_move(player1, PLAYER1_SPEED, 0);
+            break;
+        case 30: //W
+            player1_move(player1, 0, -PLAYER1_SPEED);
+            break;
+    }
+}
+
 //****************************************************************
 
 static Player1* player1_allocate(){

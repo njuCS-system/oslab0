@@ -1,7 +1,7 @@
 #include "lib.h"
 #include "component.h"
 #include "screen.h"
-#include "kb_util.h"
+#include "kb_respond.h"
 
 extern Screen screen;
 
@@ -304,6 +304,7 @@ void try_player1()
       mv_virtual_automove(player1);
       cp_virtual_draw(player1);
     }*/
+    kbRespond_add(player1);
     screen_add(player1);
   }
 }
@@ -365,7 +366,12 @@ void try(){
   try_player1();
   //try_bullet();
   //try_bigExplosion3();
-  screen_draw();
+  while(1)
+  {
+    kbRespond_action();
+    screen_draw();
+  }
+  
 
   /*_KbdReg reg = read_key();
   printf("%d\n", reg.keycode);*/

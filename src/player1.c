@@ -40,10 +40,6 @@ void player1_delete(Player1* player1){
 void player1_draw(Player1* player1){
     int x = player1->property.x;
     int y = player1->property.y;
-    
-    //              x  y size        hp_max          is_player
-    HpProperty h = {x, y, 2, player1->property.hp_max, TRUE};
-    Hp *hp = build_hp(h);
 
     _FBCtlReg ctl;
 
@@ -82,7 +78,7 @@ void player1_draw(Player1* player1){
     video_draw(ctl);
     draw_sync();
 
-    draw_hp(hp);
+    hp_draw(hp);
     fb_add(&ctl);
 }
 
@@ -111,6 +107,11 @@ void player1_answer(Player1 *player1, int keycode)
     }
 }
 
+void player1_hurt(Player1 *player1, int hp_lost)
+{
+    hp_decrease(player1->hp, hp_lost);
+}
+
 //****************************************************************
 
 static Player1* player1_allocate(){
@@ -134,6 +135,12 @@ static void __init__Player1(Player1* player1,Player1Property property){
     player1->info.type = 'P';
     player1->info.valid = TRUE;
     player1->property = property;
+    int x = player1->property.x;
+    int y = player1->property.y;
+    
+    //              x  y size        hp_max          is_player
+    HpProperty h = {x, y, 2, player1->property.hp_max, TRUE};
+    player->hp = build_hp(h);
 }
 
 
@@ -142,4 +149,5 @@ static void __init__Player1(Player1* player1,Player1Property property){
 //*****************************
 static void __finalize_Player1(Player1* player1){
     //善后事宜
+    hp_delete(player1->hp);
 }

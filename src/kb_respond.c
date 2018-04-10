@@ -46,7 +46,7 @@ static void __add(KbRespond* s,void* object){
     {
         now_index += OBJ_MAX;
     }
-    for(; s->obj[i] != NULL && s->index != now_index; s->index = (s->index + 1)%OBJ_MAX);    
+    for(; s->obj[s->index] != NULL && s->index != now_index; s->index = (s->index + 1)%OBJ_MAX);    
     if(s->index == now_index)
     {
         printf("[ERROR] KbRespond buffer overflow!\n");

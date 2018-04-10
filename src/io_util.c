@@ -25,13 +25,11 @@ uint32_t uptime() {
   return uptime.lo;
 }
 
-int read_key() {
+_KbdReg read_key() {
   _Device *dev = getdev(&input_dev, _DEV_INPUT);
   _KbdReg key;
   dev->read(_DEVREG_INPUT_KBD, &key, sizeof(_KbdReg));
-  int ret = key.keycode;
-  if (key.keydown) ret |= 0x8000;
-  return ret;
+  return key;
 }
 
 void video_draw(_FBCtlReg ctl)

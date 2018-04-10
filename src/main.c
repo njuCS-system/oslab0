@@ -293,8 +293,6 @@ void try_player1()
   Player1Property t;
   t.x = 100;
   t.y = 100;
-  t.vx = 40;
-  t.vy = 20;
   t.size = 2;
   
   Player1 *player1 = build_player1(t);

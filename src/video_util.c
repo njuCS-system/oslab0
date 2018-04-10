@@ -24,7 +24,7 @@ void video_draw(_FBCtlReg ctl)
 
 void draw_sync() {
   _Device *dev = getdev(&video_dev, _DEV_VIDEO);
-  _FBCtlReg clt;
+  _FBCtlReg ctl;
   ctl.pixels = NULL;
   ctl.x = ctl.y = ctl.w = ctl.h = 0;
   ctl.sync = 1;

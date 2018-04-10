@@ -38,16 +38,14 @@ void bullet_delete(Bullet* bullet){
 }
 
 void bullet_draw(Bullet* bullet){
-    _FBCtlReg ctl;
     int x = bullet->property.x;
     int y = bullet->property.y;
     int size = bullet->property.size;
     
     CircleProperty p = {x, y, 3 * size, {31, 145, 249, 0}};
-    bullet->body = build_circle(p);
-    circle_draw(bullet->body);
-
-    fb_add(&ctl);
+    Circle *body = build_circle(p);
+    circle_draw(body);
+    circle_delete(body);
 }
 
 
@@ -94,5 +92,4 @@ static void __init__Bullet(Bullet* bullet,BulletProperty property){
 //*****************************
 static void __finalize_Bullet(Bullet* bullet){
     //善后事宜
-    circle_delete(bullet->body);
 }

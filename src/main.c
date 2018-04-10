@@ -353,6 +353,28 @@ void try_bullet()
   }
 }
 
+void try_hp()
+{
+  HpProperty h;
+  h.x = 100;
+  h.y = 100;
+  h.size = 2;
+  h.is_player = false;
+  h.hp_max = 100;
+
+  Hp *hp = bulid_hp(h);
+  if(hp != NULL)
+  {
+    hp_draw(hp);
+    for(int i = 0; i < 5; i++)
+    {
+      hp_decrease(hp, 10);
+      hp_move(hp, 20, 0);
+      hp_draw(hp);
+    }
+  }
+}
+
 void try(){
   screen_init();
   
@@ -363,14 +385,15 @@ void try(){
   //try_planeX();
   //try_planeU();
   //try_planeT();
-  try_player1();
+  //try_player1();
   //try_bullet();
   //try_bigExplosion3();
-  while(1)
+  try_hp();
+  /*while(1)
   {
     kbRespond_action();
     screen_draw();
-  }
+  }*/
   
 
   /*_KbdReg reg = read_key();

@@ -294,7 +294,7 @@ void try_player1()
   t.x = 100;
   t.y = 100;
   t.size = 2;
-  t.hp_max = 100;
+  t.hp_max = 10000000;
   
   Player1 *player1 = build_player1(t);
   if(player1 != NULL)
@@ -305,7 +305,7 @@ void try_player1()
       mv_virtual_automove(player1);
       cp_virtual_draw(player1);
     }*/
-    battle_virtual_hurt(player1, 10);
+    //battle_virtual_hurt(player1, 10);
     kbRespond_add(player1);
     screen_add(player1);
   }
@@ -393,6 +393,7 @@ void try(){
   //try_hp();
   while(1)
   {
+    battle_virtual_hurt(player1, 1);
     kbRespond_action();
     screen_draw();
   }

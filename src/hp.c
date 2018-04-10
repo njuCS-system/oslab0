@@ -41,15 +41,15 @@ void hp_draw(Hp* hp)
 {
     const int offset = 10;
     int size = hp->property.size;
-    int y = hp->property.y;
-    int x;
+    int x = hp->property.x;
+    int y;
     if(hp->property.is_player)
     {
-        x = hp->property.x + PLANE_HEIGHT + offset;
+        y = hp->property.y + PLANE_HEIGHT + offset;
     }
     else
     {
-        x = hp->property.x - offset;
+        x = hp->property.y - offset;
     }
     //                x    y                  w                                   h     s_color          f_color  stroke is_fill
     RectProperty p0 = {x, y, (30 * hp->hp_left) / hp->property.hp_max * size, 4 * size, {0, 255, 0, 0}, {0, 255, 0, 0}, 0, TRUE};

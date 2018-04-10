@@ -86,6 +86,7 @@ void player1_draw(Player1* player1){
 void player1_move(Player1* player1,int deltaX, int deltaY){
     player1->property.x += deltaX;
     player1->property.y += deltaY;
+    hp_move(plyaer1->hp, deltaX, deltaY);
 }
 
 void player1_answer(Player1 *player1, int keycode)

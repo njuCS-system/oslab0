@@ -396,7 +396,7 @@ void try(){
   t.x = 100;
   t.y = 100;
   t.size = 2;
-  t.hp_max = 10000000;
+  t.hp_max = 1000000;
   
   Player1 *player1 = build_player1(t);
   if(player1 != NULL)

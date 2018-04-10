@@ -40,6 +40,7 @@ void hp_delete(Hp* hp){
 void hp_draw(Hp* hp)
 {
     const int offset = 10;
+    int size = hp->property.size;
     int y = hp->property.y;
     int x;
     if(hp->property.is_player)

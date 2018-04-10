@@ -52,7 +52,7 @@ void hp_draw(Hp* hp)
         x = hp->property.x - offset;
     }
     //                x    y                  w                                   h     s_color          f_color  stroke is_fill
-    RectProperty p0 = {x, y, 30 * (hp->hp_left / hp->property.hp_max) * size, 4 * size, {0, 255, 0, 0}, {0, 255, 0, 0}, 0, TRUE};
+    RectProperty p0 = {x, y, (30 * hp->hp_left) / hp->property.hp_max * size, 4 * size, {0, 255, 0, 0}, {0, 255, 0, 0}, 0, TRUE};
     Rect *left = build_rect(p0);
     RectProperty p1 = {x, y, 30 * size, 4 * size, {0, 255, 0, 0}, {0, 255, 0, 0}, 1, FALSE};
     Rect *lost = build_rect(p1);
@@ -71,7 +71,6 @@ void hp_move(Hp* hp,int deltaX, int deltaY){
 void hp_decrease(Hp* hp, int hp_lost)
 {
     hp->hp_left -= hp_lost;
-    printf("%d\n", hp->hp_left);
 }
 
 

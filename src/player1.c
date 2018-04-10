@@ -38,8 +38,13 @@ void player1_delete(Player1* player1){
 }
 
 void player1_draw(Player1* player1){
+    int x = player1->property.x;
+    int y = player1->property.y;
+    
     //              x  y size        hp_max          is_player
     HpProperty h = {x, y, 2, player1->property.hp_max, TRUE};
+    Hp *hp = build_hp(h);
+
     _FBCtlReg ctl;
 
     BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_player1 + BITMAPFILEHEADER_LENGTH);
@@ -66,8 +71,8 @@ void player1_draw(Player1* player1){
         }
     }
     
-    ctl.x = player1->property.x;
-    ctl.y = player1->property.y;
+    ctl.x = x;
+    ctl.y = y;
     ctl.pixels = color_buf;
     ctl.w = width;
     ctl.h = height;
@@ -77,6 +82,7 @@ void player1_draw(Player1* player1){
     video_draw(ctl);
     draw_sync();
 
+    draw_hp(hp);
     fb_add(&ctl);
 }
 

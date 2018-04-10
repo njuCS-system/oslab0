@@ -74,6 +74,7 @@ void planeU_draw(PlaneU* planeU){
     video_draw(ctl);
     draw_sync();
 
+    hp_draw(planeU->hp);
     fb_add(&ctl);
 }
 
@@ -81,14 +82,19 @@ void planeU_draw(PlaneU* planeU){
 void planeU_move(PlaneU* planeU,int deltaX, int deltaY){
     planeU->property.x += deltaX;
     planeU->property.y += deltaY;
+    hp_move(planeU->hp, deltaX, deltaY);
 }
 
 void planeU_automove(PlaneU* planeU){
     planeU->property.x += planeU->property.vx;
     planeU->property.y += planeU->property.vy;
+    hp_move(planeU->hp, planeU->property.vx, planeU->property.vy);
 }
 
-
+void planeU_hurt(PlaneU *planeU, int hp_lost)
+{
+    hp_decrease(planeU->hp, hp_lost);
+}
 
 //****************************************************************
 
@@ -113,6 +119,11 @@ static void __init__PlaneU(PlaneU* planeU,PlaneUProperty property){
     planeU->info.type = 'U';
     planeU->info.valid = TRUE;
     planeU->property = property;
+
+    int x = planeU->property.x;
+    int y = planeU->property.y;
+    HpProperty h = {x, y, 2, planeU->property.hp_max, TRUE};
+    planeU->hp = build_hp(h);
 }
 
 
@@ -121,4 +132,5 @@ static void __init__PlaneU(PlaneU* planeU,PlaneUProperty property){
 //*****************************
 static void __finalize_PlaneU(PlaneU* planeU){
     //善后事宜
+    hp_delete(planeU->hp);
 }

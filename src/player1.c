@@ -136,9 +136,9 @@ static void __init__Player1(Player1* player1,Player1Property property){
     player1->info.type = 'P';
     player1->info.valid = TRUE;
     player1->property = property;
+    
     int x = player1->property.x;
     int y = player1->property.y;
-    
     //              x  y size        hp_max          is_player
     HpProperty h = {x, y, 2, player1->property.hp_max, TRUE};
     player1->hp = build_hp(h);

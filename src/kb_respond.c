@@ -30,7 +30,7 @@ void kbRespond_clear(){
 
 
 
-void kbRespond_draw(){
+void kbRespond_action(){
     __action(&kbRespond);
 }
 

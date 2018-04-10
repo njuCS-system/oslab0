@@ -299,8 +299,8 @@ void try_planeT()
 void try_player1()
 {
   Player1Property t;
-  t.x = 100;
-  t.y = 100;
+  t.x = 150;
+  t.y = 150;
   t.size = 2;
   t.hp_max = 100;
   
@@ -313,7 +313,7 @@ void try_player1()
       mv_virtual_automove(player1);
       cp_virtual_draw(player1);
     }*/
-    //battle_virtual_hurt(player1, 10);
+    battle_virtual_hurt(player1, 50);
     kbRespond_add(player1);
     screen_add(player1);
   }
@@ -395,7 +395,7 @@ void try(){
   try_planeX();
   try_planeU();
   try_planeT();
-  //try_player1();
+  try_player1();
   //try_bullet();
   //try_bigExplosion3();
   //try_hp();

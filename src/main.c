@@ -267,7 +267,7 @@ void try_planeU()
       mv_virtual_automove(planeU);
       cp_virtual_draw(planeU);
     }*/
-    battle_virtual_hurt(planeU, 20);
+    battle_virtual_hurt(planeU, 50);
     screen_add(planeU);
   }
 }

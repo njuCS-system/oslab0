@@ -267,7 +267,7 @@ void try_planeU()
       mv_virtual_automove(planeU);
       cp_virtual_draw(planeU);
     }*/
-    battle_virtual_hurt(planeU, 50);
+    battle_virtual_hurt(planeU, 90);
     screen_add(planeU);
   }
 }
@@ -391,11 +391,11 @@ void try(){
   //try_rect();
   //try_circle();
   //try_line();
-  //try_planeI();
-  //try_planeX();
+  try_planeI();
+  try_planeX();
   try_planeU();
-  //try_planeT();
-  //try_player1();
+  try_planeT();
+  try_player1();
   //try_bullet();
   //try_bigExplosion3();
   //try_hp();

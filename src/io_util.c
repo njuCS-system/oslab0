@@ -1,6 +1,8 @@
-#include "video_util.h"
+#include "io_util.h"
 
+static _Device *input_dev;
 static _Device *video_dev;
+static _Device *timer_dev;
 
 static _Device *getdev(_Device **ptr, uint32_t id) {
   if (*ptr) return *ptr;
@@ -14,6 +16,22 @@ static _Device *getdev(_Device **ptr, uint32_t id) {
   }
   //assert(0);
   return NULL;
+}
+
+uint32_t uptime() {
+  _UptimeReg uptime;
+  _Device *dev = getdev(&timer_dev, _DEV_TIMER);
+  dev->read(_DEVREG_TIMER_UPTIME, &uptime, sizeof(uptime));
+  return uptime.lo;
+}
+
+int read_key() {
+  _Device *dev = getdev(&input_dev, _DEV_INPUT);
+  _KbdReg key;
+  dev->read(_DEVREG_INPUT_KBD, &key, sizeof(_KbdReg));
+  int ret = key.keycode;
+  if (key.keydown) ret |= 0x8000;
+  return ret;
 }
 
 void video_draw(_FBCtlReg ctl)

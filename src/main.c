@@ -395,16 +395,16 @@ void try(){
   //try_planeX();
   //try_planeU();
   //try_planeT();
-  //try_player1();
+  try_player1();
   //try_bullet();
   //try_bigExplosion3();
   //try_hp();
   
-  /*while(1)
+  while(1)
   {
     kbRespond_action();
     screen_draw();
-  }*/
+  }
   
   //screen_draw();
 

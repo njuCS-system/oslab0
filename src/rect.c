@@ -72,9 +72,9 @@ void rect_draw(Rect* rect){
     ctl.h = rect->property.height;
     ctl.sync = 0;
     
-    _Device *dev = getdev(&video_dev, _DEV_VIDEO);
-    dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(_FBCtlReg));
+    video_draw(ctl);
     draw_sync();
+    
     fb_add(&ctl);
 }
 

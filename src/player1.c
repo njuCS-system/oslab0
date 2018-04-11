@@ -74,6 +74,7 @@ void player1_draw(Player1* player1){
     ctl.h = height;
     ctl.sync = 0;
 
+    printf("%d", ctl.pixels[0]);
     
     // video_draw(ctl);
     // draw_sync();

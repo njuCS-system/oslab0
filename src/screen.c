@@ -72,6 +72,7 @@ static void __draw(Screen* s){
             //printf("%d, %c\n", i, ((Info*)&s->obj[i])->type);
         }
     }
+    while(1);
     fb_sync();
 }
 static void __clear(Screen* s){

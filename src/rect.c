@@ -38,6 +38,7 @@ void rect_delete(Rect* rect){
 }
 
 void rect_draw(Rect* rect){
+    printf("rect_draw\n");
     _FBCtlReg ctl;
     unsigned s_color = color_to_int(rect->property.s_color);
     unsigned f_color = color_to_int(rect->property.f_color);

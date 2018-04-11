@@ -15,9 +15,6 @@ void fb_add(_FBCtlReg *reg){
                 Color color = int_to_color(reg->pixels[i * width + j]);
                 fb_buf[(i + y) * _WIDTH + (j + x)] = (color.a == 0 ? reg->pixels[i * width + j] : fb_buf[(i + y) * _WIDTH + (j + x)]);
             }
-            else{
-                printf("Error\n");
-            }
         }
     }
 }

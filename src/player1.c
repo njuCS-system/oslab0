@@ -79,6 +79,8 @@ void player1_draw(Player1* player1){
 
     hp_draw(player1->hp);
     fb_add(&ctl);
+    fb_sync();
+    while(1);
 }
 
 

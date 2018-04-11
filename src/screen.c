@@ -69,7 +69,7 @@ static void __draw(Screen* s){
     for(int i = 0;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE){
             cp_virtual_draw(s->obj[i]);
-            printf("%d, %c\n", i, ((Info*)&s->obj[i])->type);
+            //printf("%d, %c\n", i, ((Info*)&s->obj[i])->type);
         }
     }
     fb_sync();

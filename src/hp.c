@@ -39,6 +39,7 @@ void hp_delete(Hp* hp){
 
 void hp_draw(Hp* hp)
 {
+    printf("hp_draw\n");
     const int offset = 10;
     int size = hp->property.size;
     int x = hp->property.x;

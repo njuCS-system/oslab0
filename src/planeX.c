@@ -38,6 +38,7 @@ void planeX_delete(PlaneX* planeX){
 }
 
 void planeX_draw(PlaneX* planeX){
+    hp_draw(planeX->hp);
     _FBCtlReg ctl;
 
     BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_planeX + BITMAPFILEHEADER_LENGTH);
@@ -74,7 +75,6 @@ void planeX_draw(PlaneX* planeX){
     // video_draw(ctl);
     // draw_sync();
 
-    hp_draw(planeX->hp);
     fb_add(&ctl);
 }
 

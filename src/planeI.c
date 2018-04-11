@@ -113,6 +113,15 @@ void planeI_move(PlaneI* planeI,int deltaX, int deltaY){
     hp_move(planeI->hp, deltaX, deltaY);
 }
 
+void planeI_locate(PlaneI *planeI, UTIL_RECT *ur)
+{
+    ur->x = planeI->property.x;
+    ur->y = planeI->property.y;
+    BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_planeI + BITMAPFILEHEADER_LENGTH);
+    ur->w = bmpHead -> biWidth;
+    ur->h = bmpHead -> biHeight;
+}
+
 void planeI_automove(PlaneI* planeI){
     planeI->property.x += planeI->property.vx;
     planeI->property.y += planeI->property.vy;

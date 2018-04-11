@@ -83,6 +83,16 @@ void player1_draw(Player1* player1){
 }
 
 
+void player1_locate(Player1 *player1, UTIL_RECT *ur)
+{
+    ur->x = player1->property.x;
+    ur->y = player1->property.y;
+    BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_player1 + BITMAPFILEHEADER_LENGTH);
+    ur->w = bmpHead -> biWidth;
+    ur->h = bmpHead -> biHeight;
+}
+
+
 void player1_move(Player1* player1,int deltaX, int deltaY){
     player1->property.x += deltaX;
     player1->property.y += deltaY;

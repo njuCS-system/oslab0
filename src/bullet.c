@@ -48,6 +48,13 @@ void bullet_draw(Bullet* bullet){
     circle_delete(body);
 }
 
+void bullet_locate(Bullet *bullet, UTIL_RECT *ur)
+{
+    ur->x = bullet->property.x - 3 * size;
+    ur->y = bullet->property.y - 3 * size;
+    ur->w = 3 * size * 2;
+    ur->h = 3 * size * 2;
+}
 
 void bullet_move(Bullet* bullet,int deltaX, int deltaY){
     bullet->property.x += deltaX;

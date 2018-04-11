@@ -121,3 +121,30 @@ void cp_virtual_move(void* obj,int deltaX, int deltaY){
             break;
     }
 }
+
+
+void cp_virtual_locate(void* obj, UTIL_RECT *ur){
+    Info info = *((Info*)obj);
+    if(!info.valid){
+        return;
+    }
+
+    case 'I':
+        planeI_locate((PlaneI *)obj, ur);
+        break;
+    case 'X':
+        planeX_locate((PlaneX *)obj, ur);
+        break;
+    case 'U':
+        planeU_locate((PlaneU *)obj, ur);
+        break;
+    case 'T':
+        planeT_locate((PlaneT *)obj, ur);
+        break;
+    case 'B':
+        bullet_locate((Bullet *)obj, ur);
+        break;
+    case 'P':
+        player1_locate((Player1 *)obj, ur);
+        break;
+}

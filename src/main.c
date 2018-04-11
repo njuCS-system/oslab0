@@ -410,11 +410,11 @@ void try(){
   //try_hp();
 
   
-  /*while(1)
+  while(1)
   {
     kbRespond_action();
     screen_draw();
-  }*/
+  }
   
   //screen_draw();
 

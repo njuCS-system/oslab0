@@ -46,7 +46,7 @@ bool battle_virtual_isCrash(void *obj)
             return planeX_isCrash((PlaneX *)obj);
             break;
         case 'P':
-            return player1_isCrash((player1 *)obj);
+            return player1_isCrash((Player1 *)obj);
             break;
     }
 

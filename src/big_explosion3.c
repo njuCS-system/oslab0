@@ -78,8 +78,8 @@ void bigExplosion3_draw(BigExplosion3* bigExplosion3){
     ctl.h = height;
     ctl.sync = 0;
 
-    video_draw(ctl);
-    draw_sync();
+    /*video_draw(ctl);
+    draw_sync();*/
 
     fb_add(&ctl);
 }

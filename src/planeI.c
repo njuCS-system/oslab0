@@ -99,8 +99,8 @@ void planeI_draw(PlaneI* planeI){
     ctl.h = height;
     ctl.sync = 0;
 
-    video_draw(ctl);
-    draw_sync();
+    /*video_draw(ctl);
+    draw_sync();*/
 
     hp_draw(planeI->hp);    
     fb_add(&ctl);

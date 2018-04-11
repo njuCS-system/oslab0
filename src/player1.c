@@ -75,8 +75,8 @@ void player1_draw(Player1* player1){
     ctl.sync = 0;
 
     
-    video_draw(ctl);
-    draw_sync();
+    // video_draw(ctl);
+    // draw_sync();
 
     hp_draw(player1->hp);
     fb_add(&ctl);

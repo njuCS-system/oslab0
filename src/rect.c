@@ -72,8 +72,8 @@ void rect_draw(Rect* rect){
     ctl.h = rect->property.height;
     ctl.sync = 0;
     
-    video_draw(ctl);
-    draw_sync();
+    // video_draw(ctl);
+    // draw_sync();
     
     fb_add(&ctl);
 }

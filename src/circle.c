@@ -65,8 +65,8 @@ void circle_draw(Circle* circle){
     
     ctl.pixels = color_buf;
     
-    video_draw(ctl);
-    draw_sync();
+    /*video_draw(ctl);
+    draw_sync();*/
     
     fb_add(&ctl);
 }

@@ -15,6 +15,8 @@ void screen_init()
 {
     memset(screen.obj, 0 ,sizeof(void *) * OBJ_MAX);
     screen.index = 0;
+    fb_clear();
+    fb_sync();
 }
 
 

@@ -71,8 +71,8 @@ void planeX_draw(PlaneX* planeX){
     ctl.h = height;
     ctl.sync = 0;
 
-    video_draw(ctl);
-    draw_sync();
+    // video_draw(ctl);
+    // draw_sync();
 
     hp_draw(planeX->hp);
     fb_add(&ctl);

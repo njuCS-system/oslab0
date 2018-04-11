@@ -69,8 +69,8 @@ void line_draw(Line* line){
     ctl.pixels = color_buf;
     ctl.sync = 1;
     
-    video_draw(ctl);
-    draw_sync();
+    /*video_draw(ctl);
+    draw_sync();*/
     
     fb_add(&ctl);
 }

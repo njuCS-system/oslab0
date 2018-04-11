@@ -57,7 +57,7 @@ void hp_draw(Hp* hp)
     RectProperty p1 = {x, y, 30 * size, 4 * size, {0, 255, 0, 0}, {0, 255, 0, 0}, 1, FALSE};
     Rect *lost = build_rect(p1);
     rect_draw(lost);
-    //rect_draw(left);
+    rect_draw(left);
     rect_delete(left);
     rect_delete(lost);
 }

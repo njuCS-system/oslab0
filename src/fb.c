@@ -11,7 +11,7 @@ void fb_add(_FBCtlReg *reg){
     {
         for(int j = 0; j < width; j++)
         {
-            if((i + y) * _WIDTH + (j + x) < _WIDTH * _HEIGHT){
+            if((i + y) * _WIDTH + (j + x) < _WIDTH * _HEIGHT && (i + y) * _WIDTH + (j + x) >= 0){
                 Color color = int_to_color(reg->pixels[i * width + j]);
                 fb_buf[(i + y) * _WIDTH + (j + x)] = (color.a == 0 ? reg->pixels[i * width + j] : fb_buf[(i + y) * _WIDTH + (j + x)]);
             }

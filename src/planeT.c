@@ -105,7 +105,7 @@ void planeT_hurt(PlaneT *planeT, int hp_lost)
     hp_decrease(planeT->hp, hp_lost);
 }
 
-bool planeT_isCrash(PlaneT *planeI)
+bool planeT_isCrash(PlaneT *planeT)
 {
     return planeT->hp->hp_left <= 0;
 }

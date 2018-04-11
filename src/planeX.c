@@ -105,6 +105,11 @@ void planeX_hurt(PlaneX *planeX, int hp_lost)
     hp_decrease(planeX->hp, hp_lost);
 }
 
+bool planeX_isCrash(PlaneX *planeX)
+{
+    return planeX->hp.hp_left <= 0;
+}
+
 //****************************************************************
 
 static PlaneX* planeX_allocate(){

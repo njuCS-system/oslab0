@@ -122,6 +122,11 @@ void player1_hurt(Player1 *player1, int hp_lost)
     hp_decrease(player1->hp, hp_lost);
 }
 
+bool player1_isCrash(Player1 *player1)
+{
+    return player1->hp.hp_left <= 0;
+}
+
 //****************************************************************
 
 static Player1* player1_allocate(){

@@ -133,6 +133,11 @@ void planeI_hurt(PlaneI *planeI, int hp_lost)
     hp_decrease(planeI->hp, hp_lost);
 }
 
+bool planeI_isCrash(PlaneI *planeI)
+{
+    return planeI->hp.hp_left <= 0;
+}
+
 //****************************************************************
 
 static PlaneI* planeI_allocate(){

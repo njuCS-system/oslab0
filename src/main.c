@@ -291,9 +291,9 @@ void try_planeT()
       mv_virtual_automove(planeT);
       cp_virtual_draw(planeT);
     }*/
-    UTIL_RECT ur;
+    /*UTIL_RECT ur;
     cp_virtual_locate(planeT, &ur);
-    printf("x = %d, y = %d, w = %d, h = %d\n", ur.x, ur.y, ur.w, ur.h);
+    printf("x = %d, y = %d, w = %d, h = %d\n", ur.x, ur.y, ur.w, ur.h);*/
     battle_virtual_hurt(planeT, 50);
     screen_add(planeT);
   }
@@ -403,9 +403,9 @@ void try(){
   //try_planeI();
   //try_planeX();
   //try_planeU();
-  try_planeT();
+  //try_planeT();
   //try_player1();
-  //try_bullet();
+  try_bullet();
   //try_bigExplosion3();
   //try_hp();
   

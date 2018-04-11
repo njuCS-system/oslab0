@@ -3,16 +3,16 @@
 static int fb_buf[_WIDTH * _HEIGHT];
 
 void fb_add(_FBCtlReg *reg){
-    int width = reg.w;
-    int height = reg.h;
-    int x = reg.x;
-    int y = reg.y;
+    int width = reg->w;
+    int height = reg->h;
+    int x = reg->x;
+    int y = reg->y;
     for(int i = 0; i < height; i++)
     {
         for(int j = 0; j < width; j++)
         {
-            Color color = int_to_color(reg.pixels[i * width + j]);
-            fb_buf[(i + y) * _WIDTH + (j + x)] = (color.a == 0 ? reg.pixels[i * width + j] : fb_buf[(i + y) * _WIDTH + (j + x)]);
+            Color color = int_to_color(reg->pixels[i * width + j]);
+            fb_buf[(i + y) * _WIDTH + (j + x)] = (color.a == 0 ? reg->pixels[i * width + j] : fb_buf[(i + y) * _WIDTH + (j + x)]);
         }
     }
 }

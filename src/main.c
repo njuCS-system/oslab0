@@ -407,7 +407,9 @@ void try(){
   //try_player1();
   //try_bullet();
   //try_bigExplosion3();
+  fb_clear();
   try_hp();
+  fb_sync();
   
   /*while(1)
   {
@@ -415,7 +417,7 @@ void try(){
     screen_draw();
   }*/
   
-  screen_draw();
+  //screen_draw();
 
   /*_KbdReg reg = read_key();
   printf("%d\n", reg.keycode);*/

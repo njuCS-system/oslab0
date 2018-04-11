@@ -362,7 +362,6 @@ void try_bullet()
     UTIL_RECT ur;
     for(int i =0; i < 10; i++)
     {
-      UTIL_RECT ur;
       cp_virtual_locate(bullet, &ur);
       printf("x = %d, y = %d, w = %d, h = %d\n", ur.x, ur.y, ur.w, ur.h);
       mv_virtual_automove(bullet);

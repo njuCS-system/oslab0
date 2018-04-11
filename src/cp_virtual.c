@@ -34,11 +34,9 @@ void cp_virtual_draw(void* obj){
         case '3':
             bigExplosion3_draw((BigExplosion3 *)obj);
             break;
-        case 'P':{
-            printf("player1\n");
+        case 'P':
             player1_draw((Player1 *)obj);
             break;
-        }
     }
 
 }

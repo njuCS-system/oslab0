@@ -38,6 +38,7 @@ void player1_delete(Player1* player1){
 }
 
 void player1_draw(Player1* player1){
+    hp_draw(player1->hp);
     int x = player1->property.x;
     int y = player1->property.y;
 
@@ -76,11 +77,8 @@ void player1_draw(Player1* player1){
     
     // video_draw(ctl);
     // draw_sync();
-
-    hp_draw(player1->hp);
+    
     fb_add(&ctl);
-    fb_sync();
-    while(1);
 }
 
 

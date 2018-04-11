@@ -7,15 +7,13 @@ void fb_add(_FBCtlReg *reg){
     int height = reg->h;
     int x = reg->x;
     int y = reg->y;
-    printf("fb %d %d\n", x, y);
     for(int i = 0; i < height; i++)
     {
         for(int j = 0; j < width; j++)
         {
             if(((i + y) * _WIDTH + (j + x)) < _WIDTH * _HEIGHT && ((i + y) * _WIDTH + (j + x)) >= 0){
-                //Color color = int_to_color(reg->pixels[i * width + j]);
-                //fb_buf[(i + y) * _WIDTH + (j + x)] = (color.a == 0 ? reg->pixels[i * width + j] : fb_buf[(i + y) * _WIDTH + (j + x)]);
-                fb_buf[(i + y) * _WIDTH + (j + x)] = reg->pixels[i * width + j];
+                Color color = int_to_color(reg->pixels[i * width + j]);
+                fb_buf[(i + y) * _WIDTH + (j + x)] = (color.a == 0 ? reg->pixels[i * width + j] : fb_buf[(i + y) * _WIDTH + (j + x)]);
             }
         }
     }

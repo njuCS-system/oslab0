@@ -50,6 +50,7 @@ void bullet_draw(Bullet* bullet){
 
 void bullet_locate(Bullet *bullet, UTIL_RECT *ur)
 {
+    int size = bullet->property.size;
     ur->x = bullet->property.x - 3 * size;
     ur->y = bullet->property.y - 3 * size;
     ur->w = 3 * size * 2;

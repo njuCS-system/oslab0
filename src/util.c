@@ -8,7 +8,7 @@ unsigned color_to_int(Color color)
 
 Color int_to_color(int rgb)
 {
-	Color *color = (COlor *)&rgb;
+	Color *color = (Color *)&rgb;
 	return *color;
 }
 

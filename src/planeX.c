@@ -107,7 +107,7 @@ void planeX_hurt(PlaneX *planeX, int hp_lost)
 
 bool planeX_isCrash(PlaneX *planeX)
 {
-    return planeX->hp.hp_left <= 0;
+    return planeX->hp->hp_left <= 0;
 }
 
 //****************************************************************

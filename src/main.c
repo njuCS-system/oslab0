@@ -400,13 +400,13 @@ void try(){
   //try_rect();
   //try_circle();
   //try_line();
-  //try_planeI();
-  //try_planeX();
-  //try_planeU();
-  //try_planeT();
-  //try_player1();
-  //try_bullet();
-  //try_bigExplosion3();
+  try_planeI();
+  try_planeX();
+  try_planeU();
+  try_planeT();
+  try_player1();
+  try_bullet();
+  try_bigExplosion3();
   //try_hp();
 
   

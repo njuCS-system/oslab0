@@ -302,8 +302,8 @@ void try_planeT()
 void try_player1()
 {
   Player1Property t;
-  t.x = 150;
-  t.y = 150;
+  t.x = 0;
+  t.y = 0;
   t.size = 2;
   t.hp_max = 100;
   

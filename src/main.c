@@ -415,7 +415,7 @@ void try(){
     screen_draw();
   }*/
   
-  screen_draw();
+  //screen_draw();
 
   /*_KbdReg reg = read_key();
   printf("%d\n", reg.keycode);*/

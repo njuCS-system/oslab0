@@ -7,6 +7,7 @@ void fb_add(_FBCtlReg *reg){
     int height = reg->h;
     int x = reg->x;
     int y = reg->y;
+    printf("fb %d %d\n", x, y);
     for(int i = 0; i < height; i++)
     {
         for(int j = 0; j < width; j++)

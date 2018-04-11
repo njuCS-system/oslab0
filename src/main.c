@@ -378,7 +378,7 @@ void try_hp()
   h.x = 100;
   h.y = 100;
   h.size = 2;
-  h.is_player = false;
+  h.is_player = true;
   h.hp_max = 100;
 
   Hp *hp = build_hp(h);

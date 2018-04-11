@@ -73,13 +73,13 @@ void player1_draw(Player1* player1){
     ctl.w = width;
     ctl.h = height;
     ctl.sync = 0;
-
-    printf("%x\n", ctl.pixels[0]);
     
     // video_draw(ctl);
     // draw_sync();
 
     hp_draw(player1->hp);
+    fb_sync();
+    while(1);
     fb_add(&ctl);
 }
 

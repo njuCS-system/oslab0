@@ -407,9 +407,8 @@ void try(){
   //try_player1();
   //try_bullet();
   //try_bigExplosion3();
-  fb_clear();
-  try_hp();
-  fb_sync();
+  //try_hp();
+
   
   /*while(1)
   {

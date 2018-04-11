@@ -358,15 +358,16 @@ void try_bullet()
   Bullet *bullet = build_bullet(b);
   if(bullet != NULL)
   {
-    cp_virtual_draw(bullet);
+    //cp_virtual_draw(bullet);
     for(int i =0; i < 10; i++)
     {
       /*UTIL_RECT ur;
       cp_virtual_locate(bullet, &ur);
       printf("x = %d, y = %d, w = %d, h = %d\n", ur.x, ur.y, ur.w, ur.h);*/
       mv_virtual_automove(bullet);
-      cp_virtual_draw(bullet);
+      //cp_virtual_draw(bullet);
     }
+    screen_add(bullet);
     //cp_virtual_move(bullet, 10, 20);
     //cp_virtual_draw(bullet);
   }

@@ -404,7 +404,7 @@ void try(){
   //try_planeX();
   //try_planeU();
   //try_planeT();
-  //try_player1();
+  try_player1();
   //try_bullet();
   //try_bigExplosion3();
   //try_hp();
@@ -416,7 +416,7 @@ void try(){
     screen_draw();
   }*/
   
-  //screen_draw();
+  screen_draw();
 
   /*_KbdReg reg = read_key();
   printf("%d\n", reg.keycode);*/

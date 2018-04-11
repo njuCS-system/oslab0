@@ -385,12 +385,12 @@ void try_hp()
   if(hp != NULL)
   {
     hp_draw(hp);
-    for(int i = 0; i < 5; i++)
+    /*for(int i = 0; i < 5; i++)
     {
       hp_decrease(hp, 10);
       hp_move(hp, 0, 20);
       hp_draw(hp);
-    }
+    }*/
   }
 }
 
@@ -404,10 +404,10 @@ void try(){
   //try_planeX();
   //try_planeU();
   //try_planeT();
-  try_player1();
+  //try_player1();
   //try_bullet();
   //try_bigExplosion3();
-  //try_hp();
+  try_hp();
   
   /*while(1)
   {

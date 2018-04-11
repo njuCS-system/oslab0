@@ -319,7 +319,7 @@ void try_player1()
     /*UTIL_RECT ur;
     cp_virtual_locate(player1, &ur);
     printf("x = %d, y = %d, w = %d, h = %d\n", ur.x, ur.y, ur.w, ur.h);*/
-    //battle_virtual_hurt(player1, 50);
+    battle_virtual_hurt(player1, 50);
     kbRespond_add(player1);
     screen_add(player1);
   }
@@ -403,8 +403,8 @@ void try(){
   //try_planeI();
   //try_planeX();
   //try_planeU();
-  //try_planeT();
-  try_player1();
+  try_planeT();
+  //try_player1();
   //try_bullet();
   //try_bigExplosion3();
   //try_hp();

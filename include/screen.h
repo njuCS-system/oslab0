@@ -1,6 +1,8 @@
 #ifndef SCREEN_H
-
 #define SCREEN_H
+
+#include "component.h"
+
 #define OBJ_MAX 1000
 
 

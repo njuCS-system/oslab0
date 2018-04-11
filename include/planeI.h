@@ -2,7 +2,7 @@
 #define PLANEI_H
 
 #include "util.h"
-#include "rect.h"
+#include "hp.h"
 
 
 #define PLANEI_MAX 20
@@ -12,26 +12,20 @@ typedef struct PlaneIProperty{
     int x,y; //位置
     int vx, vy;
     int size;
+    int hp_max;
 }PlaneIProperty;
 
 
 typedef struct PlaneI{
     volatile Info info;
     volatile PlaneIProperty property;
-    Rect *large_wing;
-    Rect *small_wing;
-    Rect *empennage_left;
-    Rect *empennage_right;
-    Rect *body;
-    Rect *jet_left;
-    Rect *jet_right;
+    Hp *hp;
 }PlaneI;
 
 typedef struct PlaneI_factory{
     PlaneI __planeIs[PLANEI_MAX];
     int idx;
 }PlaneI_factory;
-
 
 PlaneI *build_planeI();
 
@@ -47,9 +41,13 @@ void planeI_move(PlaneI*,int,int);
 void planeI_delete(PlaneI* );
 
 //
+void planeI_locate(PlaneI *, UTIL_RECT*);
+
+//
 void planeI_automove(PlaneI* planeI);
 
-
+//
+void planeI_hurt(PlaneI*, int);
 
 
 #endif

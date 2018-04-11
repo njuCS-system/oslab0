@@ -2,8 +2,7 @@
 #define PLANEX_H
 
 #include "util.h"
-#include "rect.h"
-
+#include "hp.h"
 
 #define PLANEX_MAX 20
 
@@ -12,19 +11,14 @@ typedef struct PlaneXProperty{
     int x,y; //位置
     int vx, vy;
     int size;
+    int hp_max;
 }PlaneXProperty;
 
 
 typedef struct PlaneX{
     volatile Info info;
     volatile PlaneXProperty property;
-    Rect *large_wing;
-    Rect *small_wing;
-    Rect *empennage_left;
-    Rect *empennage_right;
-    Rect *body;
-    Rect *jet_left;
-    Rect *jet_right;
+    Hp *hp;
 }PlaneX;
 
 typedef struct PlaneX_factory{
@@ -47,9 +41,12 @@ void planeX_move(PlaneX*,int,int);
 void planeX_delete(PlaneX* );
 
 //
+void planeX_locate(PlaneX *, UTIL_RECT*);
+
+//
 void planeX_automove(PlaneX* planeX);
 
-
-
+//
+void planeX_hurt(PlaneX*, int);
 
 #endif

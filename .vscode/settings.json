@@ -1,6 +1,7 @@
 {
     "files.associations": {
         "screen.h": "c",
-        "component.h": "c"
+        "component.h": "c",
+        "kb_util.h": "c"
     }
 }

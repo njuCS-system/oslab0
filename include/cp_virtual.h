@@ -9,7 +9,7 @@ void cp_virtual_draw(void *);
 
 void cp_virtual_move(void*, int deltaX, int deltaY);
 
-
+void cp_virtual_locate(void*, UTIL_RECT *ur);
 
 
 #endif

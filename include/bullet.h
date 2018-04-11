@@ -18,7 +18,6 @@ typedef struct BulletProperty{
 typedef struct Bullet{
     volatile Info info;
     volatile BulletProperty property;
-    Circle *body;
 }Bullet;
 
 typedef struct Bullet_factory{
@@ -39,6 +38,9 @@ void bullet_move(Bullet*,int,int);
 
 //删除
 void bullet_delete(Bullet* );
+
+//
+void bullet_locate(Bullet *, UTIL_RECT*);
 
 //
 void bullet_automove(Bullet* bullet);

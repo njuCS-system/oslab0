@@ -1,6 +1,6 @@
 #include "fb.h"
 
-static int fb_buf[_WIDTH * _HEIGHT];
+static uint32_t fb_buf[_WIDTH * _HEIGHT];
 
 void fb_add(_FBCtlReg *reg){
     int width = reg->w;

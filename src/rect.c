@@ -38,7 +38,6 @@ void rect_delete(Rect* rect){
 }
 
 void rect_draw(Rect* rect){
-    printf("rect_draw\n");
     _FBCtlReg ctl;
     unsigned s_color = color_to_int(rect->property.s_color);
     unsigned f_color = color_to_int(rect->property.f_color);
@@ -72,7 +71,6 @@ void rect_draw(Rect* rect){
     ctl.w = rect->property.width;
     ctl.h = rect->property.height;
     ctl.sync = 0;
-    printf("%d %d\n", ctl.x, ctl.y);
     
     // video_draw(ctl);
     // draw_sync();

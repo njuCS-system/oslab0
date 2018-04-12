@@ -2,7 +2,7 @@
 #include "component.h"
 #include "screen.h"
 #include "kb_respond.h"
-
+#include "game.h"
 extern Screen screen;
 
 void try();
@@ -31,7 +31,8 @@ int main() {
     printf("\n");
   }*/
   
-  try();
+  //try();
+  main_loop();
 
   return 0;
 }

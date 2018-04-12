@@ -76,7 +76,7 @@ void create_bullet()
     for(int i = 0;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE){
             UTIL_RECT ur;
-            cp_virtual_locate(obj, &ur);
+            cp_virtual_locate(s->obj[i], &ur);
             if(cp_virtual_isPlayer(s->obj[i]))
             {
                 //                     x            y           vx       vy      size          attack

@@ -9,7 +9,7 @@ static PlaneXProperty x = {0, 0, 0, 1, 1, 200, 30};
 static PlaneTProperty t = {0, 0, 0, 2, 1, 200, 80};
 static PlaneUProperty u = {0, 0, 0, 3, 1, 400, 50};
 
-//                                 x                    y                 size hp_max attack
+//                                        x                              y                 size hp_max attack
 static Player1Property p1 =  {_WIDTH / 2 - PLANE_WIDTH / 2, _HEIGHT - HP_OFFSET - PLANE_HEIGHT, 1, 1000, 80};
 
 static void __add(Game* s,void* object);
@@ -58,6 +58,7 @@ void main_loop()
         if(now_time >= last_time + delay)
         {
             random_create_plane();
+            create_bullet();
             game_move();
             kbRespond_action();
             game_draw();
@@ -68,40 +69,35 @@ void main_loop()
     
 }
 
-static void game_init()
+void create_bullet()
 {
-    memset(game.obj, 0 ,sizeof(void *) * OBJ_MAX);
-    game.index = 0;
-    screen_init();
+    const int bullet_speed = 10;
+    const int bullet_offset = 10;
+    for(int i = 0;i < OBJ_MAX;i++){
+        if(((Info *)(s->obj[i]))->valid == TRUE){
+            UTIL_RECT ur;
+            cp_virtual_locate(obj, &ur);
+            if(cp_virtual_isPlayer(s->obj[i]))
+            {
+                //                     x            y           vx       vy      size          attack
+                BulletProperty b0 = {ur.x, ur.y - bullet_offset, 0, bullet_speed, 2, battle_virtual_attack(obj)};
+                BulletProperty b1 = {ur.x + PLANE_WIDTH / 2, ur.y - bullet_offset, 0, bullet_speed, 2, battle_virtual_attack(obj)};
+                BulletProperty b2 = {ur.x + PLANE_WIDTH, ur.y - bullet_offset, 0, bullet_speed, 2, battle_virtual_attack(obj)};
 
-    Player1 *player1 = build_player1(p1);
-    kbRespond_add(player1);
-    game_add(player1);
-}
+                Bullet *bullet0 = build_bullet(b0);
+                Bullet *bullet1 = build_bullet(b1);
+                Bullet *bullet2 = build_bullet(b2);
 
+                game_add(bullet0);
+                game_add(bullet1);
+                game_add(bullet2);
+            }
+            else if(cp_virtual_isEnemy(s->obj[i]))
+            {
 
-static void game_add(void *obj){
-    __add(&game,obj);
-}
-
-
-static void game_clear(){
-    __clear(&game);
-}
-
-
-static void game_draw(){
-    __draw(&game);
-}
-
-
-static void game_rm(void * obj){
-    __remove(&game, obj);
-}
-
-static void game_move()
-{
-    __move(&game);
+            }
+        }
+    }
 }
 
 void random_create_plane()
@@ -141,6 +137,42 @@ void random_create_plane()
             game_add(planeU);
         }
     }
+}
+
+static void game_init()
+{
+    memset(game.obj, 0 ,sizeof(void *) * OBJ_MAX);
+    game.index = 0;
+    screen_init();
+
+    Player1 *player1 = build_player1(p1);
+    kbRespond_add(player1);
+    game_add(player1);
+}
+
+
+static void game_add(void *obj){
+    __add(&game,obj);
+}
+
+
+static void game_clear(){
+    __clear(&game);
+}
+
+
+static void game_draw(){
+    __draw(&game);
+}
+
+
+static void game_rm(void * obj){
+    __remove(&game, obj);
+}
+
+static void game_move()
+{
+    __move(&game);
 }
 
 //****************************************************************

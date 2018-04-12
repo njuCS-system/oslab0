@@ -377,7 +377,18 @@ static void __bullet_hurt(Game *s)
                 {
                     if(((Info *)(s->obj[j]))->valid == TRUE && cp_virtual_isPlayer(s->obj[j]) == TRUE)
                     {
-                        //TODO:
+                        UTIL_RECT ur_player;
+                        cp_virtual_locate(s->obj[j], &ur_player);
+                        if(is_inside_collision(&ur_bullet, &ur_player))
+                        {
+                            battle_virtual_hurt(s->obj[j], battle_virtual_get_attack(s->obj[i]));
+                            game_rm(s->obj[i]);
+                            if(battle_virtual_isCrash(s->obj[j]))
+                            {
+                                game_rm(s->obj[j]);
+                            }
+                            break;
+                        }
                     }
                 }
             }

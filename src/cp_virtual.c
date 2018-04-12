@@ -189,7 +189,7 @@ bool cp_virtual_isEnemyBullet(void *obj)
     switch(info.type){
         case 'B':
         {
-            if(((Bullet*)obj)->property.vx > 0)
+            if(((Bullet*)obj)->property.vy > 0)
             {
                 return true;
             }

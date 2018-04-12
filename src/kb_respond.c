@@ -89,6 +89,6 @@ static void __remove(KbRespond* s, void *obj)
     }
     else 
     {
-        printf("[ERROR] The Object is invalid!\n");
+        printf("[ERROR] The KB Object is invalid!\n");
     }
 }

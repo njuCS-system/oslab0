@@ -100,6 +100,6 @@ static void __remove(Screen* s, void *obj)
     }
     else 
     {
-        printf("[ERROR] The Object is invalid!\n");
+        printf("[ERROR] The Screen Object is invalid!\n");
     }
 }

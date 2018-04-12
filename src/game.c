@@ -59,7 +59,7 @@ void main_loop()
     game_init();
 
     const int delay = 30;
-    const int shooting_loop_count = 2;
+    const int shooting_loop_count = 20000;
 
     unsigned now_time = uptime();
     unsigned last_time = 0;
@@ -72,7 +72,7 @@ void main_loop()
             random_create_plane();
             if(loop_count % shooting_loop_count == 0)
             {
-                //create_bullet();
+                create_bullet();
             }
             game_move();
             boundary_detect();

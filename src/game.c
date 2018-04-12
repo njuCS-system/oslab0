@@ -65,7 +65,6 @@ void main_loop()
     unsigned last_time = 0;
     srand(now_time);
     int loop_count = 0;
-boundary_detect();
     while(1)
     {
         if(now_time >= last_time + delay)
@@ -76,7 +75,7 @@ boundary_detect();
                 create_bullet();
             }
             game_move();
-            
+            boundary_detect();
             kbRespond_action();
             game_draw();
             last_time = now_time;

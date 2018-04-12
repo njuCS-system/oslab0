@@ -354,7 +354,7 @@ static void __bullet_hurt(Game *s)
                     {
                         UTIL_RECT ur_enemy;
                         cp_virtual_locate(s->obj[j], &ur_bullet);
-                        if(is_inside_collision(ur_bullet, ur_enemy))
+                        if(is_inside_collision(&ur_bullet, &ur_enemy))
                         {
                             game_rm(s->obj[i]);
                             battle_virtual_hurt(s->obj[j], battle_virtual_get_attack(s->obj[i]));

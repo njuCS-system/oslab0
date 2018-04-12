@@ -5,9 +5,9 @@ static int init_x = 0;
 
 //                         x  y vx vy size h_max attack
 static PlaneIProperty i = {0, 0, 0, 1, 1, 100, 20};
-static PlaneXProperty x = {0, 0, 0, 1, 1, 200, 30};
+static PlaneXProperty x = {0, 0, 0, 1, 1, 600, 30};
 static PlaneTProperty t = {0, 0, 0, 2, 1, 200, 80};
-static PlaneUProperty u = {0, 0, 0, 3, 1, 400, 50};
+static PlaneUProperty u = {0, 0, 0, 3, 1, 200, 50};
 
 //                                        x                              y                 size hp_max attack
 static Player1Property p1 =  {_WIDTH / 2 - PLANE_WIDTH / 2, _HEIGHT - HP_OFFSET - PLANE_HEIGHT, 1, 1000, 80};
@@ -63,7 +63,7 @@ void main_loop()
     game_init();
 
     const int delay = 20;
-    const int shooting_loop_count = 20;
+    const int shooting_loop_count = 30;
 
     unsigned now_time = uptime();
     unsigned last_time = 0;
@@ -155,7 +155,7 @@ static void boundary_detect()
 static void random_create_plane()
 {
     const int random_range = 10000;
-    const int plane_occur = random_range * 0.03;
+    const int plane_occur = random_range * 0.02;
     const int planeI_occur = plane_occur * 0.4;
     const int planeX_occur = plane_occur * 0.3 + planeI_occur;
     const int planeT_occur = plane_occur * 0.2 + planeX_occur;

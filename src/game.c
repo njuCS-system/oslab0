@@ -336,7 +336,7 @@ static void __bullet_hurt(Game *s)
         {
             UTIL_RECT ur_bullet;
             cp_virtual_locate(s->obj[i], &ur_bullet);
-            if(cp_virtual_isEmemyBullet(s->obj[i]))
+            if(cp_virtual_isEnemyBullet(s->obj[i]))
             {
                 for(int j = 0; j < OBJ_MAX; j++)
                 {

@@ -74,7 +74,6 @@ static void game_init()
     game.index = 0;
     screen_init();
 
-    p1.x = init_x;
     Player1 *player1 = build_player1(p1);
     kbRespond_add(player1);
     game_add(player1);

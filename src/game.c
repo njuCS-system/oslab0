@@ -106,13 +106,13 @@ void random_create_plane()
         if(r < planeI_occur)
         {
             i.x = init_x;
-            PlaneI *planeI = build_planeT(i);
+            PlaneI *planeI = build_planeI(i);
             game_add(planeI);
         }
         else if(r < planeX_occur)
         {
             x.x = init_x;
-            PlaneX *planeX = build_planeT(x);
+            PlaneX *planeX = build_planeX(x);
             game_add(planeX);
         }
         else if(r < planeT_occur)
@@ -124,7 +124,7 @@ void random_create_plane()
         else if(r < planeU_occur)
         {
             u.x = init_x;
-            PlaneU *planeU = build_planeT(u);
+            PlaneU *planeU = build_planeU(u);
             game_add(planeU);
         }
     }

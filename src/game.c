@@ -47,15 +47,19 @@ void main_loop()
     game_clear();
     game_rm(NULL);
     game_init();
+
+    const int delay = 30;
+
     unsigned now_time = uptime();
     unsigned last_time = 0;
     srand(now_time);
     while(1)
     {
-        if(now_time >= last_time + 0)
+        if(now_time >= last_time + delay)
         {
             random_create_plane();
             game_move();
+            kbRespond_action();
             game_draw();
             last_time = now_time;
         }
@@ -69,6 +73,11 @@ static void game_init()
     memset(game.obj, 0 ,sizeof(void *) * OBJ_MAX);
     game.index = 0;
     screen_init();
+
+    p1.x = init_x;
+    Player1 *player1 = build_player1(p1);
+    kbRespond_add(player1);
+    game_add(player1);
 }
 
 

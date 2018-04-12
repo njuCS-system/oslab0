@@ -22,7 +22,9 @@ static void __remove(Game* s,void* object);
 
 static void __move(Game* s);
 
-static void __bullet(Game *s);
+static void __create_player_bullet(Game *s);
+
+static void __enemy_player_bullet(Game *s);
 
 static void __boundary(Game *s);
 
@@ -42,7 +44,9 @@ static void game_move();
 
 static void random_create_plane();
 
-static void create_bullet();
+static void create_player_bullet();
+
+static void create_enemy_bullet();
 
 static void boundary_detect();
 
@@ -63,7 +67,9 @@ void main_loop()
     game_init();
 
     const int delay = 20;
-    const int shooting_loop_count = 30;
+    const int player_shooting_loop_count = 30;
+    const int enemy_shooting_loop_count = 50;
+
 
     unsigned now_time = uptime();
     unsigned last_time = 0;
@@ -74,9 +80,13 @@ void main_loop()
         if(now_time >= last_time + delay)
         {
             random_create_plane();
-            if(loop_count % shooting_loop_count == 0)
+            if(loop_count % player_shooting_loop_count == 0)
             {
-                create_bullet();
+                create_player_bullet();
+            }
+            if(loop_count % enemy_shooting_loop_count == 0)
+            {
+                create_enemy_bullet();
             }
             game_move();
             boundary_detect();
@@ -142,9 +152,14 @@ bool is_outside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
     }
 }
 
-static void create_bullet()
+static void create_player_bullet()
 {
-    __bullet(&game);
+    __create_player_bullet(&game);
+}
+
+static void create_enemy_bullet()
+{
+    __create_enemy_bullet(&game);
 }
 
 static void boundary_detect()
@@ -279,7 +294,7 @@ static void __move(Game* s)
     }
 }
 
-static void __bullet(Game *s)
+static void __create_player_bullet(Game *s)
 {
     const int bullet_speed = 10;
     const int bullet_offset = 10;
@@ -302,9 +317,25 @@ static void __bullet(Game *s)
                 game_add(bullet1);
                 //game_add(bullet2);
             }
-            else if(cp_virtual_isEnemy(s->obj[i]))
+        }
+    }
+}
+
+static void __create_enemy_bullet(Game *s)
+{
+    const int bullet_speed = 10;
+    const int bullet_offset = 10;
+    for(int i = 0;i < OBJ_MAX;i++){
+        if(((Info *)(s->obj[i]))->valid == TRUE){
+            UTIL_RECT ur;
+            cp_virtual_locate(s->obj[i], &ur);
+            if(cp_virtual_isEnemy(s->obj[i]))
             {
-                //TODO:
+                //                     x            y           vx       vy      size            attack
+                BulletProperty b0 = {ur.x + PLANE_WIDTH / 2, ur.y - bullet_offset, 0, bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
+                Bullet *bullet0 = build_bullet(b0);
+
+                game_add(bullet0);
             }
         }
     }

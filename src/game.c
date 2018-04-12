@@ -26,6 +26,8 @@ static void __bullet(Game *s);
 
 static void __boundary(Game *s);
 
+static void __bullet_hurt(Game *s);
+
 static void game_init();
 
 static void game_add(void *obj);
@@ -47,6 +49,8 @@ static void boundary_detect();
 static bool is_inside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2);
 
 static bool is_outside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2);
+
+static void bullet_hurt();
 
 static void random_init_x()
 {
@@ -180,6 +184,11 @@ static void random_create_plane()
             game_add(planeU);
         }
     }
+}
+
+static void bullet_hurt()
+{
+    __bullet_hurt(&game);
 }
 
 static void game_init()

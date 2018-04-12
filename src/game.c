@@ -72,7 +72,7 @@ void main_loop()
             random_create_plane();
             if(loop_count % shooting_loop_count == 0)
             {
-                create_bullet();
+                //create_bullet();
             }
             game_move();
             boundary_detect();
@@ -309,6 +309,7 @@ static void __boundary(Game *s)
                 if(is_outside_collision(&ur_obj, &ur_game) == TRUE && is_inside_collision(&ur_obj, &ur_game) == FALSE)
                 {
                     game_rm(s->obj[i]);
+                    printf("collision\n");
                 }
             }
             else if(cp_virtual_isPlayer(s->obj[i]))

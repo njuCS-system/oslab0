@@ -78,7 +78,6 @@ void main_loop()
             boundary_detect();
             kbRespond_action();
             game_draw();
-            while(1);
             last_time = now_time;
             loop_count++;
         }
@@ -310,6 +309,7 @@ static void __boundary(Game *s)
                 if(is_outside_collision(&ur_obj, &ur_game) == TRUE && is_inside_collision(&ur_obj, &ur_game) == FALSE)
                 {
                     game_rm(s->obj[i]);
+                    printf("cllision\n");
                 }
             }
             else if(cp_virtual_isPlayer(s->obj[i]))

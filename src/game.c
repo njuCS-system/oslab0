@@ -4,10 +4,13 @@ Game game;
 static int init_x = 0;
 
 //                         x  y vx  vy size h_max
-static PlaneIProperty i = {0, 0, 0, 3, 1, 100};
-static PlaneXProperty x = {0, 0, 0, 3, 1, 200};
-static PlaneTProperty t = {0, 0, 0, 5, 1, 200};
-static PlaneUProperty u = {0, 0, 0, 7, 1, 400};
+static PlaneIProperty i = {0, 0, 0, 1, 1, 100};
+static PlaneXProperty x = {0, 0, 0, 1, 1, 200};
+static PlaneTProperty t = {0, 0, 0, 2, 1, 200};
+static PlaneUProperty u = {0, 0, 0, 3, 1, 400};
+
+//                                 x            x     size hp_max
+//static Player1Property p1 =  {_WIDTH / 2, HEIGHT - 10, 1, 1000}
 
 static void __add(Game* s,void* object);
 
@@ -49,7 +52,7 @@ void main_loop()
     srand(now_time);
     while(1)
     {
-        if(now_time >= last_time + 200)
+        if(now_time >= last_time + 50)
         {
             random_create_plane();
             game_move();

@@ -116,9 +116,9 @@ int planeU_get_attack(PlaneU *planeU)
     return planeU->property.attack;
 }
 
-void planeU_set_attack(PlaneI *planeI, int attack)
+void planeU_set_attack(PlaneU *planeU, int attack)
 {
-    planeI->property.attack = attack;
+    planeU->property.attack = attack;
 }
 
 //****************************************************************

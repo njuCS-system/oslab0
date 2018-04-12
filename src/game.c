@@ -24,6 +24,8 @@ static void __move(Game* s);
 
 static void __bullet(Game *s);
 
+static void __boundary(Game *s);
+
 static void game_init();
 
 static void game_add(void *obj);
@@ -40,6 +42,11 @@ void random_create_plane();
 
 void create_bullet();
 
+void boundary_detect();
+
+bool is_inside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2);
+
+bool is_outside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2);
 
 void random_init_x()
 {
@@ -49,7 +56,6 @@ void random_init_x()
 void main_loop()
 {
     game_clear();
-    game_rm(NULL);
     game_init();
 
     const int delay = 30;
@@ -70,6 +76,7 @@ void main_loop()
                 create_bullet();
             }
             game_move();
+            boundary_detect();
             kbRespond_action();
             game_draw();
             last_time = now_time;
@@ -80,12 +87,61 @@ void main_loop()
     
 }
 
-void create_bullet()
+bool is_point_inside(Rect_Points rp, Point p)
+{
+    if(p.x >= rp.p1.x && p.x >= rp.p3.x && p.x <= rp.p2.x && p.x <= rp.p4.x
+     &&p.y >= rp.p1.y && p.y >= rp.p2.y && p.y <= rp.p3.y && p.y <= rp.p4.y)
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+bool is_inside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
+{
+    Rect_Points rp1 = {{ur1.x, ur1.y}, {ur1.x + ur.w, ur1.y}, {ur1.x, ur1.y + ur1.h}, {ur1.x + ur1.w, ur1.y + ur1.h}};
+    Rect_Points rp2 = {{ur2.x, ur2.y}, {ur2.x + ur.w, ur2.y}, {ur2.x, ur2.y + ur2.h}, {ur2.x + ur2.w, ur2.y + ur2.h}};
+    if((is_point_inside(rp1, rp2.p1) && is_point_inside(rp1, rp2.p2) && is_point_inside(rp1, rp2.p3) && is_point_inside(rp1, rp2.p4))
+     ||(is_point_inside(rp2, rp1.p1) && is_point_inside(rp2, rp1.p2) && is_point_inside(rp2, rp1.p3) && is_point_inside(rp2, rp1.p4))
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+    
+}
+
+bool is_outside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
+{
+    Rect_Points rp1 = {{ur1.x, ur1.y}, {ur1.x + ur.w, ur1.y}, {ur1.x, ur1.y + ur1.h}, {ur1.x + ur1.w, ur1.y + ur1.h}}; 
+    Rect_Points rp2 = {{ur2.x, ur2.y}, {ur2.x + ur.w, ur2.y}, {ur2.x, ur2.y + ur2.h}, {ur2.x + ur2.w, ur2.y + ur2.h}};
+    if((is_point_inside(rp1, rp2.p1) || is_point_inside(rp1, rp2.p2) || is_point_inside(rp1, rp2.p3) || is_point_inside(rp1, rp2.p4))
+     ||(is_point_inside(rp2, rp1.p1) || is_point_inside(rp2, rp1.p2) || is_point_inside(rp2, rp1.p3) || is_point_inside(rp2, rp1.p4))
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+static void create_bullet()
 {
     __bullet(&game);
 }
 
-void random_create_plane()
+static void boundary_detect()
+{
+    __boundary(&game);
+}
+
+static void random_create_plane()
 {
     const int random_range = 1000;
     const int plane_occur = random_range * 0.1;
@@ -207,7 +263,7 @@ static void __move(Game* s)
     }
 }
 
-void __bullet(Game *s)
+static void __bullet(Game *s)
 {
     const int bullet_speed = 10;
     const int bullet_offset = 10;
@@ -232,7 +288,30 @@ void __bullet(Game *s)
             }
             else if(cp_virtual_isEnemy(s->obj[i]))
             {
+                //TODO:
+            }
+        }
+    }
+}
 
+static void __boundary(Game *s)
+{
+    for(int i = 0;i < OBJ_MAX;i++){
+        if(((Info *)(s->obj[i]))->valid == TRUE){
+            UTIL_RECT ur_obj;
+            cp_virtual_locate(s->obj[i], &ur_obj);
+            //                   x  y     w        h
+            UTIL_RECT ur_game = {0, 0, _WIDTH, _HEIGHT};
+            if(cp_virtual_isBullet(s->obj[i]) || cp_virtual_isEnemy(s->obj[i]))
+            {
+                if(is_outside_collision(ur_obj, ur_game) == TRUE && is_inside_collision(ur_obj, ur_game) == FALSE)
+                {
+                    game_rm(s->obj[i]);
+                }
+            }
+            else if(cp_virtual_isPlayer(s->obj[i]))
+            {
+                //TODO:
             }
         }
     }

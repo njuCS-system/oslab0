@@ -332,7 +332,7 @@ static void __create_enemy_bullet(Game *s)
             if(cp_virtual_isEnemy(s->obj[i]))
             {
                 //                     x            y           vx       vy      size            attack
-                BulletProperty b0 = {ur.x + PLANE_WIDTH / 2, ur.y + bullet_offset, 0, bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
+                BulletProperty b0 = {ur.x + PLANE_WIDTH / 3, ur.y + bullet_offset + PLANE_HEIGHT, 0, bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
                 Bullet *bullet0 = build_bullet(b0);
 
                 game_add(bullet0);

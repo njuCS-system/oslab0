@@ -309,7 +309,6 @@ static void __boundary(Game *s)
                 if(is_outside_collision(&ur_obj, &ur_game) == TRUE && is_inside_collision(&ur_obj, &ur_game) == FALSE)
                 {
                     game_rm(s->obj[i]);
-                    printf("cllision\n");
                 }
             }
             else if(cp_virtual_isPlayer(s->obj[i]))

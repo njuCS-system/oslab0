@@ -69,12 +69,12 @@ void bullet_automove(Bullet* bullet){
 
 int bullet_get_attack(Bullet *bullet)
 {
-    return bullet->properoty.attack;
+    return bullet->property.attack;
 }
 
 void bullet_set_attack(Bullet *bullet, int attack)
 {
-    bullet->properoty.attack = attack;
+    bullet->property.attack = attack;
 }
 
 //****************************************************************

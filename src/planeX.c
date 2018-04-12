@@ -112,12 +112,12 @@ bool planeX_isCrash(PlaneX *planeX)
 
 int planeX_get_attack(PlaneX *planeX)
 {
-    return planeX->properoty.attack;
+    return planeX->property.attack;
 }
 
 void planeX_set_attack(PlaneX *planeX, int attack)
 {
-    planeX->properoty.attack = attack;
+    planeX->property.attack = attack;
 }
 
 //****************************************************************

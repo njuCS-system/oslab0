@@ -140,12 +140,12 @@ bool planeI_isCrash(PlaneI *planeI)
 
 int planeI_get_attack(PlaneI *planeI)
 {
-    return planeI->properoty.attack;
+    return planeI->property.attack;
 }
 
 void planeI_set_attack(PlaneI *planeI, int attack)
 {
-    planeI->properoty.attack = attack;
+    planeI->property.attack = attack;
 }
 
 //****************************************************************

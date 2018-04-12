@@ -62,7 +62,7 @@ void main_loop()
     game_clear();
     game_init();
 
-    const int delay = 30;
+    const int delay = 3000;
     const int shooting_loop_count = 10;
 
     unsigned now_time = uptime();
@@ -357,12 +357,11 @@ static void __bullet_hurt(Game *s)
                         if(is_inside_collision(&ur_bullet, &ur_enemy))
                         {
                             game_rm(s->obj[i]);
+                            printf("hurt\n");
                             battle_virtual_hurt(s->obj[j], battle_virtual_get_attack(s->obj[i]));
                             if(battle_virtual_isCrash(s->obj[j]))
                             {
                                 game_rm(s->obj[j]);
-                                printf("hurt\n");
-                            while(1);
                             }
                         }
                     }

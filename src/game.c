@@ -59,7 +59,7 @@ void main_loop()
     game_init();
 
     const int delay = 30;
-    const int shooting_loop_count = 20000;
+    const int shooting_loop_count = 10;
 
     unsigned now_time = uptime();
     unsigned last_time = 0;
@@ -309,12 +309,52 @@ static void __boundary(Game *s)
                 if(is_outside_collision(&ur_obj, &ur_game) == TRUE && is_inside_collision(&ur_obj, &ur_game) == FALSE)
                 {
                     game_rm(s->obj[i]);
-                    printf("collision\n");
                 }
             }
             else if(cp_virtual_isPlayer(s->obj[i]))
             {
                 //TODO:
+            }
+        }
+    }
+}
+
+static void __bullet_hurt(Game *s)
+{
+    for(int i = 0;i < OBJ_MAX;i++){
+        if(((Info *)(s->obj[i]))->valid == TRUE && cp_virtual_isBullet(s->obj[i]) == TRUE)
+        {
+            UTIL_RECT ur_bullet;
+            cp_virtual_locate(s->obj[i], &ur_bullet);
+            if(cp_virtual_isEmemyBullet(s->obj[i]))
+            {
+                for(int j = 0; j < OBJ_MAX; j++)
+                {
+                    if(((Info *)(s->obj[j]))->valid == TRUE && cp_virtual_isPlayer(s->obj[j]) == TRUE)
+                    {
+                        //TODO:
+                    }
+                }
+            }
+            else
+            {
+                for(int j = 0; j < OBJ_MAX; j++)
+                {
+                    if(((Info *)(s->obj[j]))->valid == TRUE && cp_virtual_isEnemy(s->obj[j]) == TRUE)
+                    {
+                        UTIL_RECT ur_enemy;
+                        cp_virtual_locate(s->obj[j], &ur_bullet);
+                        if(is_inside_collision(ur_bullet, ur_enemy))
+                        {
+                            game_rm(s->obj[i]);
+                            battle_virtual_hurt(s->obj[j], battle_virtual_get_attack(s->obj[i]));
+                            if(battle_virtual_isCrash(s->obj[j]))
+                            {
+                                game_rm(s->obj[j]);
+                            }
+                        }
+                    }
+                }
             }
         }
     }

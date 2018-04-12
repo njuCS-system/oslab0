@@ -129,12 +129,12 @@ bool player1_isCrash(Player1 *player1)
 
 int player1_get_attack(Player1 *player1)
 {
-    return player1->properoty.attack;
+    return player1->property.attack;
 }
 
 void player1_set_attack(Player1 *player1, int attack)
 {
-    player1->properoty.attack = attack;
+    player1->property.attack = attack;
 }
 
 //****************************************************************

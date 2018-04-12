@@ -10,7 +10,7 @@ static PlaneTProperty t = {0, 0, 0, 2, 1, 200};
 static PlaneUProperty u = {0, 0, 0, 3, 1, 400};
 
 //                                 x            x     size hp_max
-static Player1Property p1 =  {_WIDTH / 2, _HEIGHT - 10 - PLANE_HEIGHT, 1, 1000};
+static Player1Property p1 =  {_WIDTH / 2, _HEIGHT - HP_OFFSET - PLANE_HEIGHT, 1, 1000};
 
 static void __add(Game* s,void* object);
 

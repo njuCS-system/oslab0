@@ -62,8 +62,8 @@ void main_loop()
     game_clear();
     game_init();
 
-    const int delay = 100;
-    const int shooting_loop_count = 10;
+    const int delay = 0;
+    const int shooting_loop_count = 5;
 
     unsigned now_time = uptime();
     unsigned last_time = 0;

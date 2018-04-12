@@ -63,7 +63,7 @@ void main_loop()
     game_init();
 
     const int delay = 0;
-    const int shooting_loop_count = 5;
+    const int shooting_loop_count = 10;
 
     unsigned now_time = uptime();
     unsigned last_time = 0;

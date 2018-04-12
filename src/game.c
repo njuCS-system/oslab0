@@ -119,6 +119,7 @@ bool is_outside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
 {
     Rect_Points rp1 = {{ur1->x, ur1->y}, {ur1->x + ur1->w, ur1->y}, {ur1->x, ur1->y + ur1->h}, {ur1->x + ur1->w, ur1->y + ur1->h}}; 
     Rect_Points rp2 = {{ur2->x, ur2->y}, {ur2->x + ur1->w, ur2->y}, {ur2->x, ur2->y + ur2->h}, {ur2->x + ur2->w, ur2->y + ur2->h}};
+    printf("(%d %d) (%d %d) (%d %d) (%d %d)\n", rp1.p1.x, rp1.p1.y, rp1.p2.x, rp1.p2.y ,rp1.p3.x ,rp1.p3.y, rp1.p4.x, rp1.p4.y);
     if((is_point_inside(rp1, rp2.p1) || is_point_inside(rp1, rp2.p2) || is_point_inside(rp1, rp2.p3) || is_point_inside(rp1, rp2.p4))
      ||(is_point_inside(rp2, rp1.p1) || is_point_inside(rp2, rp1.p2) || is_point_inside(rp2, rp1.p3) || is_point_inside(rp2, rp1.p4)))
     {
@@ -303,7 +304,7 @@ static void __boundary(Game *s)
             UTIL_RECT ur_game = {0, 0, _WIDTH, _HEIGHT};
             if(cp_virtual_isBullet(s->obj[i]) || cp_virtual_isEnemy(s->obj[i]))
             {
-                if(is_outside_collision(&ur_obj, &ur_game) == TRUE || is_inside_collision(&ur_obj, &ur_game) == TRUE)
+                if(is_outside_collision(&ur_obj, &ur_game) == TRUE && is_inside_collision(&ur_obj, &ur_game) == FALSE)
                 {
                     game_rm(s->obj[i]);
                 }

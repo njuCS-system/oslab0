@@ -4,10 +4,10 @@ Game game;
 static int init_x = 0;
 
 //                         x  y vx  vy size h_max
-static PlaneIProperty i = {0, 0, 0, 6, 1, 100};
-static PlaneXProperty x = {0, 0, 0, 6, 1, 200};
-static PlaneTProperty t = {0, 0, 0, 10, 1, 200};
-static PlaneUProperty u = {0, 0, 0, 15, 1, 400};
+static PlaneIProperty i = {0, 0, 0, 3, 1, 100};
+static PlaneXProperty x = {0, 0, 0, 3, 1, 200};
+static PlaneTProperty t = {0, 0, 0, 5, 1, 200};
+static PlaneUProperty u = {0, 0, 0, 7, 1, 400};
 
 static void __add(Game* s,void* object);
 

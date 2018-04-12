@@ -180,7 +180,7 @@ bool cp_virtual_isBullet(void *obj)
     return false;
 }
 
-bool cp_virtual_isEmemyBullet(void *obj)
+bool cp_virtual_isEnemyBullet(void *obj)
 {
     Info info = *((Info*)obj);
     if(!info.valid){

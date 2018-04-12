@@ -36,6 +36,8 @@ static void game_move();
 
 void random_create_plane();
 
+void create_bullet();
+
 
 void random_init_x()
 {

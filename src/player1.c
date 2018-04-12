@@ -127,6 +127,16 @@ bool player1_isCrash(Player1 *player1)
     return player1->hp->hp_left <= 0;
 }
 
+int player1_get_attack(Player1 *player1)
+{
+    return player1->properoty.attack;
+}
+
+void player1_set_attack(Player1 *player1, int attack)
+{
+    player1->properoty.attack = attack;
+}
+
 //****************************************************************
 
 static Player1* player1_allocate(){

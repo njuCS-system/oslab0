@@ -110,6 +110,16 @@ bool planeX_isCrash(PlaneX *planeX)
     return planeX->hp->hp_left <= 0;
 }
 
+int planeX_get_attack(PlaneX *planeX)
+{
+    return planeX->properoty.attack;
+}
+
+void planeX_set_attack(PlaneX *planeX, int attack)
+{
+    planeX->properoty.attack = attack;
+}
+
 //****************************************************************
 
 static PlaneX* planeX_allocate(){

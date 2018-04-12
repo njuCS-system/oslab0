@@ -52,3 +52,63 @@ bool battle_virtual_isCrash(void *obj)
 
     return false;
 }
+
+int battle_virtual_get_attack(void *obj)
+{
+    Info info = *((Info*)obj);
+    if(!info.valid){
+        return -1;
+    }
+    
+    switch(info.type){
+        case 'I':
+            return planeI_get_attack((PlaneI *)obj);
+            break;
+        case 'T':
+            return planeT_get_attack((PlaneT *)obj);
+            break;
+        case 'U':
+            return planeU_get_attack((PlaneU *)obj);
+            break;
+        case 'X':
+            return planeX_get_attack((PlaneX *)obj);
+            break;
+        case 'P':
+            return player1_get_attack((Player1 *)obj);
+            break;
+        case 'B':
+            return bullet_get_attack((Bullet *)obj);
+            break;
+    }
+
+    return -1;
+}
+
+void battle_virtual_set_attack(void *obj, int attack)
+{
+    Info info = *((Info*)obj);
+    if(!info.valid){
+        return;
+    }
+    
+    switch(info.type){
+        case 'I':
+            planeI_set_attack((PlaneI *)obj, attack);
+            break;
+        case 'T':
+            planeT_set_attack((PlaneT *)obj, attack);
+            break;
+        case 'U':
+            planeU_set_attack((PlaneU *)obj, attack);
+            break;
+        case 'X':
+            planeX_set_attack((PlaneX *)obj, attack);
+            break;
+        case 'P':
+            player1_set_attack((Player1 *)obj, attack);
+            break;
+        case 'B':
+            bullet_set_attack((Bullet *)obj, attack);
+            break;
+    }
+}

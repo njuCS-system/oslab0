@@ -67,7 +67,15 @@ void bullet_automove(Bullet* bullet){
     bullet->property.y += bullet->property.vy;
 }
 
+int bullet_get_attack(Bullet *bullet)
+{
+    return bullet->properoty.attack;
+}
 
+void bullet_set_attack(Bullet *bullet, int attack)
+{
+    bullet->properoty.attack = attack;
+}
 
 //****************************************************************
 

@@ -149,3 +149,57 @@ void cp_virtual_locate(void* obj, UTIL_RECT *ur){
             break;
     }
 }
+
+void cp_virtual_isPlayer(void *obj)
+{
+    Info info = *((Info*)obj);
+    if(!info.valid){
+        return false;
+    }
+    switch(info.type){
+        case 'P':
+            return true;
+            break;
+    }
+
+    return false;
+}
+
+void cp_virtual_isBullet(void *obj)
+{
+    Info info = *((Info*)obj);
+    if(!info.valid){
+        return false;
+    }
+    switch(info.type){
+        case 'B':
+            return true;
+            break;
+    }
+
+    return false;
+}
+
+void cp_virtual_isEnemy(void *obj)
+{
+    Info info = *((Info*)obj);
+    if(!info.valid){
+        return false;
+    }
+    switch(info.type){
+        case 'I':
+            return true;
+            break;
+        case 'X':
+            return true;
+            break;
+        case 'U':
+            return true;
+            break;
+        case 'T':
+            return true;
+            break;
+    }
+
+    return false;
+}

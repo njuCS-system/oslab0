@@ -111,6 +111,16 @@ bool planeU_isCrash(PlaneU *planeU)
     return planeU->hp->hp_left <= 0;
 }
 
+int planeU_get_attack(PlaneU *planeU)
+{
+    return planeU->properoty.attack;
+}
+
+void planeU_set_attack(PlaneI *planeI, int attack)
+{
+    planeI->properoty.attack = attack;
+}
+
 //****************************************************************
 
 static PlaneU* planeU_allocate(){

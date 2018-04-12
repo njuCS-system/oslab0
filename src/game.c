@@ -38,17 +38,17 @@ static void game_rm(void * obj);
 
 static void game_move();
 
-void random_create_plane();
+static void random_create_plane();
 
-void create_bullet();
+static void create_bullet();
 
-void boundary_detect();
+static void boundary_detect();
 
-bool is_inside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2);
+static bool is_inside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2);
 
-bool is_outside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2);
+static bool is_outside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2);
 
-void random_init_x()
+static void random_init_x()
 {
     init_x = rand() % (_WIDTH - PLANE_WIDTH);
 }

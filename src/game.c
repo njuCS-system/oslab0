@@ -304,7 +304,7 @@ static void __boundary(Game *s)
             UTIL_RECT ur_game = {0, 0, _WIDTH, _HEIGHT};
             if(cp_virtual_isBullet(s->obj[i]) || cp_virtual_isEnemy(s->obj[i]))
             {
-                if(is_outside_collision(ur_obj, ur_game) == TRUE && is_inside_collision(ur_obj, ur_game) == FALSE)
+                if(is_outside_collision(&ur_obj, &ur_game) == TRUE && is_inside_collision(&ur_obj, &ur_game) == FALSE)
                 {
                     game_rm(s->obj[i]);
                 }

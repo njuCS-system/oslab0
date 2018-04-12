@@ -53,7 +53,7 @@ void main_loop()
     game_init();
 
     const int delay = 30;
-    const int shooting_loop_count = 10;
+    const int shooting_loop_count = 20;
 
     unsigned now_time = uptime();
     unsigned last_time = 0;
@@ -218,9 +218,9 @@ void __bullet(Game *s)
             if(cp_virtual_isPlayer(s->obj[i]))
             {
                 //                     x            y           vx       vy      size            attack
-                BulletProperty b0 = {ur.x, ur.y - bullet_offset, 0, bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
-                BulletProperty b1 = {ur.x + PLANE_WIDTH / 2, ur.y - bullet_offset, 0, bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
-                BulletProperty b2 = {ur.x + PLANE_WIDTH, ur.y - bullet_offset, 0, bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
+                BulletProperty b0 = {ur.x, ur.y - bullet_offset, 0, -bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
+                BulletProperty b1 = {ur.x + PLANE_WIDTH / 2, ur.y - bullet_offset, 0, -bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
+                BulletProperty b2 = {ur.x + PLANE_WIDTH, ur.y - bullet_offset, 0, -bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
 
                 Bullet *bullet0 = build_bullet(b0);
                 Bullet *bullet1 = build_bullet(b1);

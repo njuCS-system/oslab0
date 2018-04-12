@@ -46,3 +46,17 @@ void draw_sync() {
   ctl.sync = 1;
   dev->write(_DEVREG_VIDEO_FBCTL, &ctl, sizeof(ctl));
 }
+
+int screen_width() {
+  _Device *dev = getdev(&video_dev, _DEV_VIDEO);
+  _VideoInfoReg info;
+  dev->read(_DEVREG_VIDEO_INFO, &info, sizeof(info));
+  return info.width;
+}
+
+int screen_height() {
+  _Device *dev = getdev(&video_dev, _DEV_VIDEO);
+  _VideoInfoReg info;
+  dev->read(_DEVREG_VIDEO_INFO, &info, sizeof(info));
+  return info.height;
+}

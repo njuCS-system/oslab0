@@ -31,8 +31,8 @@ int main() {
     printf("\n");
   }*/
   
-  //try();
-  main_loop();
+  try();
+  //main_loop();
 
   return 0;
 }
@@ -406,17 +406,17 @@ void try(){
   //try_planeX();
   //try_planeU();
   //try_planeT();
-  //try_player1();
+  try_player1();
   //try_bullet();
   //try_bigExplosion3();
   //try_hp();
 
   
-  /*while(1)
+  while(1)
   {
     kbRespond_action();
     screen_draw();
-  }*/
+  }
   
   //screen_draw();
 

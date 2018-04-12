@@ -360,14 +360,13 @@ static void __bullet_hurt(Game *s)
                         cp_virtual_locate(s->obj[j], &ur_enemy);
                         if(is_inside_collision(&ur_bullet, &ur_enemy))
                         {
-                            game_rm(s->obj[i]);
                             battle_virtual_hurt(s->obj[j], battle_virtual_get_attack(s->obj[i]));
-                            printf("%d\n", battle_virtual_get_attack(s->obj[i]));
+                            game_rm(s->obj[i]);
                             if(battle_virtual_isCrash(s->obj[j]))
                             {
                                 game_rm(s->obj[j]);
                             }
-                            //break;
+                            break;
                         }
                     }
                 }

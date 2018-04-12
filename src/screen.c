@@ -86,6 +86,11 @@ static void __clear(Screen* s){
 
 static void __remove(Screen* s, void *obj)
 {
+    if(obj == NULL)
+    {
+        return;
+    }
+    
     int index = 0;
     for(; obj != s->obj[index] && index < OBJ_MAX; index++);
     

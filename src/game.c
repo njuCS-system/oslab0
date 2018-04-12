@@ -41,6 +41,8 @@ void random_init_x()
 
 void main_loop()
 {
+    game_clear();
+    game_rm(NULL);
     game_init();
     unsigned now_time = uptime();
     unsigned last_time = 0;

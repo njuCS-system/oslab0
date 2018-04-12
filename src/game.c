@@ -24,7 +24,7 @@ static void __move(Game* s);
 
 static void __create_player_bullet(Game *s);
 
-static void __enemy_player_bullet(Game *s);
+static void __create_enemy_bullet(Game *s);
 
 static void __boundary(Game *s);
 

@@ -59,7 +59,7 @@ void main_loop()
     game_init();
 
     const int delay = 30;
-    const int shooting_loop_count = 20;
+    const int shooting_loop_count = 1;
 
     unsigned now_time = uptime();
     unsigned last_time = 0;
@@ -76,7 +76,7 @@ void main_loop()
                 create_bullet();
             }
             game_move();
-            boundary_detect();
+            //boundary_detect();
             kbRespond_action();
             game_draw();
             last_time = now_time;

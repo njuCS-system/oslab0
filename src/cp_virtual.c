@@ -150,7 +150,7 @@ void cp_virtual_locate(void* obj, UTIL_RECT *ur){
     }
 }
 
-void cp_virtual_isPlayer(void *obj)
+bool cp_virtual_isPlayer(void *obj)
 {
     Info info = *((Info*)obj);
     if(!info.valid){
@@ -165,7 +165,7 @@ void cp_virtual_isPlayer(void *obj)
     return false;
 }
 
-void cp_virtual_isBullet(void *obj)
+bool cp_virtual_isBullet(void *obj)
 {
     Info info = *((Info*)obj);
     if(!info.valid){
@@ -180,7 +180,7 @@ void cp_virtual_isBullet(void *obj)
     return false;
 }
 
-void cp_virtual_isEnemy(void *obj)
+bool cp_virtual_isEnemy(void *obj)
 {
     Info info = *((Info*)obj);
     if(!info.valid){

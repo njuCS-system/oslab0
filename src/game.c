@@ -99,7 +99,7 @@ void random_create_plane()
     const int planeX_occur = plane_occur * 0.3 + planeI_occur;
     const int planeT_occur = plane_occur * 0.2 + planeX_occur;
     const int planeU_occur = plane_occur * 0.1 + planeU_occur;
-    random_init_x;
+    random_init_x();
     int r = rand() % random_range;
     if(r < plane_occur)
     {

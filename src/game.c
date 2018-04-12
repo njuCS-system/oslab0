@@ -357,12 +357,12 @@ static void __bullet_hurt(Game *s)
                     if(((Info *)(s->obj[j]))->valid == TRUE && cp_virtual_isEnemy(s->obj[j]) == TRUE)
                     {
                         UTIL_RECT ur_enemy;
-                        cp_virtual_locate(s->obj[j], &ur_bullet);
+                        cp_virtual_locate(s->obj[j], &ur_enemy);
                         if(is_inside_collision(&ur_bullet, &ur_enemy))
                         {
                             game_rm(s->obj[i]);
                             //printf("hurt\n");
-                            printf("%d %d %d %d\n", ur_bullet.x, ur_bullet.y, ur_bullet.w ,ur_bullet.h);
+                            //printf("%d %d %d %d\n", ur_bullet.x, ur_bullet.y, ur_bullet.w ,ur_bullet.h);
                             battle_virtual_hurt(s->obj[j], battle_virtual_get_attack(s->obj[i]));
                             if(battle_virtual_isCrash(s->obj[j]))
                             {

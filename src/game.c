@@ -102,10 +102,10 @@ bool is_point_inside(Rect_Points rp, Point p)
 
 bool is_inside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
 {
-    Rect_Points rp1 = {{ur1->x, ur1->y}, {ur1->x + ur->w, ur1->y}, {ur1->x, ur1->y + ur1->h}, {ur1->x + ur1->w, ur1->y + ur1->h}};
-    Rect_Points rp2 = {{ur2->x, ur2->y}, {ur2->x + ur->w, ur2->y}, {ur2->x, ur2->y + ur2->h}, {ur2->x + ur2->w, ur2->y + ur2->h}};
+    Rect_Points rp1 = {{ur1->x, ur1->y}, {ur1->x + ur1->w, ur1->y}, {ur1->x, ur1->y + ur1->h}, {ur1->x + ur1->w, ur1->y + ur1->h}};
+    Rect_Points rp2 = {{ur2->x, ur2->y}, {ur2->x + ur1->w, ur2->y}, {ur2->x, ur2->y + ur2->h}, {ur2->x + ur2->w, ur2->y + ur2->h}};
     if((is_point_inside(rp1, rp2.p1) && is_point_inside(rp1, rp2.p2) && is_point_inside(rp1, rp2.p3) && is_point_inside(rp1, rp2.p4))
-     ||(is_point_inside(rp2, rp1.p1) && is_point_inside(rp2, rp1.p2) && is_point_inside(rp2, rp1.p3) && is_point_inside(rp2, rp1.p4))
+     ||(is_point_inside(rp2, rp1.p1) && is_point_inside(rp2, rp1.p2) && is_point_inside(rp2, rp1.p3) && is_point_inside(rp2, rp1.p4)))
     {
         return TRUE;
     }
@@ -118,10 +118,10 @@ bool is_inside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
 
 bool is_outside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
 {
-    Rect_Points rp1 = {{ur1->x, ur1->y}, {ur1->x + ur->w, ur1->y}, {ur1->x, ur1->y + ur1->h}, {ur1->x + ur1->w, ur1->y + ur1->h}}; 
-    Rect_Points rp2 = {{ur2->x, ur2->y}, {ur2->x + ur->w, ur2->y}, {ur2->x, ur2->y + ur2->h}, {ur2->x + ur2->w, ur2->y + ur2->h}};
+    Rect_Points rp1 = {{ur1->x, ur1->y}, {ur1->x + ur1->w, ur1->y}, {ur1->x, ur1->y + ur1->h}, {ur1->x + ur1->w, ur1->y + ur1->h}}; 
+    Rect_Points rp2 = {{ur2->x, ur2->y}, {ur2->x + ur1->w, ur2->y}, {ur2->x, ur2->y + ur2->h}, {ur2->x + ur2->w, ur2->y + ur2->h}};
     if((is_point_inside(rp1, rp2.p1) || is_point_inside(rp1, rp2.p2) || is_point_inside(rp1, rp2.p3) || is_point_inside(rp1, rp2.p4))
-     ||(is_point_inside(rp2, rp1.p1) || is_point_inside(rp2, rp1.p2) || is_point_inside(rp2, rp1.p3) || is_point_inside(rp2, rp1.p4))
+     ||(is_point_inside(rp2, rp1.p1) || is_point_inside(rp2, rp1.p2) || is_point_inside(rp2, rp1.p3) || is_point_inside(rp2, rp1.p4)))
     {
         return TRUE;
     }

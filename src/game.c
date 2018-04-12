@@ -53,20 +53,27 @@ void main_loop()
     game_init();
 
     const int delay = 30;
+    const int shooting_loop_count = 10;
 
     unsigned now_time = uptime();
     unsigned last_time = 0;
     srand(now_time);
+    int loop_count = 0;
+
     while(1)
     {
         if(now_time >= last_time + delay)
         {
             random_create_plane();
-            create_bullet();
+            if(loop_count % shooting_loop_count)
+            {
+                create_bullet();
+            }
             game_move();
             kbRespond_action();
             game_draw();
             last_time = now_time;
+            loop_count++;
         }
         now_time = uptime();
     }

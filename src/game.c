@@ -52,7 +52,7 @@ void main_loop()
     srand(now_time);
     while(1)
     {
-        if(now_time >= last_time + 30)
+        if(now_time >= last_time + 0)
         {
             random_create_plane();
             game_move();

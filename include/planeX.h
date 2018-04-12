@@ -12,6 +12,7 @@ typedef struct PlaneXProperty{
     int vx, vy;
     int size;
     int hp_max;
+    int attack;
 }PlaneXProperty;
 
 
@@ -48,5 +49,14 @@ void planeX_automove(PlaneX* planeX);
 
 //
 void planeX_hurt(PlaneX*, int);
+
+//
+bool planeX_isCrash(PlaneX*);
+
+//
+int planeX_get_attack(PlaneX *);
+
+//
+void planeX_set_attack(PlaneX *, int);
 
 #endif

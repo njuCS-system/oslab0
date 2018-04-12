@@ -5,12 +5,13 @@
 #include "hp.h"
 
 #define PLAYER1_MAX 20
-#define PLAYER1_SPEED 20
+#define PLAYER1_SPEED 8
 
 typedef struct Player1Property{
     int x,y; //位置
     int size;
     int hp_max;
+    int attack;
 }Player1Property;
 
 
@@ -50,6 +51,15 @@ void player1_answer(Player1*, int keycode);
 
 //
 void player1_hurt(Player1*, int);
+
+//
+bool player1_isCrash(Player1*);
+
+//
+int player1_get_attack(Player1 *);
+
+//
+void player1_set_attack(Player1 *, int);
 
 
 #endif

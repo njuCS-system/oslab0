@@ -3,7 +3,7 @@
 
 #include "component.h"
 
-#define OBJ_MAX 1000
+#define OBJ_MAX 30
 
 
 typedef struct Screen{

@@ -12,6 +12,7 @@ typedef struct BulletProperty{
     int x,y; //位置
     int vx, vy;
     int size;
+    int attack;
 }BulletProperty;
 
 
@@ -45,7 +46,11 @@ void bullet_locate(Bullet *, UTIL_RECT*);
 //
 void bullet_automove(Bullet* bullet);
 
+//
+int bullet_get_attack(Bullet *);
 
+//
+void bullet_set_attack(Bullet *, int);
 
 
 #endif

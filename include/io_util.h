@@ -7,5 +7,7 @@ uint32_t uptime();
 _KbdReg read_key();
 void video_draw(_FBCtlReg clt);
 void draw_sync();
+int screen_width();
+int screen_height();
 
 #endif

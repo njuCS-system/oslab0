@@ -13,6 +13,7 @@ typedef struct PlaneTProperty{
     int vx, vy;
     int size;
     int hp_max;
+    int attack;
 }PlaneTProperty;
 
 
@@ -49,6 +50,15 @@ void planeT_automove(PlaneT* planeT);
 
 //
 void planeT_hurt(PlaneT*, int);
+
+//
+bool planeT_isCrash(PlaneT*);
+
+//
+int planeT_get_attack(PlaneT *);
+
+//
+void planeT_set_attack(PlaneT *, int);
 
 
 #endif

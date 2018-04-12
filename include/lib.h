@@ -33,6 +33,8 @@ int abs(int num);
 /**************************/
 /*        stdlib.h        */
 /**************************/
+int rand(void);
+void srand(unsigned int seed);
 char *itoa(int num, char *str, int radix, int sign);
 int atoi(char* pstr);
 

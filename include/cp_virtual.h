@@ -11,5 +11,14 @@ void cp_virtual_move(void*, int deltaX, int deltaY);
 
 void cp_virtual_locate(void*, UTIL_RECT *ur);
 
+bool cp_virtual_isPlayer(void *obj);
+
+bool cp_virtual_isBullet(void *obj);
+
+bool cp_virtual_isEnemyBullet(void *obj);
+
+bool cp_virtual_isEnemy(void *obj);
+
+void cp_virtual_toRect(void *obj, UTIL_RECT *ur);
 
 #endif

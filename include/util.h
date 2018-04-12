@@ -19,8 +19,9 @@
 //不采用sizeof而是宏定义大小是因为sizeof考虑了对齐
 #define BITMAPFILEHEADER_LENGTH 14
 #define SIZE_OF_OBJECTSET 24
-#define _WIDTH 400
-#define _HEIGHT 300
+#define _WIDTH 630
+#define _HEIGHT 470
+#define PLANE_WIDTH 80
 #define PLANE_HEIGHT 50
 #define DEFAULT_COLOR 0x01000000
 #define BACKGROUND 0x00010101
@@ -38,6 +39,12 @@ typedef struct Color{
     volatile unsigned char r;
     volatile unsigned char a;
 }Color;
+
+typedef struct Point
+{
+	int x;
+	int y;
+}Point;
 
 enum {ID_PLAYER, ID_ENEMY_SMALL, ID_ENEMY_MEDIUM, ID_ENEMY_BIG, ID_ROUNDBULLET_0, ID_ROUNDBULLET_1, ID_DOWNMISSILE, ID_UPMISSILE, ID_SMALLBOMB_0, ID_SMALLBOMB_1, ID_SMALLBOMB_2, ID_SMALLBOMB_3, ID_SMALLBOMB_4, ID_SMALLBOMB_5, ID_SMALLBOMB_6, ID_SMALLBOMB_7, ID_BIGBOMB_0, ID_BIGBOMB_1, ID_BIGBOMB_2, ID_BIGBOMB_3, ID_BIGBOMB_4, ID_BIGBOMB_5, ID_BIGBOMB_6, ID_BIGBOMB_7};
 

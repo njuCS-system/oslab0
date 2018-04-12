@@ -76,9 +76,11 @@ int battle_virtual_get_attack(void *obj)
         case 'P':
             return player1_get_attack((Player1 *)obj);
             break;
-        case 'B':
+        case 'B':{
+            printf("attack\n");
             return bullet_get_attack((Bullet *)obj);
             break;
+        }
     }
 
     return -1;

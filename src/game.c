@@ -78,6 +78,7 @@ void main_loop()
             boundary_detect();
             kbRespond_action();
             game_draw();
+            while(1);
             last_time = now_time;
             loop_count++;
         }

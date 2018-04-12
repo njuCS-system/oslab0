@@ -367,6 +367,7 @@ static void __bullet_hurt(Game *s)
                             {
                                 game_rm(s->obj[j]);
                             }
+                            //break;
                         }
                     }
                 }

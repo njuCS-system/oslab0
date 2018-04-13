@@ -121,9 +121,9 @@ void planeU_set_attack(PlaneU *planeU, int attack)
     planeU->property.attack = attack;
 }
 
-int planeT_get_hp(PlaneT *planeI)
+int planeU_get_hp(PlaneU *planeU)
 {
-    return planeT->hp->hp_left;
+    return planeU->hp->hp_left;
 }
 
 //****************************************************************

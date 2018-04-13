@@ -120,6 +120,11 @@ void planeX_set_attack(PlaneX *planeX, int attack)
     planeX->property.attack = attack;
 }
 
+int planeX_get_hp(PlaneX *planeX)
+{
+    return planeX->hp->hp_left;
+}
+
 //****************************************************************
 
 static PlaneX* planeX_allocate(){

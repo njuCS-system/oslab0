@@ -148,6 +148,11 @@ void planeI_set_attack(PlaneI *planeI, int attack)
     planeI->property.attack = attack;
 }
 
+int planeI_get_hp(PlaneI *planeI)
+{
+    return planeI->hp->hp_left;
+}
+
 //****************************************************************
 
 static PlaneI* planeI_allocate(){

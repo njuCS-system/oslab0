@@ -137,6 +137,11 @@ void player1_set_attack(Player1 *player1, int attack)
     player1->property.attack = attack;
 }
 
+int player1_get_hp(Player1 *player1)
+{
+    return player1->hp->hp_left;
+}
+
 //****************************************************************
 
 static Player1* player1_allocate(){

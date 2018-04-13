@@ -120,6 +120,11 @@ void planeT_set_attack(PlaneT *planeT, int attack)
     planeT->property.attack = attack;
 }
 
+int planeT_get_hp(PlaneT *planeT)
+{
+    return planeT->hp->hp_left;
+}
+
 //****************************************************************
 
 static PlaneT* planeT_allocate(){

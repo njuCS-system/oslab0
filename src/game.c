@@ -28,7 +28,7 @@ static void __create_enemy_bullet(Game *s);
 
 static void __boundary(Game *s);
 
-static void __bullet_hurt(Game *s);
+static void __collision_detect(Game *s);
 
 static void game_init();
 
@@ -54,7 +54,7 @@ static bool is_inside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2);
 
 static bool is_outside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2);
 
-static void bullet_hurt();
+static void collision_detect();
 
 static void random_init_x()
 {
@@ -206,9 +206,9 @@ static void random_create_plane()
     }
 }
 
-static void bullet_hurt()
+static void collision_detect()
 {
-    __bullet_hurt(&game);
+    __collision_detect(&game);
 }
 
 static void game_init()
@@ -364,7 +364,7 @@ static void __boundary(Game *s)
     }
 }
 
-static void __bullet_hurt(Game *s)
+static void __collision_detect(Game *s)
 {
     for(int i = 0;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE && cp_virtual_isBullet(s->obj[i]) == TRUE)
@@ -410,6 +410,29 @@ static void __bullet_hurt(Game *s)
                             }
                             break;
                         }
+                    }
+                }
+            }
+        }
+        else if(((Info *)(s->obj[i]))->valid == TRUE && cp_virtual_isPlayer(s->obj[i]) == TRUE)
+        {
+            UTIL_RECT ur_player;
+            cp_virtual_locate(s->obj[i], &ur_player);
+            for(int j = 0; j < OBJ_MAX; j++)
+            {
+                if(((Info *)(s->obj[j]))->valid == TRUE && cp_virtual_isEnemy(s->obj[j]) == TRUE)
+                {
+                    UTIL_RECT ur_enemy;
+                    cp_virtual_locate(s->obj[j], &ur_enemy);
+                    if(is_outside_collision(&ur_player, &ur_enemy))
+                    {
+                        battle_virtual_hurt(s->obj[i], battle_virtual_get_hp(s->obj[j]));
+                        game_rm(s->obj[j]);
+                        if(battle_virtual_isCrash(s->obj[i]))
+                        {
+                            game_rm(s->obj[i]);
+                        }
+                        break;
                     }
                 }
             }

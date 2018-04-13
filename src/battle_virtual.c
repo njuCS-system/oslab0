@@ -112,3 +112,31 @@ void battle_virtual_set_attack(void *obj, int attack)
             break;
     }
 }
+
+int battle_virtual_get_hp(void *obj)
+{
+    Info info = *((Info*)obj);
+    if(!info.valid){
+        return -1;
+    }
+    
+    switch(info.type){
+        case 'I':
+            return planeI_get_hp((PlaneI *)obj);
+            break;
+        case 'T':
+            return planeT_get_hp((PlaneT *)obj);
+            break;
+        case 'U':
+            return planeU_get_hp((PlaneU *)obj);
+            break;
+        case 'X':
+            return planeX_get_hp((PlaneX *)obj);
+            break;
+        case 'P':
+            return player1_get_hp((Player1 *)obj);
+            break;
+    }
+
+    return -1;
+}

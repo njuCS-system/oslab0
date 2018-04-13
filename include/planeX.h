@@ -59,4 +59,7 @@ int planeX_get_attack(PlaneX *);
 //
 void planeX_set_attack(PlaneX *, int);
 
+//
+int planeX_get_hp(PlaneX *);
+
 #endif

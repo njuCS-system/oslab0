@@ -5,7 +5,7 @@
 #include "hp.h"
 
 #define PLAYER1_MAX 20
-#define PLAYER1_SPEED 8
+#define PLAYER1_SPEED 12
 
 typedef struct Player1Property{
     int x,y; //位置
@@ -60,6 +60,9 @@ int player1_get_attack(Player1 *);
 
 //
 void player1_set_attack(Player1 *, int);
+
+//
+int player1_get_hp(Player1 *);
 
 
 #endif

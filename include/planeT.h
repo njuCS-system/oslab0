@@ -60,5 +60,7 @@ int planeT_get_attack(PlaneT *);
 //
 void planeT_set_attack(PlaneT *, int);
 
+//
+int planeT_get_hp(PlaneT *);
 
 #endif

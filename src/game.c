@@ -90,7 +90,7 @@ void main_loop()
             }
             game_move();
             boundary_detect();
-            bullet_hurt();
+            collision_detect();
             kbRespond_action();
             game_draw();
             last_time = now_time;

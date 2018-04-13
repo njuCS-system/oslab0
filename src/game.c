@@ -5,7 +5,7 @@ static int init_x = 0;
 
 //                         x  y vx vy size h_max attack
 static PlaneIProperty i = {0, 0, 0, 1, 1, 80, 20};
-static PlaneXProperty x = {0, 0, 0, 1, 1, 600, 30};
+static PlaneXProperty x = {0, 0, 0, 1, 1, 500, 30};
 static PlaneTProperty t = {0, 0, 0, 2, 1, 120, 80};
 static PlaneUProperty u = {0, 0, 0, 3, 1, 200, 50};
 

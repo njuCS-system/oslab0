@@ -170,7 +170,7 @@ static void boundary_detect()
 static void random_create_plane()
 {
     const int random_range = 10000;
-    const int plane_occur = random_range * 0.01;
+    const int plane_occur = random_range * 0.005;
     const int planeI_occur = plane_occur * 0.4;
     const int planeX_occur = plane_occur * 0.3 + planeI_occur;
     const int planeT_occur = plane_occur * 0.2 + planeX_occur;

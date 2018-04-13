@@ -31,8 +31,8 @@ int main() {
     printf("\n");
   }*/
   
-  try();
-  //main_loop();
+  //try();
+  main_loop();
 
   return 0;
 }
@@ -422,6 +422,6 @@ void try(){
 
   //screen_draw();
 
-  _KbdReg reg = read_key();
+  /*_KbdReg reg = read_key();
   printf("%d\n", reg.keycode);
 }

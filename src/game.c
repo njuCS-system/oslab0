@@ -373,7 +373,8 @@ static void __collision_detect(Game *s)
             cp_virtual_locate(s->obj[i], &ur_bullet);
             if(cp_virtual_isEnemyBullet(s->obj[i]))
             {
-                for(int j = 0; j < OBJ_MAX; j++)
+                //我们假设player只能出现在前两个单元！
+                for(int j = 0; j < 2; j++)
                 {
                     if(((Info *)(s->obj[j]))->valid == TRUE && cp_virtual_isPlayer(s->obj[j]) == TRUE)
                     {
@@ -414,11 +415,15 @@ static void __collision_detect(Game *s)
                 }
             }
         }
-        else if(((Info *)(s->obj[i]))->valid == TRUE && cp_virtual_isPlayer(s->obj[i]) == TRUE)
+    }
+
+    //我们假设player只能出现在前两个单元！
+    for(int i = 0; i < 2; i++){
+        if(((Info *)(s->obj[i]))->valid == TRUE && cp_virtual_isPlayer(s->obj[i]) == TRUE)
         {
             UTIL_RECT ur_player;
             cp_virtual_locate(s->obj[i], &ur_player);
-            for(int j = 0; j < OBJ_MAX; j++)
+            for(int j = i + 1; j < OBJ_MAX; j++)
             {
                 if(((Info *)(s->obj[j]))->valid == TRUE && cp_virtual_isEnemy(s->obj[j]) == TRUE)
                 {

@@ -97,7 +97,7 @@ void main_loop()
             last_time = now_time;
             loop_count++;
         }
-        now_time = uptime();
+        //now_time = uptime();
     }
     
 }

@@ -222,7 +222,7 @@ static void game_init()
     kbRespond_add(player1);
     game_add(player1);
 
-    Player2 *player2 = build_player2(p1);
+    Player2 *player2 = build_player2(p2);
     kbRespond_add(player2);
     game_add(player2);
 }

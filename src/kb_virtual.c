@@ -10,7 +10,9 @@ void kb_virtual_answer(void* obj, int keycode){
     {
         case 'P':
             player1_answer((Player1 *)obj, keycode);
+            break;
         case 'p':
             player2_answer((Player2 *)obj, keycode);
+            break;
     }
 }

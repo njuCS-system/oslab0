@@ -66,7 +66,6 @@ static void __action(KbRespond* s){
     }
     for(int i = 0;i < KB_MAX;i++){
         if(s->obj[i] != NULL){
-            printf("%d\n", i);
             kb_virtual_answer(s->obj[i], reg.keycode);
         }
     }

@@ -100,7 +100,6 @@ void player2_move(Player2* player2,int deltaX, int deltaY){
 
 void player2_answer(Player2 *player2, int keycode)
 {
-    printf("player2\n");
     switch(keycode)
     {
         case 49: //J

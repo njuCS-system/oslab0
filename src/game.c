@@ -97,7 +97,7 @@ void main_loop()
             last_time = now_time;
             loop_count++;
         }
-        //now_time = uptime();
+        now_time = uptime();
     }
     
 }
@@ -348,7 +348,7 @@ static void __create_enemy_bullet(Game *s)
 
 static void __boundary(Game *s)
 {
-    for(int i = 0;i < OBJ_MAX;i++){
+    /*for(int i = 0;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE){
             UTIL_RECT ur_obj;
             cp_virtual_locate(s->obj[i], &ur_obj);
@@ -366,7 +366,7 @@ static void __boundary(Game *s)
                 //TODO:
             }
         }
-    }
+    }*/
 }
 
 static void __collision_detect(Game *s)

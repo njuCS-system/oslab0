@@ -22,6 +22,9 @@ void battle_virtual_hurt(void* obj, int hp_lost){
         case 'P':
             player1_hurt((Player1 *)obj, hp_lost);
             break;
+        case 'p':
+            player2_hurt((Player2 *)obj, hp_lost);
+            break;
     }
 }
 
@@ -46,6 +49,9 @@ bool battle_virtual_isCrash(void *obj)
             return planeX_isCrash((PlaneX *)obj);
             break;
         case 'P':
+            return player1_isCrash((Player1 *)obj);
+            break;
+        case 'p':
             return player1_isCrash((Player1 *)obj);
             break;
     }
@@ -74,6 +80,9 @@ int battle_virtual_get_attack(void *obj)
             return planeX_get_attack((PlaneX *)obj);
             break;
         case 'P':
+            return player1_get_attack((Player1 *)obj);
+            break;
+        case 'p':
             return player1_get_attack((Player1 *)obj);
             break;
         case 'B':
@@ -107,6 +116,9 @@ void battle_virtual_set_attack(void *obj, int attack)
         case 'P':
             player1_set_attack((Player1 *)obj, attack);
             break;
+        case 'p':
+            player1_set_attack((Player1 *)obj, attack);
+            break;
         case 'B':
             bullet_set_attack((Bullet *)obj, attack);
             break;
@@ -134,6 +146,9 @@ int battle_virtual_get_hp(void *obj)
             return planeX_get_hp((PlaneX *)obj);
             break;
         case 'P':
+            return player1_get_hp((Player1 *)obj);
+            break;
+        case 'p':
             return player1_get_hp((Player1 *)obj);
             break;
     }

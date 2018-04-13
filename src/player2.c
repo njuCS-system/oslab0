@@ -102,16 +102,16 @@ void player2_answer(Player2 *player2, int keycode)
 {
     switch(keycode)
     {
-        case 43: //A
+        case 49: //J
             player2_move(player2, -PLAYER2_SPEED, 0);
             break;
-        case 44: //S
+        case 50: //K
             player2_move(player2, 0, PLAYER2_SPEED);
             break;
-        case 45: //D
+        case 51: //L
             player2_move(player2, PLAYER2_SPEED, 0);
             break;
-        case 30: //W
+        case 36: //I
             player2_move(player2, 0, -PLAYER2_SPEED);
             break;
     }
@@ -162,7 +162,7 @@ static Player2* player2_allocate(){
 
 static void __init__Player2(Player2* player2,Player2Property property){
     //初始化逻辑
-    player2->info.type = 'P';
+    player2->info.type = 'p';
     player2->info.valid = TRUE;
     player2->property = property;
     

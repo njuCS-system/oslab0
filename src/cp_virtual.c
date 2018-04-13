@@ -37,6 +37,9 @@ void cp_virtual_draw(void* obj){
         case 'P':
             player1_draw((Player1 *)obj);
             break;
+        case 'p':
+            player2_draw((Player2 *)obj);
+            break;
     }
 
 }
@@ -77,6 +80,9 @@ void cp_virtual_delete(void* obj){
             break;
         case 'P':
             player1_delete((Player1 *)obj);
+            break;
+        case 'p':
+            player2_delete((Player2 *)obj);
             break;
     }
 }
@@ -119,6 +125,9 @@ void cp_virtual_move(void* obj,int deltaX, int deltaY){
         case 'P':
             player1_move((Player1 *)obj, deltaX, deltaY);
             break;
+        case 'p':
+            player2_move((Player2 *)obj, deltaX, deltaY);
+            break;
     }
 }
 
@@ -147,6 +156,9 @@ void cp_virtual_locate(void* obj, UTIL_RECT *ur){
         case 'P':
             player1_locate((Player1 *)obj, ur);
             break;
+        case 'p':
+            player2_locate((Player2 *)obj, ur);
+            break;
     }
 }
 
@@ -158,6 +170,9 @@ bool cp_virtual_isPlayer(void *obj)
     }
     switch(info.type){
         case 'P':
+            return true;
+            break;
+        case 'p':
             return true;
             break;
     }

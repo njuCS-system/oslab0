@@ -10,7 +10,8 @@ static PlaneTProperty t = {0, 0, 0, 2, 1, 120, 80};
 static PlaneUProperty u = {0, 0, 0, 3, 1, 200, 50};
 
 //                                        x                              y                 size hp_max attack
-static Player1Property p1 =  {_WIDTH / 2 - PLANE_WIDTH / 2, _HEIGHT - HP_OFFSET - PLANE_HEIGHT, 1, 1000, 80};
+static Player1Property p1 =  {_WIDTH / 3 - PLANE_WIDTH / 2, _HEIGHT - HP_OFFSET - PLANE_HEIGHT, 1, 1000, 80};
+static Player1Property p2 =  {2 * _WIDTH / 3 - PLANE_WIDTH / 2, _HEIGHT - HP_OFFSET - PLANE_HEIGHT, 1, 1000, 80};
 
 static void __add(Game* s,void* object);
 
@@ -220,6 +221,10 @@ static void game_init()
     Player1 *player1 = build_player1(p1);
     kbRespond_add(player1);
     game_add(player1);
+
+    Player2 *player2 = build_player2(p1);
+    kbRespond_add(player2);
+    game_add(player2);
 }
 
 

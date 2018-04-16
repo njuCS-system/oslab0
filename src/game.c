@@ -346,7 +346,7 @@ static void __create_player_bullet(Game *s)
 {
     const int bullet_speed = 10;
     const int bullet_offset = 10;
-    for(int i = 0;i < OBJ_MAX;i++){
+    for(int i = 0;i < 2;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE){
             UTIL_RECT ur;
             cp_virtual_locate(s->obj[i], &ur);

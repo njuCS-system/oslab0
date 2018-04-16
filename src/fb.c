@@ -26,7 +26,9 @@ void fb_sync(){
     ctl.w = _WIDTH;
     ctl.h = _HEIGHT;
     ctl.pixels = fb_buf;
+    test_time = uptime();
     video_draw(ctl);
+    printf("game move: %d\n", uptime() - test_time);
     draw_sync();
 }
 

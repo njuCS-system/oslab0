@@ -79,60 +79,58 @@ void main_loop()
     {
         if(now_time >= last_time + delay)
         {
-            int test_time = uptime();
-            int new_time = 0;
+            //int test_time = uptime();
+            //int new_time = 0;
+            int temp_test_time = uptime();
             random_create_plane();
             
-            new_time = uptime();
-            printf("create plane: %d\n", new_time - test_time);
-            test_time = new_time;
+            // new_time = uptime();
+            // printf("create plane: %d\n", new_time - test_time);
+            // test_time = new_time;
             
             if(loop_count % shooting_loop_count == 0)
             {
                 create_player_bullet();
                 create_enemy_bullet();
             }
-            
-            new_time = uptime();
-            printf("create player bullet: %d\n", new_time - test_time);
-            test_time = new_time;
 
-            new_time = uptime();
-            printf("create enemy bullet: %d\n", new_time - test_time);
-            test_time = new_time;
+            // new_time = uptime();
+            // printf("create bullet: %d\n", new_time - test_time);
+            // test_time = new_time;
 
             game_move();
 
-            new_time = uptime();
-            printf("game move: %d\n", new_time - test_time);
-            test_time = new_time;
+            // new_time = uptime();
+            // printf("game move: %d\n", new_time - test_time);
+            // test_time = new_time;
 
             boundary_detect();
 
-            new_time = uptime();
-            printf("boundary: %d\n", new_time - test_time);
-            test_time = new_time;
+            // new_time = uptime();
+            // printf("boundary: %d\n", new_time - test_time);
+            // test_time = new_time;
 
             collision_detect();
 
-            new_time = uptime();
-            printf("collision: %d\n", new_time - test_time);
-            test_time = new_time;
+            // new_time = uptime();
+            // printf("collision: %d\n", new_time - test_time);
+            // test_time = new_time;
 
             kbRespond_action();
 
-            new_time = uptime();
-            printf("kb: %d\n", new_time - test_time);
-            test_time = new_time;
+            // new_time = uptime();
+            // printf("kb: %d\n", new_time - test_time);
+            // test_time = new_time;
 
             game_draw();
 
-            new_time = uptime();
-            printf("draw: %d\n", new_time - test_time);
-            test_time = new_time;
+            // new_time = uptime();
+            // printf("draw: %d\n", new_time - test_time);
+            // test_time = new_time;
 
             last_time = now_time;
             loop_count++;
+            printf("the end: %d\n", uptime() - temp_test_time);
             //while(1);
         }
         now_time = uptime();

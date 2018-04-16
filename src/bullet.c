@@ -42,7 +42,7 @@ void bullet_draw(Bullet* bullet){
     int y = bullet->property.y;
     int size = bullet->property.size;
     
-    CircleProperty p = {x, y, 1 * size, {31, 145, 249, 0}};
+    CircleProperty p = {x, y, INIT_SIZE * size, {31, 145, 249, 0}};
     Circle *body = build_circle(p);
     circle_draw(body);
     circle_delete(body);
@@ -51,10 +51,10 @@ void bullet_draw(Bullet* bullet){
 void bullet_locate(Bullet *bullet, UTIL_RECT *ur)
 {
     int size = bullet->property.size;
-    ur->x = bullet->property.x - 3 * size;
-    ur->y = bullet->property.y - 3 * size;
-    ur->w = 3 * size * 2;
-    ur->h = 3 * size * 2;
+    ur->x = bullet->property.x - size;
+    ur->y = bullet->property.y - size;
+    ur->w = size * 2;
+    ur->h = size * 2;
 }
 
 void bullet_move(Bullet* bullet,int deltaX, int deltaY){

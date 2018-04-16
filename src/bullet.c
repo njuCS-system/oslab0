@@ -53,8 +53,8 @@ void bullet_locate(Bullet *bullet, UTIL_RECT *ur)
     int size = bullet->property.size;
     ur->x = bullet->property.x - size;
     ur->y = bullet->property.y - size;
-    ur->w = size * 2;
-    ur->h = size * 2;
+    ur->w = size * 2 * 3;
+    ur->h = size * 2 * 3;
 }
 
 void bullet_move(Bullet* bullet,int deltaX, int deltaY){

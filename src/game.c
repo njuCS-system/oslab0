@@ -68,8 +68,7 @@ void main_loop()
     game_init();
 
     const int delay = 0;
-    const int player_shooting_loop_count = 50;
-    const int enemy_shooting_loop_count = 50;
+    const int shooting_loop_count = 50;
 
 
     unsigned now_time = uptime();
@@ -88,19 +87,15 @@ void main_loop()
             printf("create plane: %d\n", new_time - test_time);
             test_time = new_time;
             
-            if(loop_count % player_shooting_loop_count == 0)
+            if(loop_count % shooting_loop_count == 0)
             {
                 create_player_bullet();
+                create_enemy_bullet();
             }
             
             new_time = uptime();
             printf("create player bullet: %d\n", new_time - test_time);
             test_time = new_time;
-            
-            if(loop_count % enemy_shooting_loop_count == 0)
-            {
-                create_enemy_bullet();
-            }
 
             new_time = uptime();
             printf("create enemy bullet: %d\n", new_time - test_time);

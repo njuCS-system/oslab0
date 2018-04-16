@@ -70,7 +70,7 @@ void player1_draw(Player1* player1){
         }
     }
 
-    printf("player1: \n", uptime() - test_time);
+    printf("player1: %d\n", uptime() - test_time);
     
     ctl.x = x;
     ctl.y = y;

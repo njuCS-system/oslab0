@@ -25,7 +25,7 @@ void fb_sync(){
     ctl.y = 0;
     ctl.w = _WIDTH;
     ctl.h = _HEIGHT;
-    ctl.pixels = fb_buf + SAFE_OFFSET;
+    ctl.pixels = fb_buf;
     video_draw(ctl);
     draw_sync();
 }

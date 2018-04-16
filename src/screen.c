@@ -65,14 +65,30 @@ static void __add(Screen* s,void* object){
 }
 
 static void __draw(Screen* s){
+    int test_time = up_time;
+    int new_time = 0;
     fb_clear();
+
+    new_time = uptime();
+    printf("clear: %d\n", new_time - test_time);
+    test_time = new_time;
+
     for(int i = 0;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE){
             cp_virtual_draw(s->obj[i]);
             //printf("%d, %c\n", i, ((Info*)&s->obj[i])->type);
         }
     }
+
+    new_time = uptime();
+    printf("add: %d\n", new_time - test_time);
+    test_time = new_time;
+
     fb_sync();
+
+    new_time = uptime();
+    printf("sync: %d\n", new_time - test_time);
+    test_time = new_time;
 }
 static void __clear(Screen* s){
     for(int i=0;i < OBJ_MAX;i++){

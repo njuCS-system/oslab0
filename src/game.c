@@ -336,7 +336,7 @@ static void __move(Game* s)
 
 static void __create_player_bullet(Game *s)
 {
-    const int bullet_speed = 10;
+    const int bullet_speed = 15;
     const int bullet_offset = 10;
     //我们假设player只能出现在前两个单元！
     for(int i = 0;i < 2;i++){
@@ -346,17 +346,20 @@ static void __create_player_bullet(Game *s)
             if(cp_virtual_isPlayer(s->obj[i]))
             {
                 //                     x            y           vx       vy      size            attack
-                BulletProperty b0 = {ur.x + PLANE_WIDTH / 3, ur.y - bullet_offset, 0, -bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
+                
+                BulletProperty b0 = {ur.x + PLANE_WIDTH / 2, ur.y - bullet_offset, 0, -bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
+                Bullet *bullet0 = build_bullet(b0);
+                game_add(bullet0);
+                
+                /*BulletProperty b0 = {ur.x + PLANE_WIDTH / 3, ur.y - bullet_offset, 0, -bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
                 BulletProperty b1 = {ur.x + 2 * PLANE_WIDTH / 3, ur.y - bullet_offset, 0, -bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
-                //BulletProperty b2 = {ur.x + PLANE_WIDTH, ur.y - bullet_offset, 0, -bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
-
+                
                 Bullet *bullet0 = build_bullet(b0);
                 Bullet *bullet1 = build_bullet(b1);
-                //Bullet *bullet2 = build_bullet(b2);
-
+                
                 game_add(bullet0);
                 game_add(bullet1);
-                //game_add(bullet2);
+                */
             }
         }
     }
@@ -364,10 +367,10 @@ static void __create_player_bullet(Game *s)
 
 static void __create_enemy_bullet(Game *s)
 {
-    const int bullet_speed = 10;
+    const int bullet_speed = 15;
     const int bullet_offset = 10;
     const int random_range = 1000;
-    const int attack = random_range * 0.2;
+    const int attack = random_range * 0.3;
     for(int i = 0;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE){
             UTIL_RECT ur;

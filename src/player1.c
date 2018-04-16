@@ -48,6 +48,8 @@ void player1_draw(Player1* player1){
     long width = bmpHead -> biWidth;
     long height = bmpHead -> biHeight;
 
+    int test_time = uptime();
+    
     for(int i = 0; i < height; i++)
     {
         for(int j = 0; j < width; j++)
@@ -67,6 +69,8 @@ void player1_draw(Player1* player1){
             color_buf[i * width + j] = color_to_int(temp_color);
         }
     }
+
+    printf("player1: \n", uptime() - test_time);
     
     ctl.x = x;
     ctl.y = y;
@@ -74,9 +78,6 @@ void player1_draw(Player1* player1){
     ctl.w = width;
     ctl.h = height;
     ctl.sync = 0;
-    
-    // video_draw(ctl);
-    // draw_sync();
     
     fb_add(&ctl);
 }

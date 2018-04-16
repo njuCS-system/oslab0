@@ -371,7 +371,7 @@ static void __boundary(Game *s)
 
 static void __collision_detect(Game *s)
 {
-    /*for(int i = 0;i < OBJ_MAX;i++){
+    for(int i = 0;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE && cp_virtual_isBullet(s->obj[i]) == TRUE)
         {
             UTIL_RECT ur_bullet;
@@ -447,5 +447,5 @@ static void __collision_detect(Game *s)
                 }
             }
         }
-    }*/
+    }
 }

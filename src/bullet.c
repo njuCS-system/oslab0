@@ -42,7 +42,7 @@ void bullet_draw(Bullet* bullet){
     int y = bullet->property.y;
     int size = bullet->property.size;
     
-    CircleProperty p = {x, y, 3 * size, {31, 145, 249, 0}};
+    CircleProperty p = {x, y, 1 * size, {31, 145, 249, 0}};
     Circle *body = build_circle(p);
     circle_draw(body);
     circle_delete(body);

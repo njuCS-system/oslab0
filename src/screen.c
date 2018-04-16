@@ -65,7 +65,7 @@ static void __add(Screen* s,void* object){
 }
 
 static void __draw(Screen* s){
-    int test_time = up_time;
+    int test_time = up_time();
     int new_time = 0;
     fb_clear();
 

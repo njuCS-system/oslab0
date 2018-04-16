@@ -4,8 +4,8 @@ Game game;
 static int init_x = 0;
 
 //                         x  y vx vy size h_max attack
-static PlaneIProperty i = {0, 0, 0, 1, 1, 80, 20};
-static PlaneXProperty x = {0, 0, 0, 1, 1, 500, 30};
+static PlaneIProperty i = {0, 0, 0, 1, 1, 60, 20};
+static PlaneXProperty x = {0, 0, 0, 1, 1, 300, 30};
 static PlaneTProperty t = {0, 0, 0, 2, 1, 120, 80};
 static PlaneUProperty u = {0, 0, 0, 3, 1, 200, 50};
 
@@ -68,7 +68,7 @@ void main_loop()
     game_init();
 
     const int delay = 0;
-    const int shooting_loop_count = 50;
+    const int shooting_loop_count = 40;
 
 
     unsigned now_time = uptime();
@@ -336,7 +336,7 @@ static void __move(Game* s)
 
 static void __create_player_bullet(Game *s)
 {
-    const int bullet_speed = 15;
+    const int bullet_speed = 18;
     const int bullet_offset = 10;
     //我们假设player只能出现在前两个单元！
     for(int i = 0;i < 2;i++){
@@ -367,7 +367,7 @@ static void __create_player_bullet(Game *s)
 
 static void __create_enemy_bullet(Game *s)
 {
-    const int bullet_speed = 15;
+    const int bullet_speed = 18;
     const int bullet_offset = 10;
     const int random_range = 1000;
     const int attack = random_range * 0.3;

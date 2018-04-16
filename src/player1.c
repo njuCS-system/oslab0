@@ -48,8 +48,6 @@ void player1_draw(Player1* player1){
     long width = bmpHead -> biWidth;
     long height = bmpHead -> biHeight;
 
-    int test_time = uptime();
-    
     for(int i = 0; i < height; i++)
     {
         for(int j = 0; j < width; j++)
@@ -63,8 +61,6 @@ void player1_draw(Player1* player1){
         }
     }
 
-    printf("player1: %d\n", uptime() - test_time);
-    
     ctl.x = x;
     ctl.y = y;
     ctl.pixels = color_buf;

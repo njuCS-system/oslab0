@@ -46,7 +46,9 @@ void rect_draw(Rect* rect){
     {
     	for(int j = 0; j < rect->property.width; j++)
         {
-            if(i < rect->property.stroke || j < rect->property.stroke 
+            color_buf[i * rect->property.width + j] = (i < rect->property.stroke || j < rect->property.stroke 
+            || i + rect->property.stroke >= rect->property.height || j + rect->property.stroke >= rect->property.width) ? s_color : ((rect->property.is_fill) ? f_color : DEFAULT_COLOR);
+            /*if(i < rect->property.stroke || j < rect->property.stroke 
             || i + rect->property.stroke >= rect->property.height || j + rect->property.stroke >= rect->property.width)
             {
                 color_buf[i * rect->property.width + j] = s_color;
@@ -61,7 +63,7 @@ void rect_draw(Rect* rect){
                 {
                     color_buf[i * rect->property.width + j] = DEFAULT_COLOR;
                 }
-            }
+            }*/
         }
     }
     

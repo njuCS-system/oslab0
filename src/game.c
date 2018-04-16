@@ -138,7 +138,7 @@ void main_loop()
 
             last_time = now_time;
             loop_count++;
-            while(1);
+            //while(1);
         }
         now_time = uptime();
     }

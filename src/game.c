@@ -371,8 +371,8 @@ static void __create_player_bullet(Game *s)
 
 static void __create_enemy_bullet(Game *s)
 {
-    const int bullet_speed = 10;
-    const int bullet_offset = 10;
+    //const int bullet_speed = 10;
+    //const int bullet_offset = 10;
     for(int i = 0;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE){
             UTIL_RECT ur;

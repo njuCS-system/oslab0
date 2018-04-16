@@ -1,6 +1,6 @@
 #include "fb.h"
 
-static uint32_t fb_buf[_WIDTH * _HEIGHT + SAFE_OFFSET * 2];
+static uint32_t fb_buf[_WIDTH * _HEIGHT];
 
 void fb_add(_FBCtlReg *reg){
     int width = reg->w;
@@ -11,10 +11,10 @@ void fb_add(_FBCtlReg *reg){
     {
         for(int j = 0; j < width; j++)
         {
-            //if(((i + y) * _WIDTH + (j + x)) < _WIDTH * _HEIGHT && ((i + y) * _WIDTH + (j + x)) >= 0){
+            if(((i + y) * _WIDTH + (j + x)) < _WIDTH * _HEIGHT && ((i + y) * _WIDTH + (j + x)) >= 0){
                 Color color = int_to_color(reg->pixels[i * width + j]);
-                fb_buf[SAFE_OFFSET + (i + y) * _WIDTH + (j + x)] = (color.a == 0 ? reg->pixels[i * width + j] : fb_buf[(i + y) * _WIDTH + (j + x)]);
-            //}
+                fb_buf[(i + y) * _WIDTH + (j + x)] = (color.a == 0 ? reg->pixels[i * width + j] : fb_buf[(i + y) * _WIDTH + (j + x)]);
+            }
         }
     }
 }
@@ -31,7 +31,7 @@ void fb_sync(){
 }
 
 void fb_clear(){
-    for(int i = 0; i < _HEIGHT * _WIDTH + SAFE_OFFSET * 2; i++)
+    for(int i = 0; i < _HEIGHT * _WIDTH; i++)
     {
         fb_buf[i] = 0;
     }

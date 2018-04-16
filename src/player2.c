@@ -56,14 +56,7 @@ void player2_draw(Player2* player2){
             temp_color.b = bmpHead -> pixels[(i * width + j) * 3];
             temp_color.g = bmpHead -> pixels[(i * width + j) * 3 + 1];
             temp_color.r = bmpHead -> pixels[(i * width + j) * 3 + 2];
-            if(temp_color.b == 1 && temp_color.g == 1 && temp_color.r == 1)
-            {
-                temp_color.a = 1;
-            }
-            else
-            {
-                temp_color.a = 0;
-            }
+            temp_color.a = (temp_color.b == 1 && temp_color.g == 1 && temp_color.r == 1) ? 1 : 0;
             color_buf[i * width + j] = color_to_int(temp_color);
         }
     }

@@ -52,14 +52,7 @@ void circle_draw(Circle* circle){
     {
         for(int j = 0; j < r * 2; j++)
         {
-            if((i - r) * (i - r) + (j - r) * (j - r) <= r_square)
-            {
-                color_buf[i * 2 * r + j] = color;
-            }
-            else
-            {
-                color_buf[i * 2 * r + j] = DEFAULT_COLOR;
-            }
+            color_buf[i * 2 * r + j] = ((i - r) * (i - r) + (j - r) * (j - r) <= r_square) ? color : DEFAULT_COLOR;
         }
     }
     

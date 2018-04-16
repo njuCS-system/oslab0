@@ -174,9 +174,9 @@ bool is_outside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
 {
     Rect_Points rp1 = {{ur1->x, ur1->y}, {ur1->x + ur1->w, ur1->y}, {ur1->x, ur1->y + ur1->h}, {ur1->x + ur1->w, ur1->y + ur1->h}}; 
     Rect_Points rp2 = {{ur2->x, ur2->y}, {ur2->x + ur2->w, ur2->y}, {ur2->x, ur2->y + ur2->h}, {ur2->x + ur2->w, ur2->y + ur2->h}};
-    printf("rp1 = (%d %d) (%d %d) (%d %d) (%d %d) rp2 = (%d %d) (%d %d) (%d %d) (%d %d)\n"
+    /*printf("rp1 = (%d %d) (%d %d) (%d %d) (%d %d) rp2 = (%d %d) (%d %d) (%d %d) (%d %d)\n"
     , rp1.p1.x, rp1.p1.y, rp1.p2.x, rp1.p2.y ,rp1.p3.x ,rp1.p3.y, rp1.p4.x, rp1.p4.y, rp2.p1.x, rp2.p1.y, rp2.p2.x, rp2.p2.y ,rp2.p3.x ,rp2.p3.y, rp2.p4.x, rp2.p4.y);
-    
+    */
     if((is_point_inside(rp1, rp2.p1) || is_point_inside(rp1, rp2.p2) || is_point_inside(rp1, rp2.p3) || is_point_inside(rp1, rp2.p4))
      ||(is_point_inside(rp2, rp1.p1) || is_point_inside(rp2, rp1.p2) || is_point_inside(rp2, rp1.p3) || is_point_inside(rp2, rp1.p4)))
     {
@@ -336,7 +336,7 @@ static void __move(Game* s)
 
 static void __create_player_bullet(Game *s)
 {
-    const int bullet_speed = 18;
+    const int bullet_speed = 8;
     const int bullet_offset = 10;
     //我们假设player只能出现在前两个单元！
     for(int i = 0;i < 2;i++){
@@ -367,7 +367,7 @@ static void __create_player_bullet(Game *s)
 
 static void __create_enemy_bullet(Game *s)
 {
-    const int bullet_speed = 18;
+    const int bullet_speed = 8;
     const int bullet_offset = 10;
     const int random_range = 1000;
     const int attack = random_range * 1;
@@ -395,9 +395,16 @@ static void __boundary(Game *s)
             cp_virtual_locate(s->obj[i], &ur_obj);
             //                   x  y     w        h
             UTIL_RECT ur_game = {0, 0, _WIDTH, _HEIGHT};
-            if(cp_virtual_isBullet(s->obj[i]) || cp_virtual_isEnemy(s->obj[i]))
+            if(cp_virtual_isEnemy(s->obj[i]))
             {
                 if(is_outside_collision(&ur_obj, &ur_game) == TRUE && is_inside_collision(&ur_obj, &ur_game) == FALSE)
+                {
+                    game_rm(s->obj[i]);
+                }
+            }
+            else if(cp_virtual_isBullet(s->obj[i]))
+            {
+                if(is_outside_collision(&ur_obj, &ur_game) == FALSE && is_inside_collision(&ur_obj, &ur_game) == FALSE)
                 {
                     game_rm(s->obj[i]);
                 }

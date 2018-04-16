@@ -73,10 +73,6 @@ static void __draw(Screen* s){
         }
     }
     fb_sync();
-
-    new_time = uptime();
-    printf("sync: %d\n", new_time - test_time);
-    test_time = new_time;
 }
 static void __clear(Screen* s){
     for(int i=0;i < OBJ_MAX;i++){

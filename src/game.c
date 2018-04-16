@@ -79,8 +79,8 @@ void main_loop()
     {
         if(now_time >= last_time + delay)
         {
-            int test_time = uptime();
-            int new_time = 0;
+            // int test_time = uptime();
+            // int new_time = 0;
             random_create_plane();
             
             // new_time = uptime();

@@ -80,20 +80,62 @@ void main_loop()
     {
         if(now_time >= last_time + delay)
         {
+            int test_time = uptime();
+            int new_time = 0;
             random_create_plane();
+            
+            new_time = uptime();
+            printf("%d\n", new_time);
+            test_time = new_time;
+            
             if(loop_count % player_shooting_loop_count == 0)
             {
                 create_player_bullet();
             }
+            
+            new_time = uptime();
+            printf("%d\n", new_time);
+            test_time = new_time;
+            
             if(loop_count % enemy_shooting_loop_count == 0)
             {
                 create_enemy_bullet();
             }
+
+            new_time = uptime();
+            printf("%d\n", new_time);
+            test_time = new_time;
+
             game_move();
+
+            new_time = uptime();
+            printf("%d\n", new_time);
+            test_time = new_time;
+
             boundary_detect();
+
+            new_time = uptime();
+            printf("%d\n", new_time);
+            test_time = new_time;
+
             collision_detect();
+
+            new_time = uptime();
+            printf("%d\n", new_time);
+            test_time = new_time;
+
             kbRespond_action();
+
+            new_time = uptime();
+            printf("%d\n", new_time);
+            test_time = new_time;
+
             game_draw();
+
+            new_time = uptime();
+            printf("%d\n", new_time);
+            test_time = new_time;
+            
             last_time = now_time;
             loop_count++;
         }

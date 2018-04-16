@@ -352,7 +352,6 @@ static void __create_player_bullet(Game *s)
             cp_virtual_locate(s->obj[i], &ur);
             if(cp_virtual_isPlayer(s->obj[i]))
             {
-                /*
                 //                     x            y           vx       vy      size            attack
                 BulletProperty b0 = {ur.x + PLANE_WIDTH / 3, ur.y - bullet_offset, 0, -bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
                 BulletProperty b1 = {ur.x + 2 * PLANE_WIDTH / 3, ur.y - bullet_offset, 0, -bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
@@ -365,7 +364,6 @@ static void __create_player_bullet(Game *s)
                 game_add(bullet0);
                 game_add(bullet1);
                 //game_add(bullet2);
-                */
             }
         }
     }
@@ -381,11 +379,13 @@ static void __create_enemy_bullet(Game *s)
             cp_virtual_locate(s->obj[i], &ur);
             if(cp_virtual_isEnemy(s->obj[i]))
             {
+                /*
                 //                     x            y           vx       vy      size            attack
                 BulletProperty b0 = {ur.x + PLANE_WIDTH / 3, ur.y + bullet_offset + PLANE_HEIGHT, 0, bullet_speed, 2, battle_virtual_get_attack(s->obj[i])};
                 Bullet *bullet0 = build_bullet(b0);
 
                 game_add(bullet0);
+                */
             }
         }
     }

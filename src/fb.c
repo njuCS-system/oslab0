@@ -31,7 +31,7 @@ void fb_sync(){
 }
 
 void fb_clear(){
-    for(int i = 0; i < _HEIGHT * _WIDTH; i++)
+    for(int i = 0; i < _HEIGHT * _WIDTH + SAFE_OFFSET * 2; i++)
     {
         fb_buf[i] = 0;
     }

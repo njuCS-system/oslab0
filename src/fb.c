@@ -1,6 +1,6 @@
 #include "fb.h"
 
-static uint32_t fb_buf[_WIDTH * _HEIGHT];
+static uint32_t fb_buf[_WIDTH * _HEIGHT + SAFE_OFFSET * 2];
 
 void fb_add(_FBCtlReg *reg){
     int width = reg->w;
@@ -13,7 +13,7 @@ void fb_add(_FBCtlReg *reg){
         {
             if(((i + y) * _WIDTH + (j + x)) < _WIDTH * _HEIGHT && ((i + y) * _WIDTH + (j + x)) >= 0){
                 Color color = int_to_color(reg->pixels[i * width + j]);
-                fb_buf[(i + y) * _WIDTH + (j + x)] = (color.a == 0 ? reg->pixels[i * width + j] : fb_buf[(i + y) * _WIDTH + (j + x)]);
+                fb_buf[SAFE_OFFSET + (i + y) * _WIDTH + (j + x)] = (color.a == 0 ? reg->pixels[i * width + j] : fb_buf[(i + y) * _WIDTH + (j + x)]);
             }
         }
     }
@@ -25,7 +25,7 @@ void fb_sync(){
     ctl.y = 0;
     ctl.w = _WIDTH;
     ctl.h = _HEIGHT;
-    ctl.pixels = fb_buf;
+    ctl.pixels = fb_buf + SAFE_OFFSET;
     video_draw(ctl);
     draw_sync();
 }

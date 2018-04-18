@@ -463,7 +463,7 @@ static void __boundary(Game *s)
 {
     //                   x  y     w        h
     UTIL_RECT ur_game = {0, 0, _WIDTH, _HEIGHT};
-    for(int i = 2;i < OBJ_MAX;i++){
+    for(int i = 0;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE){
             UTIL_RECT ur_obj;
             cp_virtual_locate(s->obj[i], &ur_obj);

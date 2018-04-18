@@ -195,7 +195,7 @@ bool cp_virtual_isPlayer1(void *obj)
     return false;
 }
 
-bool cp_virtual_isPlaye2(void *obj)
+bool cp_virtual_isPlayer2(void *obj)
 {
     Info info = *((Info*)obj);
     if(!info.valid){

@@ -159,7 +159,7 @@ bool is_inside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
     //, rp1.p1.x, rp1.p1.y, rp1.p2.x, rp1.p2.y ,rp1.p3.x ,rp1.p3.y, rp1.p4.x, rp1.p4.y, rp2.p1.x, rp2.p1.y, rp2.p2.x, rp2.p2.y ,rp2.p3.x ,rp2.p3.y, rp2.p4.x, rp2.p4.y);
     //}
     return((is_point_inside(rp1, rp2.p1) && is_point_inside(rp1, rp2.p2) && is_point_inside(rp1, rp2.p3) && is_point_inside(rp1, rp2.p4))
-     ||(is_point_inside(rp2, rp1.p1) && is_point_inside(rp2, rp1.p2) && is_point_inside(rp2, rp1.p3) && is_point_inside(rp2, rp1.p4)))
+     ||(is_point_inside(rp2, rp1.p1) && is_point_inside(rp2, rp1.p2) && is_point_inside(rp2, rp1.p3) && is_point_inside(rp2, rp1.p4)));
     /*{
         return TRUE;
     }
@@ -178,7 +178,7 @@ bool is_outside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
     , rp1.p1.x, rp1.p1.y, rp1.p2.x, rp1.p2.y ,rp1.p3.x ,rp1.p3.y, rp1.p4.x, rp1.p4.y, rp2.p1.x, rp2.p1.y, rp2.p2.x, rp2.p2.y ,rp2.p3.x ,rp2.p3.y, rp2.p4.x, rp2.p4.y);
     */
     return((is_point_inside(rp1, rp2.p1) || is_point_inside(rp1, rp2.p2) || is_point_inside(rp1, rp2.p3) || is_point_inside(rp1, rp2.p4))
-     ||(is_point_inside(rp2, rp1.p1) || is_point_inside(rp2, rp1.p2) || is_point_inside(rp2, rp1.p3) || is_point_inside(rp2, rp1.p4)))
+     ||(is_point_inside(rp2, rp1.p1) || is_point_inside(rp2, rp1.p2) || is_point_inside(rp2, rp1.p3) || is_point_inside(rp2, rp1.p4)));
     /*{
         return TRUE;
     }
@@ -196,7 +196,7 @@ bool is_left_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
     , rp1.p1.x, rp1.p1.y, rp1.p2.x, rp1.p2.y ,rp1.p3.x ,rp1.p3.y, rp1.p4.x, rp1.p4.y, rp2.p1.x, rp2.p1.y, rp2.p2.x, rp2.p2.y ,rp2.p3.x ,rp2.p3.y, rp2.p4.x, rp2.p4.y);
     */
     return((!is_point_inside(rp1, rp2.p1) && is_point_inside(rp1, rp2.p2) && !is_point_inside(rp1, rp2.p3) && is_point_inside(rp1, rp2.p4))
-     ||(!is_point_inside(rp2, rp1.p1) && is_point_inside(rp2, rp1.p2) && !is_point_inside(rp2, rp1.p3) && is_point_inside(rp2, rp1.p4)))
+     ||(!is_point_inside(rp2, rp1.p1) && is_point_inside(rp2, rp1.p2) && !is_point_inside(rp2, rp1.p3) && is_point_inside(rp2, rp1.p4)));
     /*{
         return TRUE;
     }
@@ -214,7 +214,7 @@ bool is_right_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
     , rp1.p1.x, rp1.p1.y, rp1.p2.x, rp1.p2.y ,rp1.p3.x ,rp1.p3.y, rp1.p4.x, rp1.p4.y, rp2.p1.x, rp2.p1.y, rp2.p2.x, rp2.p2.y ,rp2.p3.x ,rp2.p3.y, rp2.p4.x, rp2.p4.y);
     */
     return((is_point_inside(rp1, rp2.p1) && !is_point_inside(rp1, rp2.p2) && is_point_inside(rp1, rp2.p3) && !is_point_inside(rp1, rp2.p4))
-     ||(is_point_inside(rp2, rp1.p1) && !is_point_inside(rp2, rp1.p2) && is_point_inside(rp2, rp1.p3) && !is_point_inside(rp2, rp1.p4)))
+     ||(is_point_inside(rp2, rp1.p1) && !is_point_inside(rp2, rp1.p2) && is_point_inside(rp2, rp1.p3) && !is_point_inside(rp2, rp1.p4)));
     /*{
         return TRUE;
     }
@@ -232,7 +232,7 @@ bool is_up_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
     , rp1.p1.x, rp1.p1.y, rp1.p2.x, rp1.p2.y ,rp1.p3.x ,rp1.p3.y, rp1.p4.x, rp1.p4.y, rp2.p1.x, rp2.p1.y, rp2.p2.x, rp2.p2.y ,rp2.p3.x ,rp2.p3.y, rp2.p4.x, rp2.p4.y);
     */
     return((!is_point_inside(rp1, rp2.p1) && !is_point_inside(rp1, rp2.p2) && is_point_inside(rp1, rp2.p3) && is_point_inside(rp1, rp2.p4))
-     ||(!is_point_inside(rp2, rp1.p1) && !is_point_inside(rp2, rp1.p2) && is_point_inside(rp2, rp1.p3) && is_point_inside(rp2, rp1.p4)))
+     ||(!is_point_inside(rp2, rp1.p1) && !is_point_inside(rp2, rp1.p2) && is_point_inside(rp2, rp1.p3) && is_point_inside(rp2, rp1.p4)));
     /*{
         return TRUE;
     }
@@ -250,7 +250,7 @@ bool is_down_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
     , rp1.p1.x, rp1.p1.y, rp1.p2.x, rp1.p2.y ,rp1.p3.x ,rp1.p3.y, rp1.p4.x, rp1.p4.y, rp2.p1.x, rp2.p1.y, rp2.p2.x, rp2.p2.y ,rp2.p3.x ,rp2.p3.y, rp2.p4.x, rp2.p4.y);
     */
     return((is_point_inside(rp1, rp2.p1) && is_point_inside(rp1, rp2.p2) && !is_point_inside(rp1, rp2.p3) && !is_point_inside(rp1, rp2.p4))
-     ||(is_point_inside(rp2, rp1.p1) && is_point_inside(rp2, rp1.p2) && !is_point_inside(rp2, rp1.p3) && !is_point_inside(rp2, rp1.p4)))
+     ||(is_point_inside(rp2, rp1.p1) && is_point_inside(rp2, rp1.p2) && !is_point_inside(rp2, rp1.p3) && !is_point_inside(rp2, rp1.p4)));
     /*{
         return TRUE;
     }

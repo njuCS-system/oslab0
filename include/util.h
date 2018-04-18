@@ -22,7 +22,7 @@
 #define _WIDTH 630
 #define _HEIGHT 470
 #define PLANE_WIDTH 80
-#define PLANE_HEIGHT 50
+#define PLANE_HEIGHT 60
 #define DEFAULT_COLOR 0x01000000
 #define BACKGROUND 0x00010101
 
@@ -50,7 +50,7 @@ enum {ID_PLAYER, ID_ENEMY_SMALL, ID_ENEMY_MEDIUM, ID_ENEMY_BIG, ID_ROUNDBULLET_0
 
 typedef struct {
 	int x, y;
-	uint32_t w, h;
+	int w, h;
 } UTIL_RECT;
 
 typedef struct RES_IDC {

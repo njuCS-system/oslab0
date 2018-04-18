@@ -13,6 +13,10 @@ void cp_virtual_locate(void*, UTIL_RECT *ur);
 
 bool cp_virtual_isPlayer(void *obj);
 
+bool cp_virtual_isPlayer1(void *obj);
+
+bool cp_virtual_isPlayer2(void *obj);
+
 bool cp_virtual_isBullet(void *obj);
 
 bool cp_virtual_isEnemyBullet(void *obj);

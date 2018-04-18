@@ -10,6 +10,7 @@
 //in srceen.h
 //#define OBJ_MAX 100
 #define HP_OFFSET 20
+#define BULLET_SIZE 4
 
 typedef struct Game{
     void* obj[OBJ_MAX];

@@ -11,6 +11,7 @@
 #include "bullet.h"
 #include "big_explosion3.h"
 #include "player1.h"
+#include "player2.h"
 #include "hp.h"
 
 #include "cp_virtual.h"

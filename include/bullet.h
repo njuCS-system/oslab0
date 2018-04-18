@@ -6,6 +6,7 @@
 
 
 #define BULLET_MAX 100
+#define INIT_SIZE 1
 
 
 typedef struct BulletProperty{

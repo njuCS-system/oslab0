@@ -12,7 +12,6 @@ typedef struct KbRespond{
     int index;
 }KbRespond;
 
-
 void kbRespond_init();
 
 void kbRespond_action();
@@ -23,7 +22,7 @@ void kbRespond_clear();
 
 void kbRespond_rm(void *);
 
-
+void kbRespond_disable(char ch);
 
 
 

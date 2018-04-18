@@ -501,6 +501,7 @@ static void __boundary(Game *s)
                 else if(is_down_collision(&ur_obj, &ur_game))
                 {
                     kbRespond_disable(44);
+                    printf("Player1 down\n");
                 }
                 else if(is_right_collision(&ur_obj, &ur_game))
                 {

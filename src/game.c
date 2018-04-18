@@ -188,6 +188,78 @@ bool is_outside_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
     }
 }
 
+bool is_left_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
+{
+    Rect_Points rp1 = {{ur1->x, ur1->y}, {ur1->x + ur1->w, ur1->y}, {ur1->x, ur1->y + ur1->h}, {ur1->x + ur1->w, ur1->y + ur1->h}}; 
+    Rect_Points rp2 = {{ur2->x, ur2->y}, {ur2->x + ur2->w, ur2->y}, {ur2->x, ur2->y + ur2->h}, {ur2->x + ur2->w, ur2->y + ur2->h}};
+    /*printf("rp1 = (%d %d) (%d %d) (%d %d) (%d %d) rp2 = (%d %d) (%d %d) (%d %d) (%d %d)\n"
+    , rp1.p1.x, rp1.p1.y, rp1.p2.x, rp1.p2.y ,rp1.p3.x ,rp1.p3.y, rp1.p4.x, rp1.p4.y, rp2.p1.x, rp2.p1.y, rp2.p2.x, rp2.p2.y ,rp2.p3.x ,rp2.p3.y, rp2.p4.x, rp2.p4.y);
+    */
+    if((is_point_inside(rp1, rp2.p1) && !is_point_inside(rp1, rp2.p2) && is_point_inside(rp1, rp2.p3) && !is_point_inside(rp1, rp2.p4))
+     ||(is_point_inside(rp2, rp1.p1) && !is_point_inside(rp2, rp1.p2) && is_point_inside(rp2, rp1.p3) && !is_point_inside(rp2, rp1.p4)))
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+bool is_right_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
+{
+    Rect_Points rp1 = {{ur1->x, ur1->y}, {ur1->x + ur1->w, ur1->y}, {ur1->x, ur1->y + ur1->h}, {ur1->x + ur1->w, ur1->y + ur1->h}}; 
+    Rect_Points rp2 = {{ur2->x, ur2->y}, {ur2->x + ur2->w, ur2->y}, {ur2->x, ur2->y + ur2->h}, {ur2->x + ur2->w, ur2->y + ur2->h}};
+    /*printf("rp1 = (%d %d) (%d %d) (%d %d) (%d %d) rp2 = (%d %d) (%d %d) (%d %d) (%d %d)\n"
+    , rp1.p1.x, rp1.p1.y, rp1.p2.x, rp1.p2.y ,rp1.p3.x ,rp1.p3.y, rp1.p4.x, rp1.p4.y, rp2.p1.x, rp2.p1.y, rp2.p2.x, rp2.p2.y ,rp2.p3.x ,rp2.p3.y, rp2.p4.x, rp2.p4.y);
+    */
+    if((!is_point_inside(rp1, rp2.p1) && is_point_inside(rp1, rp2.p2) && !is_point_inside(rp1, rp2.p3) && is_point_inside(rp1, rp2.p4))
+     ||(!is_point_inside(rp2, rp1.p1) && is_point_inside(rp2, rp1.p2) && !is_point_inside(rp2, rp1.p3) && is_point_inside(rp2, rp1.p4)))
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+bool is_up_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
+{
+    Rect_Points rp1 = {{ur1->x, ur1->y}, {ur1->x + ur1->w, ur1->y}, {ur1->x, ur1->y + ur1->h}, {ur1->x + ur1->w, ur1->y + ur1->h}}; 
+    Rect_Points rp2 = {{ur2->x, ur2->y}, {ur2->x + ur2->w, ur2->y}, {ur2->x, ur2->y + ur2->h}, {ur2->x + ur2->w, ur2->y + ur2->h}};
+    /*printf("rp1 = (%d %d) (%d %d) (%d %d) (%d %d) rp2 = (%d %d) (%d %d) (%d %d) (%d %d)\n"
+    , rp1.p1.x, rp1.p1.y, rp1.p2.x, rp1.p2.y ,rp1.p3.x ,rp1.p3.y, rp1.p4.x, rp1.p4.y, rp2.p1.x, rp2.p1.y, rp2.p2.x, rp2.p2.y ,rp2.p3.x ,rp2.p3.y, rp2.p4.x, rp2.p4.y);
+    */
+    if((!is_point_inside(rp1, rp2.p1) && !is_point_inside(rp1, rp2.p2) && is_point_inside(rp1, rp2.p3) && is_point_inside(rp1, rp2.p4))
+     ||(!is_point_inside(rp2, rp1.p1) && !is_point_inside(rp2, rp1.p2) && is_point_inside(rp2, rp1.p3) && is_point_inside(rp2, rp1.p4)))
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
+bool is_down_collision(UTIL_RECT *ur1, UTIL_RECT *ur2)
+{
+    Rect_Points rp1 = {{ur1->x, ur1->y}, {ur1->x + ur1->w, ur1->y}, {ur1->x, ur1->y + ur1->h}, {ur1->x + ur1->w, ur1->y + ur1->h}}; 
+    Rect_Points rp2 = {{ur2->x, ur2->y}, {ur2->x + ur2->w, ur2->y}, {ur2->x, ur2->y + ur2->h}, {ur2->x + ur2->w, ur2->y + ur2->h}};
+    /*printf("rp1 = (%d %d) (%d %d) (%d %d) (%d %d) rp2 = (%d %d) (%d %d) (%d %d) (%d %d)\n"
+    , rp1.p1.x, rp1.p1.y, rp1.p2.x, rp1.p2.y ,rp1.p3.x ,rp1.p3.y, rp1.p4.x, rp1.p4.y, rp2.p1.x, rp2.p1.y, rp2.p2.x, rp2.p2.y ,rp2.p3.x ,rp2.p3.y, rp2.p4.x, rp2.p4.y);
+    */
+    if((is_point_inside(rp1, rp2.p1) && is_point_inside(rp1, rp2.p2) && !is_point_inside(rp1, rp2.p3) && !is_point_inside(rp1, rp2.p4))
+     ||(is_point_inside(rp2, rp1.p1) && is_point_inside(rp2, rp1.p2) && !is_point_inside(rp2, rp1.p3) && !is_point_inside(rp2, rp1.p4)))
+    {
+        return TRUE;
+    }
+    else
+    {
+        return FALSE;
+    }
+}
+
 static void create_player_bullet()
 {
     __create_player_bullet(&game);
@@ -389,12 +461,12 @@ static void __create_enemy_bullet(Game *s)
 
 static void __boundary(Game *s)
 {
-    for(int i = 0;i < OBJ_MAX;i++){
+    UTIL_RECT ur_game = {0, 0, _WIDTH, _HEIGHT};
+    for(int i = 2;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE){
             UTIL_RECT ur_obj;
             cp_virtual_locate(s->obj[i], &ur_obj);
             //                   x  y     w        h
-            UTIL_RECT ur_game = {0, 0, _WIDTH, _HEIGHT};
             if(cp_virtual_isEnemy(s->obj[i]))
             {
                 if(is_outside_collision(&ur_obj, &ur_game) == TRUE && is_inside_collision(&ur_obj, &ur_game) == FALSE)
@@ -408,10 +480,51 @@ static void __boundary(Game *s)
                 {
                     game_rm(s->obj[i]);
                 }
-            }
-            else if(cp_virtual_isPlayer(s->obj[i]))
+            
+        }
+    }
+
+    for(int i = 0;i < 2;i++)
+    {
+        if(((Info *)(s->obj[i]))->valid == TRUE){
+            UTIL_RECT ur_obj;
+            if(cp_virtual_isPlayer1(s->obj[i]))
             {
-                //TODO:
+                if(is_up_collision(&ur_obj, &ur_game))
+                {
+                    kbRespond_disable(30);
+                }
+                else if(is_left_collision(&ur_obj, &ur_game))
+                {
+                    kbRespond_disable(43);
+                }
+                else if(is_down_collision(&ur_obj, &ur_game))
+                {
+                    kbRespond_disable(44);
+                }
+                else if(is_right_collision(&ur_obj, &ur_game))
+                {
+                    kbRespond_disable(45);
+                }
+            }
+            else if(cp_virtual_isPlayer2(s->obj[i]))
+            {
+                if(is_up_collision(&ur_obj, &ur_game))
+                {
+                    kbRespond_disable(36);
+                }
+                else if(is_left_collision(&ur_obj, &ur_game))
+                {
+                    kbRespond_disable(49);
+                }
+                else if(is_down_collision(&ur_obj, &ur_game))
+                {
+                    kbRespond_disable(50);
+                }
+                else if(is_right_collision(&ur_obj, &ur_game))
+                {
+                    kbRespond_disable(51);
+                }
             }
         }
     }

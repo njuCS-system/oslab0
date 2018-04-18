@@ -1,6 +1,7 @@
 #include "kb_respond.h"
 
 KbRespond kbRespond;
+static char dis_key = 0;
 
 static void __add(KbRespond* s,void* object);
 
@@ -38,6 +39,11 @@ void kbRespond_rm(void * obj){
     __remove(&kbRespond, obj);
 }
 
+void kbRespond_disable(char ch)
+{
+    dis_key = ch;
+}
+
 
 //****************************************************************
 static void __add(KbRespond* s,void* object){
@@ -60,8 +66,9 @@ static void __add(KbRespond* s,void* object){
 
 static void __action(KbRespond* s){
     _KbdReg reg = read_key();
-    if(reg.keydown == 0)
+    if(reg.keydown == 0 || reg.keycode == dis_key)
     {
+        dis_key = 0;
         return;
     }
     for(int i = 0;i < KB_MAX;i++){
@@ -69,6 +76,8 @@ static void __action(KbRespond* s){
             kb_virtual_answer(s->obj[i], reg.keycode);
         }
     }
+
+    dis_key = 0;
 }
 
 static void __clear(KbRespond* s){

@@ -480,7 +480,7 @@ static void __boundary(Game *s)
                 {
                     game_rm(s->obj[i]);
                 }
-            
+            }
         }
     }
 

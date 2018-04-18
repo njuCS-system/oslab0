@@ -47,7 +47,7 @@ void player1_draw(Player1* player1){
     BITMAPINFOHEADER *bmpHead = (BITMAPINFOHEADER*) (model_player1 + BITMAPFILEHEADER_LENGTH);
     long width = bmpHead -> biWidth;
     long height = bmpHead -> biHeight;
-    printf("w %d, h %d", width, height);
+    //printf("w %d, h %d", width, height);
 
     for(int i = 0; i < height; i++)
     {

@@ -461,12 +461,12 @@ static void __create_enemy_bullet(Game *s)
 
 static void __boundary(Game *s)
 {
+    //                   x  y     w        h
     UTIL_RECT ur_game = {0, 0, _WIDTH, _HEIGHT};
     for(int i = 2;i < OBJ_MAX;i++){
         if(((Info *)(s->obj[i]))->valid == TRUE){
             UTIL_RECT ur_obj;
             cp_virtual_locate(s->obj[i], &ur_obj);
-            //                   x  y     w        h
             if(cp_virtual_isEnemy(s->obj[i]))
             {
                 if(is_outside_collision(&ur_obj, &ur_game) == TRUE && is_inside_collision(&ur_obj, &ur_game) == FALSE)
@@ -488,6 +488,7 @@ static void __boundary(Game *s)
     {
         if(((Info *)(s->obj[i]))->valid == TRUE){
             UTIL_RECT ur_obj;
+            cp_virtual_locate(s->obj[i], &ur_obj);
             if(cp_virtual_isPlayer1(s->obj[i]))
             {
                 if(is_up_collision(&ur_obj, &ur_game))

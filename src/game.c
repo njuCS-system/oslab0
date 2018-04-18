@@ -490,6 +490,7 @@ static void __boundary(Game *s)
             UTIL_RECT ur_obj;
             if(cp_virtual_isPlayer1(s->obj[i]))
             {
+                printf("Player1\n");
                 if(is_up_collision(&ur_obj, &ur_game))
                 {
                     kbRespond_disable(30);
@@ -501,7 +502,6 @@ static void __boundary(Game *s)
                 else if(is_down_collision(&ur_obj, &ur_game))
                 {
                     kbRespond_disable(44);
-                    printf("Player1 down\n");
                 }
                 else if(is_right_collision(&ur_obj, &ur_game))
                 {

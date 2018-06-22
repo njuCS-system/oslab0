@@ -368,7 +368,7 @@ static void __add(Game* s,void* object){
     {
         now_index += OBJ_MAX;
     }
-    for(; ((Info *)(s->obj[s->index]))->valid == TRUE && s->index != now_index; s->index = (s->index + 1)%OBJ_MAX);    
+    for(; s->obj[s->index] != NULL && ((Info *)(s->obj[s->index]))->valid == TRUE && s->index != now_index; s->index = (s->index + 1)%OBJ_MAX);    
     if(s->index == now_index)
     {
         printf("[ERROR] Game buffer overflow!\n");
@@ -400,7 +400,7 @@ static void __remove(Game* s, void *obj)
 static void __move(Game* s)
 {
     for(int i = 0;i < OBJ_MAX;i++){
-        if(((Info *)(s->obj[i]))->valid == TRUE){
+        if(s->obj[i] != NULL && ((Info *)(s->obj[i]))->valid == TRUE){
             mv_virtual_automove(s->obj[i]);
         }
     }
@@ -412,7 +412,7 @@ static void __create_player_bullet(Game *s)
     const int bullet_offset = 10;
     //我们假设player只能出现在前两个单元！
     for(int i = 0;i < 2;i++){
-        if(((Info *)(s->obj[i]))->valid == TRUE){
+        if(s->obj[i] != NULL && ((Info *)(s->obj[i]))->valid == TRUE){
             UTIL_RECT ur;
             cp_virtual_locate(s->obj[i], &ur);
             if(cp_virtual_isPlayer(s->obj[i]))
@@ -444,7 +444,7 @@ static void __create_enemy_bullet(Game *s)
     const int random_range = 1000;
     const int attack = random_range * 0.25;
     for(int i = 0;i < OBJ_MAX;i++){
-        if(((Info *)(s->obj[i]))->valid == TRUE){
+        if(s->obj[i] != NULL && ((Info *)(s->obj[i]))->valid == TRUE){
             UTIL_RECT ur;
             cp_virtual_locate(s->obj[i], &ur);
             if(cp_virtual_isEnemy(s->obj[i]) && (rand()%random_range) < attack)
@@ -464,7 +464,7 @@ static void __boundary(Game *s)
     //                   x  y     w        h
     UTIL_RECT ur_game = {0, 0, _WIDTH, _HEIGHT};
     for(int i = 0;i < OBJ_MAX;i++){
-        if(((Info *)(s->obj[i]))->valid == TRUE){
+        if(s->obj[i] != NULL && ((Info *)(s->obj[i]))->valid == TRUE){
             UTIL_RECT ur_obj;
             cp_virtual_locate(s->obj[i], &ur_obj);
             if(cp_virtual_isEnemy(s->obj[i]))
@@ -534,7 +534,7 @@ static void __boundary(Game *s)
 static void __collision_detect(Game *s)
 {
     for(int i = 0;i < OBJ_MAX;i++){
-        if(((Info *)(s->obj[i]))->valid == TRUE && cp_virtual_isBullet(s->obj[i]) == TRUE)
+        if(s->obj[i] != NULL && ((Info *)(s->obj[i]))->valid == TRUE && cp_virtual_isBullet(s->obj[i]) == TRUE)
         {
             UTIL_RECT ur_bullet;
             cp_virtual_locate(s->obj[i], &ur_bullet);
@@ -564,7 +564,7 @@ static void __collision_detect(Game *s)
             {
                 for(int j = 0; j < OBJ_MAX; j++)
                 {
-                    if(((Info *)(s->obj[j]))->valid == TRUE && cp_virtual_isEnemy(s->obj[j]) == TRUE)
+                    if(s->obj[j] != NULL && ((Info *)(s->obj[j]))->valid == TRUE && cp_virtual_isEnemy(s->obj[j]) == TRUE)
                     {
                         UTIL_RECT ur_enemy;
                         cp_virtual_locate(s->obj[j], &ur_enemy);
@@ -592,7 +592,7 @@ static void __collision_detect(Game *s)
             cp_virtual_locate(s->obj[i], &ur_player);
             for(int j = i + 1; j < OBJ_MAX; j++)
             {
-                if(((Info *)(s->obj[j]))->valid == TRUE && cp_virtual_isEnemy(s->obj[j]) == TRUE)
+                if(s->obj[j] != NULL && ((Info *)(s->obj[j]))->valid == TRUE && cp_virtual_isEnemy(s->obj[j]) == TRUE)
                 {
                     UTIL_RECT ur_enemy;
                     cp_virtual_locate(s->obj[j], &ur_enemy);

@@ -84,7 +84,6 @@ void main_loop()
             random_create_plane();
             
             // new_time = uptime();
-            // printf("create plane: %d\n", new_time - test_time);
             // test_time = new_time;
             
             if(loop_count % shooting_loop_count == 0)
@@ -94,37 +93,31 @@ void main_loop()
             }
 
             // new_time = uptime();
-            // printf("create bullet: %d\n", new_time - test_time);
             // test_time = new_time;
 
             game_move();
 
             // new_time = uptime();
-            // printf("game move: %d\n", new_time - test_time);
             // test_time = new_time;
 
             boundary_detect();
 
             // new_time = uptime();
-            // printf("boundary: %d\n", new_time - test_time);
             // test_time = new_time;
 
             collision_detect();
 
             // new_time = uptime();
-            // printf("collision: %d\n", new_time - test_time);
             // test_time = new_time;
 
             kbRespond_action();
 
             // new_time = uptime();
-            // printf("kb: %d\n", new_time - test_time);
             // test_time = new_time;
 
             game_draw();
 
             // new_time = uptime();
-            // printf("draw: %d\n", new_time - test_time);
             // test_time = new_time;
 
             last_time = now_time;

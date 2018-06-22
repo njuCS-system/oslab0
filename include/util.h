@@ -17,10 +17,10 @@
 #endif 
 
 //不采用sizeof而是宏定义大小是因为sizeof考虑了对齐
-#define BITMAPFILEHEADER_LENGTH 14
+#define BITMAPFILEHEADER_LENGTH 16
 #define SIZE_OF_OBJECTSET 24
-#define _WIDTH 630
-#define _HEIGHT 470
+#define _WIDTH 390
+#define _HEIGHT 290
 #define PLANE_WIDTH 80
 #define PLANE_HEIGHT 60
 #define DEFAULT_COLOR 0x01000000

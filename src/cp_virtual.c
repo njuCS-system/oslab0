@@ -41,7 +41,6 @@ void cp_virtual_draw(void* obj){
             player2_draw((Player2 *)obj);
             break;
     }
-
 }
 
 void cp_virtual_delete(void* obj){
